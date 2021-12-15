@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.container {
+    width: 90vw;
+    margin: auto;
+    /* border-style: dotted; */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 1px black;
+    /* border-style: solid ; */
+}
+
+li {
+    display: inline;
+    padding: 20px;
+}
+
+.logo {
+    color: purple;
+    padding: 20px;
+}
+
+main {
+    /* border-style: solid; */
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border-style: dashed; */
+  margin: 50px auto 50px auto;
+}
+
+.img-logo {
+  display: inline-block;
+  width: 40%;
+  height: 40%;
+  padding: 0;
+}
+
+.hero-presentation {
+  max-width: 500px;
+  /* border-style: dotted; */
+  align-content: space-between;
+}
+
+.hero-presentation h1 {
+  margin-bottom: 20px;
+}
+
+.hero-presentation p{
+  margin-bottom:10px;
+}
+
+.hero-presentation button {
+  padding: 10px 15px 10px 15px;
+}
+
+/* section company info */
+
+.company-info {
+  text-align: center;
+  margin: 50px auto 50px auto;
+
+}
+
+.info-columns {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.info-card{
+  background-color: #ebebeb;
+  box-shadow: 8px 8px 10px 0px rgba(0, 0, 0, 0.26);
+  padding: 20px;
+}
+
+.info-card h3 {
+  padding-bottom: 20px;
+}
+
+/* section Продукция */
+
+.products {
+  text-align: center;
+  margin: 50px auto 50px auto
+}
+
+.product-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.products .card {
+  background-color: #ebebeb;
+  box-shadow: 8px 8px 10px 0px rgba(0, 0, 0, 0.26);
+  padding: 20px;
+}
+
+.card .tag {
+  background: #fa7f0e;
+}
+
+.card button{
+  padding: 10px;
+}
