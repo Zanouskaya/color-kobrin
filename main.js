@@ -34,8 +34,8 @@ var items = [
 document.getElementById("test").innerHTML = items
   .map(
     (item) =>
-      `<div class='card'>
-    <div id=${item.id}><h5>${item.category}</h5></div>
+      `<div class='card' id=${item.id}>
+    <div id='${item.id}_title'><h5>${item.category}</h5></div>
     <h3>${item.name}</h3>
     <p>${item.description}</p>
     <button>Узнать больше</button>
@@ -45,6 +45,6 @@ document.getElementById("test").innerHTML = items
 
 items.forEach((item) => {
   if (item.type == "paint") {
-    document.getElementById(item.id).style.background = "#fa7f0e";
+    document.getElementById(`${item.id}_title`).style.background = "#fa7f0e";
   }
 }, {});
