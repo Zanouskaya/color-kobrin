@@ -124,3 +124,14 @@ main {
 .card button{
   padding: 10px;
 }
+
+.card h5 {
+  color: white;
+}
+
+
+/* section calculate */
+
+.calculate {
+  align-content: center;
+}
