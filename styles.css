@@ -47,13 +47,29 @@ nav {
   padding-left: 20px;
 }
 
+.nav-adds i:hover {
+  color: grey;
+}
+
 .nav-bottom li {
   list-style: none;
 }
 
-.nav-bottom h2 {
+a {
+  text-decoration: none;
+}
+
+.nav-bottom a {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
+  font-size: 1.5rem;
+  color: black;
+}
+
+.nav-bottom a:hover {
+  text-decoration: none;
+  color: grey;
+  cursor: pointer;
 }
 
 .nav-bottom {
@@ -63,8 +79,10 @@ nav {
 }
 
 
-.logo {
-    width: 10%;
+a .logo {
+  display: inline-block;
+  width: 50%;
+  height: 50%;
 }
 
 main {
@@ -79,12 +97,6 @@ main {
   background-position: center;
 }
 
-.img-logo {
-  display: inline-block;
-  width: 45%;
-  height: 45%;
-  padding: 0;
-}
 
 .hero-presentation {
   padding: 50px;
@@ -113,6 +125,28 @@ main {
   margin-bottom: 20px;
 }
 
+/* section blog */
+.blog-section {
+  margin: 50px auto 50px auto;
+}
+.blog-section h2{
+  padding: 20px;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  min-height: 40%;
+}
+
+.blog-grid-columns img {
+  width: 100%;
+  max-height: 250px;
+}
+
+
+
 /* section company info */
 
 .company-info {
@@ -138,11 +172,36 @@ main {
   padding-bottom: 20px;
 }
 
+
+
+
+/* section calculate */
+
+.calculate {
+  align-content: center;
+}
+
+
+/* PAGE Products */
+
+.grid-page-products {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  margin-top: 50px;
+}
+
+/* section Filtr */
+
+.filtr {
+  border-right: solid 1px grey;
+}
+
 /* section Продукция */
 
 .products {
   text-align: center;
-  margin: 50px auto 50px auto
+  margin: 0 auto 50px 20px;
+
 }
 
 .product-columns {
@@ -169,11 +228,4 @@ main {
 
 .card h5 {
   color: white;
-}
-
-
-/* section calculate */
-
-.calculate {
-  align-content: center;
 }

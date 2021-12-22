@@ -2,14 +2,14 @@
 <html>
     <head>
         <meta charset='utf-8' lang='ru'>
-        <title>color-kobrin</title>
+        <title>Главная</title>
         <link href=''>
         <link rel='stylesheet' href='styles.css'>
         <script src="https://kit.fontawesome.com/0a8f206dea.js" crossorigin="anonymous"></script>
 
     <body>
         <nav class='container'>
-            <img src='./images/color-buzzard-logo.gif' alt='колор-буццард кобрин' class='logo'>
+            <a href='./index.html'><img src='./images/color-buzzard-logo.gif' alt='колор-буццард кобрин' class='logo'></a>
             <div class='nav-right'>
               <div class='nav-top'>
                 <span>8(016)42-46-6-35</span>
@@ -19,9 +19,9 @@
                 </div>
               </div>
               <ul class='nav-bottom'>
-                <li><h2>О компании<h2></li>
-                <li><h2>Продукция<h2></li>
-                <li><h2>Контакты</h2></li>
+                <li><a href='./about.html'>О компании</a></li>
+                <li><a href='./productions.html'>Продукция</a></li>
+                <li><a href='./contacts.html'>Контакты</a></li>
               </ul>
             </div>
         </nav>
@@ -35,6 +35,27 @@
         </section>
 
         <main class='container'>
+            <section class='blog-section'>
+              <h2>Колор-буццард рекомендует:</h2>
+              <div class='blog-grid'>
+                <div class='blog-grid-columns'>
+                  <img src='./images/steps_for_coloring.jpg' alt='Этапы покраски внутрнних стен'>
+                  <h3>Как покрасить стены в помещении</h3>
+                  <p>Расскажем по шагам как покрасить стены и не сдохнуть</p>
+                </div>
+                <div class='blog-grid-columns'>
+                  <img src='./images/palitra.jpg' alt='Палитра колор-буццард' >
+                  <h3>Цвета для ваших идей</h3>
+                  <p>Палитра на любой вкус</p>
+                </div>
+                <div class='blog-grid-columns'>
+                  <img src='./images/choose_color_for_fasade.jpg' alt='Шпатлевки колор-буццард'>
+                  <h3>Как правильно выбрать штукатурку для вашего фасада</h3>
+                  <p>Разберем разницу между штукатурками, чтобы сделать правильный выбор</p>
+                </div>
+              </div>
+
+            </section>
             <section class='company-info'>
               <h2>О компании</h2>
               <div class='info-columns'>
@@ -86,8 +107,10 @@
 
                 </form>
               </div>
+
         </main>
         <script src= "main.js">
         </script>
+
     </body>
 </html>
