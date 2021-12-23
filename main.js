@@ -79,19 +79,25 @@ document.getElementById("test").innerHTML = items
   .map(
     (item) =>
       `<div class='card' id=${item.id}>
-    <div id='${item.id}_title'><h5>${item.category}</h5></div>
-    <h3>${item.name}</h3>
-    <p>${item.description}</p>
-    <button>Узнать больше</button>
-  </div>`
+        <div class='card-top'>
+        <div id='${item.id}_title' class='tag'><span>${item.category}</span></div>
+        <i class="far fa-bookmark"></i>
+        </div>
+        <div class='card-description'>
+          <h3>${item.name}</h3>
+          <p>${item.description}</p>
+        </div>
+      </div>`
   )
   .join("");
 
 items.forEach((item) => {
   if (item.type == "paint") {
     document.getElementById(`${item.id}_title`).style.background = "#fa7f0e";
+    document.getElementById(`${item.id}`).style.borderColor = "#fa7f0e";
   } else if (item.type == "putty") {
     document.getElementById(`${item.id}_title`).style.background = "#0055A9";
+    document.getElementById(`${item.id}`).style.borderColor = "#0055A9";
   }
 }, {});
 
@@ -103,3 +109,10 @@ function calculate() {
   event.preventDefault();
   return (document.getElementById("result").innerHTML = `<p>площадь помещения: ${result} </p>`);
 }
+
+
+//active page
+
+
+
+//searchbar
