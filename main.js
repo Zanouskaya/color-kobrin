@@ -75,10 +75,8 @@ var items = [
   },
 ];
 
-document.getElementById("test").innerHTML = items
-  .map(
-    (item) =>
-      `<div class='card' id=${item.id}>
+document.getElementById("test").innerHTML = items.map((item) =>
+      `<div class='card ${item.type}' id=${item.id}>
         <div class='card-top'>
         <div id='${item.id}_title' class='tag'><span>${item.category}</span></div>
         <i class="far fa-bookmark"></i>
@@ -88,18 +86,28 @@ document.getElementById("test").innerHTML = items
           <p>${item.description}</p>
         </div>
       </div>`
-  )
-  .join("");
+  ).join("");
 
 items.forEach((item) => {
   if (item.type == "paint") {
     document.getElementById(`${item.id}_title`).style.background = "#fa7f0e";
     document.getElementById(`${item.id}`).style.borderColor = "#fa7f0e";
+    // document.getElementById(`${item.id}`).className += ' show'
   } else if (item.type == "putty") {
     document.getElementById(`${item.id}_title`).style.background = "#0055A9";
     document.getElementById(`${item.id}`).style.borderColor = "#0055A9";
   }
 }, {});
+
+function filterSelection(type) {
+  let products = document.getElementsByClassName(type)
+  for (i = 0; i < products.length; i++) {
+    products[i].className += ' show'
+  }
+}
+
+
+
 
 // calulations
 function calculate() {

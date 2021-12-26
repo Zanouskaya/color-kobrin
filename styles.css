@@ -260,6 +260,11 @@ main {
   /* background-color: #f3f3f3; */
   /* padding: 20px; */
   border: solid 1px;
+  display: none;
+}
+
+.products .show {
+  display: block;
 }
 
 .card:hover {
@@ -292,4 +297,9 @@ main {
 
 .card-description h3 {
   padding: 10px 20px 10px 20px;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
 }
