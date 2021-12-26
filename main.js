@@ -99,11 +99,33 @@ items.forEach((item) => {
   }
 }, {});
 
+filterSelection('card');
 function filterSelection(type) {
-  let products = document.getElementsByClassName(type)
+  let products = document.getElementsByClassName('card')
   for (i = 0; i < products.length; i++) {
-    products[i].className += ' show'
+    if (products[i].className.includes(type)) {
+      products[i].className += ' show';
+    } else {
+      while (products[i].className.includes('show')) {
+        products[i].className = products[i].className.replace(' show', '');
+      }
+      }
   }
+}
+
+var menuBar = document.getElementById("menubar");
+var btns = menuBar.getElementsByClassName("btn");
+for (i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", makeActive);
+  console.log(btns[i]);
+}
+
+function makeActive() {
+  console.log('event triggered')
+  var current = document.getElementsByClassName("active");
+  console.log(current);
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
 }
 
 

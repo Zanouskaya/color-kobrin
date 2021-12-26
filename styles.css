@@ -299,7 +299,27 @@ main {
   padding: 10px 20px 10px 20px;
 }
 
-.btn.active {
-  background-color: #666;
-  color: white;
+.menubar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+}
+
+.menubar .btn {
+  font-family: 'Raleway', sans-serif;
+  style: none;
+  border: none;
+  background: none;
+  padding: 10px;
+  font-style: inherit;
+  font-size: 1.5rem;
+}
+
+.btn:hover {
+  color: grey;
+}
+
+.menubar .active {
+  border-bottom: solid 1px;
 }

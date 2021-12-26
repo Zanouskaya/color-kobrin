@@ -19,7 +19,7 @@
             </div>
             <ul class='nav-bottom' id='pageList'>
               <li><a href='./about.html' class='page'>О компании</a></li>
-              <li><a href='./productions.html' class='page active'>Продукция</a></li>
+              <li><a href='./productions.html' class='page'>Продукция</a></li>
               <li><a href='./contacts.html' class='page'>Контакты</a></li>
             </ul>
           </div>
@@ -27,8 +27,17 @@
 
       <main class='container grid-page-products'>
 
-        <section class='filter' id='filter-buttons'>
-          <div class='collapsible'><h3>Показать:</h3></div>
+        <section class='left-side'>
+          <div id='menubar' class='menubar'>
+            <button class='btn active' onclick="filterSelection('card')">Вся продукция</button>
+            <button class='btn' onclick="filterSelection('paint')">Краски</button>
+            <button class='btn' onclick="filterSelection('putty')">Шпатлевки</button>
+            <button class='btn' onclick="filterSelection('primers')">Грунтовки</button>
+            <button class='btn' onclick="filterSelection('plasters')">Штукатурки</button>
+            <button class='btn' onclick="filterSelection('glue')">Клей</button>
+            <button class='btn' onclick="filterSelection('azure')">Лазурь</button>
+          </div>
+          <!-- <div class='collapsible'><h3>Показать:</h3></div>
             <div class='content'>
               <input type='checkbox' id='all'>
               <label for='all'>Все</label> <br>
@@ -46,37 +55,30 @@
               <label for='azure'>Лазурь</label><br>
               <input type='checkbox' id='other'>
               <label for='other'>Другое</label><br><br>
-            </div>
-          <input type='checkbox' id='for_inside'>
-          <label for='for_inside'>Для внутренних работ</label> <br>
+            </div> -->
+          <!-- <input type='checkbox' id='for_inside'>
+          <label for='for_inside'>Для внутренних работ</label> <br> -->
         </section>
 
-        <script>
-          var coll = document.getElementsByClassName("collapsible");
-          var i;
-
-          for (i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function() {
-              this.classList.toggle("active");
-              var content = this.nextElementSibling;
-              if (content.style.display === "none") {
-                content.style.display = "block";
-              } else {
-                content.style.display = "none";
-              }
-            });
-          }
-        </script>
+        <!-- <script>
+          // var coll = document.getElementsByClassName("collapsible");
+          // var i;
+          //
+          // for (i = 0; i < coll.length; i++) {
+          //   coll[i].addEventListener("click", function() {
+          //     this.classList.toggle("active");
+          //     var content = this.nextElementSibling;
+          //     if (content.style.display === "none") {
+          //       content.style.display = "block";
+          //     } else {
+          //       content.style.display = "none";
+          //     }
+          //   });
+          // }
+        </script> -->
 
         <section class='products'>
-            <div id='menubar'>
-              <button class='btn' onclick="filterSelection('paint')">Краски</button>
-              <button class='btn' onclick="filterSelection('putty')">Шпатлевки</button>
-              <button class='btn'>Грунтовки</button>
-              <button class='btn'>Штукатурки</button>
-              <button class='btn'>Клей</button>
-              <button class='btn'>Лазурь</button>
-            </div>
+
             <input class='searchbar' id='search' type='text' placeholder="поиск по названию">
 
             <div class='product-columns' id='test'>
