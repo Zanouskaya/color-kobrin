@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8' lang='ru'>
+        <title>Продукция</title>
+        <link rel='stylesheet' href='../css/styles.css'>
+        <link rel='stylesheet' href='../css/styles_productions.css'>
+        <script src="https://kit.fontawesome.com/0a8f206dea.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+      <nav class='container'>
+          <a href='../index.html'><img src='../images/color-buzzard-logo.gif' alt='колор-буццард кобрин' class='logo'></a>
+          <div class='nav-right'>
+            <div class='nav-top'>
+              <span>8(016)42-46-6-35</span>
+              <div class='nav-adds'>
+                <i class="fas fa-bookmark"></i>
+                <i class="fas fa-search"></i>
+              </div>
+            </div>
+            <ul class='nav-bottom' id='pageList'>
+              <li><a href='./about.html' class='page'>О компании</a></li>
+              <li><a href='./productions.html' class='page'>Продукция</a></li>
+              <li><a href='./contacts.html' class='page'>Контакты</a></li>
+            </ul>
+          </div>
+      </nav>
+
+      <main class='container grid-page-products'>
+
+        <section class='left-side'>
+          <div id='menubar' class='menubar'>
+            <button class='btn active' onclick="filterSelection('card')">Вся продукция</button>
+            <button class='btn' onclick="filterSelection('paint')">Краски</button>
+            <button class='btn' onclick="filterSelection('putty')">Шпатлевки</button>
+            <button class='btn' onclick="filterSelection('primers')">Грунтовки</button>
+            <button class='btn' onclick="filterSelection('plasters')">Штукатурки</button>
+            <button class='btn' onclick="filterSelection('glue')">Клей</button>
+            <button class='btn' onclick="filterSelection('azure')">Лазурь</button>
+          </div>
+        </section>
+        <script>
+        function filterSelection(type) {
+          var products = document.getElementsByClassName('card')
+          for (var i = 0; i < products.length; i++) {
+            if (products[i].className.includes(type)) {
+              products[i].className += ' show';
+            } else {
+              while (products[i].className.includes('show')) {
+                products[i].className = products[i].className.replace(' show', '');
+              }
+            }
+          }
+        };
+        </script>
+        <section class='products'>
+            <input class='searchbar' id='search' type='text' placeholder="поиск по названию">
+            <div class='product-columns' id='test'>
+            </div>
+        </section>
+
+      </main>
+
+      <!-- <script src= "filterSelection.js"></script> -->
+      <script type='module' src= "../js/productions.js"></script>
+    </body>
+</html>

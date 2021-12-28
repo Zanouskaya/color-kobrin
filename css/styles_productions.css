@@ -1,0 +1,152 @@
+.grid-page-products {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  margin-top: 50px;
+}
+
+/* section search */
+.searchbar {
+  margin: 0 40px 20px 0;
+  padding-left: 10px;
+  font-family: inherit;
+  width: 100%;
+  height: 50px;
+  border-style: none;
+  border: 1px solid grey;
+  font-size: 1rem;
+}
+
+
+/* section Filter */
+.filter input, label {
+  margin: 10px;
+  align-items: center;
+}
+
+.filter .collapsible {
+  padding-bottom: 10px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.collapsible:hover, .filter .active {
+  background-color: #f3f3f3;
+}
+
+.filter .collapsible:after {
+  content: '\2796';
+  font-size: 13px;
+  color: white;
+  float: right;
+  margin-left: 5px;
+}
+
+.filter .active:after {
+  content: "\02795";
+}
+
+.filter .content {
+  display: block;
+  padding: 0 20px;
+}
+
+
+/* section Продукция */
+
+.products {
+  text-align: center;
+  margin: 0 auto 50px 20px;
+}
+
+.product-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.products .card {
+  /* background-color: #f3f3f3; */
+  /* padding: 20px; */
+  border: solid 1px;
+  display: none;
+}
+
+.products .show {
+  display: block;
+}
+
+a {
+  color: black;
+}
+
+.card:hover {
+  background: #f3f3f3;
+  cursor: pointer;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.card-top button {
+  background: none;
+  border: none;
+  align-items: center;
+  margin-right: 15px;
+  padding: 5px;
+  font-size: 1.5rem;
+  color: #cccccc;
+}
+
+.card-top button:hover {
+  color: #fa7f0e;
+  cursor: pointer;
+}
+/* .card-top i {
+  font-size: 2em;
+  color: #cccccc;
+} */
+
+.card-top .tag {
+  width: 40%;
+  border-radius: 0 0 20px 0;
+  padding: 10px;
+  color: white;
+}
+
+.card-description {
+  padding: 20px;
+}
+
+.card-description h3 {
+  padding: 10px 20px 10px 20px;
+}
+
+.menubar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.menubar .btn {
+  font-family: 'Raleway', sans-serif;
+  style: none;
+  border: none;
+  background: none;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  font-style: inherit;
+  font-size: 1.5rem;
+}
+
+.btn:hover {
+  color: grey;
+}
+
+.menubar .active {
+  border-bottom: solid 1px;
+}
