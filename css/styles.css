@@ -71,7 +71,7 @@ a {
 .nav-bottom a {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: black;
 }
 
@@ -136,10 +136,11 @@ main {
 
 /* section blog */
 .blog-section {
-  margin: 50px auto 50px auto;
+  margin: 100px auto 100px auto;
 }
 .blog-section h2{
   padding: 20px;
+  margin-bottom: 30px;
 }
 
 .blog-grid {
@@ -149,12 +150,40 @@ main {
   min-height: 40%;
 }
 
-.blog-grid-columns img {
-  width: 100%;
-  max-height: 250px;
+.post-card {
+  border-radius: 18px;
+  background-color: #fff;
+  /* padding: 20px; */
+  box-shadow: 2px 4px 12px rgba(0,0,0,.08);
+  transition: all .3s cubic-bezier(0,0,.5,1);
 }
 
+.post-card .description {
+  margin: 20px;
+  min-height: 100px;
+}
 
+.post-card .cover {
+  display: flex;
+  max-height: 300px;
+}
+
+.cover img {
+  max-width: 100%;
+
+  border-radius: 0 0 18px 18px;
+}
+
+.description p {
+  padding-bottom: 20px;
+}
+
+.post-card:hover {
+  cursor: pointer;
+  box-shadow: 2px 4px 16px rgba(0,0,0,.16);
+  transition: all .3s cubic-bezier(0,0,.5,1);
+  transform: scale3d(1.02,1.02,1.02);
+}
 
 /* section company info */
 

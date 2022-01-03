@@ -1,5 +1,5 @@
 import { productsList } from './modules/products_data.js';
-import { filterSelection } from './modules/filterSelection.js';
+// import { filterSelection } from './modules/filterSelection.js';
 
 document.getElementById("test").innerHTML = productsList.map((item) =>
       `<div class='card ${item.type}' id=${item.id}> <a href=${item.link}>
@@ -8,37 +8,44 @@ document.getElementById("test").innerHTML = productsList.map((item) =>
         <button><i class="far fa-heart"></i></button>
         </div>
         <div class='card-description'>
-          <img src='${item.image}'>
           <h3>${item.name}</h3>
           <p>${item.description}</p>
-        </div></a>
+        </div>
+        <img src='${item.image}'>
+        </a>
       </div>`
   ).join("");
 
 
 productsList.forEach((item) => {
   if (item.type == "paint") {
-    document.getElementById(`${item.id}_title`).style.background = "#fa7f0e";
-    document.getElementById(`${item.id}`).style.borderColor = "#fa7f0e";
-    // document.getElementById(`${item.id}`).className += ' show'
+    document.getElementById(`${item.id}_title`).style.color = "#fa7f0e";
   } else if (item.type == "putty") {
-    document.getElementById(`${item.id}_title`).style.background = "#0055A9";
-    document.getElementById(`${item.id}`).style.borderColor = "#0055A9";
+    document.getElementById(`${item.id}_title`).style.color = "#0055A9";
   } else if (item.type == "primers") {
-    document.getElementById(`${item.id}_title`).style.background = "green";
-    document.getElementById(`${item.id}`).style.borderColor = "green";
+    document.getElementById(`${item.id}_title`).style.color = "green";
   } else if (item.type == "plasters") {
-    document.getElementById(`${item.id}_title`).style.background = "red";
-    document.getElementById(`${item.id}`).style.borderColor = "red";
+    document.getElementById(`${item.id}_title`).style.color = "red";
   } else if (item.type == "azure") {
-    document.getElementById(`${item.id}_title`).style.background = "purple";
-    document.getElementById(`${item.id}`).style.borderColor = "purple";
+    document.getElementById(`${item.id}_title`).style.color = "purple";
   } else if (item.type == "glue") {
-    document.getElementById(`${item.id}_title`).style.background = "purple";
-    document.getElementById(`${item.id}`).style.borderColor = "purple";}
+    document.getElementById(`${item.id}_title`).style.color = "purple";
+  }
 }, {});
 
 filterSelection('card');
+// function filterSelection(type) {
+//   var products = document.getElementsByClassName('card')
+//   for (var i = 0; i < products.length; i++) {
+//     if (products[i].className.includes(type)) {
+//       products[i].className += ' show';
+//     } else {
+//       while (products[i].className.includes('show')) {
+//         products[i].className = products[i].className.replace(' show', '');
+//       }
+//     }
+//   }
+// };
 
 var menuBar = document.getElementById("menubar");
 var btns = menuBar.getElementsByClassName("btn");

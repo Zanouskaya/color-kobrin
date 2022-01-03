@@ -21,6 +21,7 @@
             <ul class='nav-bottom' id='pageList'>
               <li><a href='./about.html' class='page'>О компании</a></li>
               <li><a href='./productions.html' class='page'>Продукция</a></li>
+              <li><a href='./palitra.html' class='page'>Палитра</a></li>
               <li><a href='./contacts.html' class='page'>Контакты</a></li>
             </ul>
           </div>
@@ -30,16 +31,17 @@
 
         <section class='left-side'>
           <div id='menubar' class='menubar'>
-            <button class='btn active' onclick="filterSelection('card')">Вся продукция</button>
-            <button class='btn' onclick="filterSelection('paint')">Краски</button>
-            <button class='btn' onclick="filterSelection('putty')">Шпатлевки</button>
-            <button class='btn' onclick="filterSelection('primers')">Грунтовки</button>
-            <button class='btn' onclick="filterSelection('plasters')">Штукатурки</button>
-            <button class='btn' onclick="filterSelection('glue')">Клей</button>
-            <button class='btn' onclick="filterSelection('azure')">Лазурь</button>
+            <button class='btn active' id='color' onclick="filterSelection('card')">Вся продукция</button>
+            <button class='btn' id='color' onclick="filterSelection('paint')">Краски</button>
+            <button class='btn' id='color' onclick="filterSelection('putty')">Шпатлевки</button>
+            <button class='btn' id='color' onclick="filterSelection('primers')">Грунтовки</button>
+            <button class='btn' id='color' onclick="filterSelection('plasters')">Штукатурки</button>
+            <button class='btn' id='color' onclick="filterSelection('glue')">Клей</button>
+            <button class='btn' id='color' onclick="filterSelection('azure')">Лазурь</button>
           </div>
         </section>
         <script>
+        
         function filterSelection(type) {
           var products = document.getElementsByClassName('card')
           for (var i = 0; i < products.length; i++) {

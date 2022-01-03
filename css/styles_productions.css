@@ -7,13 +7,24 @@
 /* section search */
 .searchbar {
   margin: 0 40px 20px 0;
-  padding-left: 10px;
+  padding-left: 60px;
   font-family: inherit;
   width: 100%;
   height: 50px;
+  background-color: #fff;
   border-style: none;
-  border: 1px solid grey;
+  box-shadow: 2px 4px 12px rgba(0,0,0,.08);
+  /* border: 1px solid #d2d2d7; */
+  border-radius: 8px;
   font-size: 1rem;
+}
+
+#search {
+  background-image: url('../images/search-solid.svg');
+  background-position: 10px 5px ;
+  background-size: contain;
+  background-repeat: no-repeat;
+
 }
 
 
@@ -69,27 +80,40 @@
 .products .card {
   /* background-color: #f3f3f3; */
   /* padding: 20px; */
-  border: solid 1px;
+  /* border: solid 1px; */
+  border-radius: 18px;
   display: none;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 2px 4px 12px rgba(0,0,0,.08);
+  transition: all .3s cubic-bezier(0,0,.5,1);
 }
+
 
 .products .show {
   display: block;
+
 }
 
 a {
   color: black;
+
 }
 
 .card:hover {
-  background: #f3f3f3;
+  /* background: #f3f3f3; */
   cursor: pointer;
+  box-shadow: 2px 4px 16px rgba(0,0,0,.16);
+  transition: all .3s cubic-bezier(0,0,.5,1);
+  transform: scale3d(1.02,1.02,1.02);
+
 }
 
 .card-top {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
+  /* margin-top: 20px; */
 }
 
 .card-top button {
@@ -113,21 +137,38 @@ a {
 
 .card-top .tag {
   width: 40%;
-  border-radius: 0 0 20px 0;
-  padding: 10px;
+  /* border-radius: 0 0 20px 0; */
+  /* padding: 10px; */
   color: white;
-}
-
-.card-description {
+  text-align: left;
   padding: 20px;
 }
 
+.card-description {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  text-align: left;
+  justify-content: flex-start;
+  min-height: 250px;
+}
+
 .card-description h3 {
-  padding: 10px 20px 10px 20px;
+  font-size: 1.5rem;
+  padding-bottom: 10px;
+}
+.card img {
+  display: block;
+  float: bottom;
+  margin: auto auto 10px auto;
+
 }
 
 .menubar {
   display: flex;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 30px;
   flex-direction: column;
   align-items: flex-start;
 }
