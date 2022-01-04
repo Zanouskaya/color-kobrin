@@ -3,29 +3,22 @@
     <head>
         <meta charset='utf-8' lang='ru'>
         <title>Продукция</title>
-        <link rel='stylesheet' href='../css/styles.css'>
-        <link rel='stylesheet' href='../css/styles_productions.css'>
+        <link rel='stylesheet' href='./css/styles.css'>
+        <link rel='stylesheet' href='./css/styles_productions.css'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+          $(function () {
+            var includes = $('[data-include]')
+            $.each(includes, function () {
+              var file = 'html/' + $(this).data('include') + '.html'
+              $(this).load(file)
+            })
+          })
+        </script>
         <script src="https://kit.fontawesome.com/0a8f206dea.js" crossorigin="anonymous"></script>
     </head>
     <body>
-      <nav class='container'>
-          <a href='../index.html'><img src='../images/color-buzzard-logo.gif' alt='колор-буццард кобрин' class='logo'></a>
-          <div class='nav-right'>
-            <div class='nav-top'>
-              <span>8(016)42-46-6-35</span>
-              <div class='nav-adds'>
-                <i class="fas fa-bookmark"></i>
-                <i class="fas fa-search"></i>
-              </div>
-            </div>
-            <ul class='nav-bottom' id='pageList'>
-              <li><a href='./about.html' class='page'>О компании</a></li>
-              <li><a href='./productions.html' class='page'>Продукция</a></li>
-              <li><a href='./palitra.html' class='page'>Палитра</a></li>
-              <li><a href='./contacts.html' class='page'>Контакты</a></li>
-            </ul>
-          </div>
-      </nav>
+      <div data-include='nav'></div>
 
       <main class='container grid-page-products'>
 
@@ -64,6 +57,6 @@
       </main>
 
       <!-- <script src= "filterSelection.js"></script> -->
-      <script type='module' src= "../js/productions.js"></script>
+      <script type='module' src= "./js/productions.js"></script>
     </body>
 </html>

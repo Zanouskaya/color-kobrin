@@ -5,7 +5,7 @@ document.getElementById("test").innerHTML = productsList.map((item) =>
       `<div class='card ${item.type}' id=${item.id}> <a href=${item.link}>
         <div class='card-top'>
         <div id='${item.id}_title' class='tag'><span>${item.category}</span></div>
-        <button><i class="far fa-heart"></i></button>
+        
         </div>
         <div class='card-description'>
           <h3>${item.name}</h3>
@@ -73,3 +73,6 @@ function makeActive() {
 
 
 //searchbar
+
+
+// <button><i class="far fa-heart"></i></button>

@@ -19,8 +19,9 @@ body {
 }
 
 .container {
-    width: 90vw;
+    width: 80vw;
     margin: auto;
+    
     /* border-style: dotted; */
 }
 
@@ -94,9 +95,6 @@ a .logo {
   height: 50%;
 }
 
-main {
-    /* border-style: solid; */
-}
 
 .hero-background {
   display: flex;
@@ -108,14 +106,14 @@ main {
 
 
 .hero-presentation {
-  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10vw;
   margin-top: 40vh;
-  margin-bottom: 50px;
-  margin-left: 50px;
+  padding: 50px;
   max-width: 700px;
-  height: 280px;
+  max-height: 300px;
   background-color: white;
-  position: relative;
   z-index: 2;
   align-content: space-between;
 }
@@ -129,9 +127,10 @@ main {
 }
 
 .hero-presentation button {
+  width: 350px;
   padding: 10px 15px 10px 15px;
   margin-top: 20px;
-  margin-bottom: 20px;
+  
 }
 
 /* section blog */

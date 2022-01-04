@@ -106,7 +106,6 @@ a {
   box-shadow: 2px 4px 16px rgba(0,0,0,.16);
   transition: all .3s cubic-bezier(0,0,.5,1);
   transform: scale3d(1.02,1.02,1.02);
-
 }
 
 .card-top {
@@ -175,7 +174,7 @@ a {
 
 .menubar .btn {
   font-family: 'Raleway', sans-serif;
-  style: none;
+  
   border: none;
   background: none;
   padding-bottom: 5px;
