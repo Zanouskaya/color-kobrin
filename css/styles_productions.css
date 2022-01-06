@@ -13,23 +13,21 @@
   height: 50px;
   background-color: #fff;
   border-style: none;
-  box-shadow: 2px 4px 12px rgba(0,0,0,.08);
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.08);
   /* border: 1px solid #d2d2d7; */
   border-radius: 8px;
   font-size: 1rem;
 }
 
 #search {
-  background-image: url('../images/search-solid.svg');
-  background-position: 10px 5px ;
-  background-size: contain;
+  background-image: url("../images/search_grey.svg");
+  background-position: 15px;
+  background-size: 3%;
   background-repeat: no-repeat;
-
 }
 
-
 /* section Filter */
-.filter input, label {
+/* .filter input, label {
   margin: 10px;
   align-items: center;
 }
@@ -59,8 +57,7 @@
 .filter .content {
   display: block;
   padding: 0 20px;
-}
-
+} */
 
 /* section Продукция */
 
@@ -85,27 +82,24 @@
   display: none;
   background-color: #fff;
   padding: 20px;
-  box-shadow: 2px 4px 12px rgba(0,0,0,.08);
-  transition: all .3s cubic-bezier(0,0,.5,1);
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
 }
-
 
 .products .show {
   display: block;
-
 }
 
 a {
   color: black;
-
 }
 
 .card:hover {
   /* background: #f3f3f3; */
   cursor: pointer;
-  box-shadow: 2px 4px 16px rgba(0,0,0,.16);
-  transition: all .3s cubic-bezier(0,0,.5,1);
-  transform: scale3d(1.02,1.02,1.02);
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.16);
+  transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
+  transform: scale3d(1.02, 1.02, 1.02);
 }
 
 .card-top {
@@ -160,7 +154,6 @@ a {
   display: block;
   float: bottom;
   margin: auto auto 10px auto;
-
 }
 
 .menubar {
@@ -173,14 +166,14 @@ a {
 }
 
 .menubar .btn {
-  font-family: 'Raleway', sans-serif;
-  
+  font-family: "Raleway", sans-serif;
+
   border: none;
   background: none;
   padding-bottom: 5px;
   margin-bottom: 15px;
   font-style: inherit;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .btn:hover {

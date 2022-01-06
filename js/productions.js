@@ -1,7 +1,9 @@
-import { productsList } from './modules/products_data.js';
+import { productsList } from "./modules/products_data.js";
 // import { filterSelection } from './modules/filterSelection.js';
 
-document.getElementById("test").innerHTML = productsList.map((item) =>
+document.getElementById("test").innerHTML = productsList
+  .map(
+    (item) =>
       `<div class='card ${item.type}' id=${item.id}> <a href=${item.link}>
         <div class='card-top'>
         <div id='${item.id}_title' class='tag'><span>${item.category}</span></div>
@@ -14,8 +16,8 @@ document.getElementById("test").innerHTML = productsList.map((item) =>
         <img src='${item.image}'>
         </a>
       </div>`
-  ).join("");
-
+  )
+  .join("");
 
 productsList.forEach((item) => {
   if (item.type == "paint") {
@@ -33,7 +35,7 @@ productsList.forEach((item) => {
   }
 }, {});
 
-filterSelection('card');
+filterSelection("card");
 // function filterSelection(type) {
 //   var products = document.getElementsByClassName('card')
 //   for (var i = 0; i < products.length; i++) {
@@ -59,6 +61,24 @@ function makeActive() {
   this.className += " active";
 }
 
+function filterName() {
+  var input, filter, products, i;
+  input = document.getElementById("search");
+  filter = input.value.toUpperCase();
+  products = document.getElementsByClassName("card");
+
+  for (i = 0; i < products.length; i++) {
+    title = products[i].getElementsByTagName("h3")[0];
+
+    if (title.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      products[i].className += " show";
+    } else {
+      while (products[i].className.includes("show")) {
+        products[i].className = products[i].className.replace(" show", "");
+      }
+    }
+  }
+}
 // calulations
 // function calculate() {
 //   var width = document.getElementById("width").value;
@@ -70,9 +90,25 @@ function makeActive() {
 
 //active page
 
-
-
 //searchbar
 
-
 // <button><i class="far fa-heart"></i></button>
+
+// function filterName() {
+//   var input, filter, ul, li, a, i;
+//   input = document.getElementById("search");
+//   filter = input.value.toUpperCase();
+//   ul = document.getElementById("test").innerHTML;
+//   li = ul.getElementsByClassName("card-description");
+
+//   // Loop through all list items, and hide those who don't match the search query
+//   for (i = 0; i < li.length; i++) {
+//     a = li[i].getElementsByTagName("h3")[0];
+
+//     if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+//       li[i].style.display = "";
+//     } else {
+//       li[i].style.display = "none";
+//     }
+//   }
+// }

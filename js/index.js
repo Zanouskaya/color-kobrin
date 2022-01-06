@@ -1,6 +1,8 @@
-import { postsList } from './modules/post_data.js';
+import { postsList } from "./modules/post_data.js";
 
-document.getElementById("posts").innerHTML = postsList.map((post) =>
+document.getElementById("posts").innerHTML = postsList
+  .map(
+    (post) =>
       ` <div class='post-card' id=${post.id}>
           <a href=${post.link}>
             <div class='description'>
@@ -12,4 +14,5 @@ document.getElementById("posts").innerHTML = postsList.map((post) =>
             </div>
           </a>
         </div>`
-  ).join("");
+  )
+  .join("");

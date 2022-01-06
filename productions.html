@@ -1,62 +1,111 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset='utf-8' lang='ru'>
-        <title>Продукция</title>
-        <link rel='stylesheet' href='./css/styles.css'>
-        <link rel='stylesheet' href='./css/styles_productions.css'>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script>
-          $(function () {
-            var includes = $('[data-include]')
-            $.each(includes, function () {
-              var file = 'html/' + $(this).data('include') + '.html'
-              $(this).load(file)
-            })
-          })
-        </script>
-        <script src="https://kit.fontawesome.com/0a8f206dea.js" crossorigin="anonymous"></script>
-    </head>
-    <body>
-      <div data-include='nav'></div>
+  <head>
+    <meta charset="utf-8" lang="ru" />
+    <title>Продукция</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/styles_productions.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(function () {
+        var includes = $("[data-include]");
+        $.each(includes, function () {
+          var file = "html/" + $(this).data("include") + ".html";
+          $(this).load(file);
+        });
+      });
+    </script>
+    <script
+      src="https://kit.fontawesome.com/0a8f206dea.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div data-include="nav"></div>
 
-      <main class='container grid-page-products'>
-
-        <section class='left-side'>
-          <div id='menubar' class='menubar'>
-            <button class='btn active' id='color' onclick="filterSelection('card')">Вся продукция</button>
-            <button class='btn' id='color' onclick="filterSelection('paint')">Краски</button>
-            <button class='btn' id='color' onclick="filterSelection('putty')">Шпатлевки</button>
-            <button class='btn' id='color' onclick="filterSelection('primers')">Грунтовки</button>
-            <button class='btn' id='color' onclick="filterSelection('plasters')">Штукатурки</button>
-            <button class='btn' id='color' onclick="filterSelection('glue')">Клей</button>
-            <button class='btn' id='color' onclick="filterSelection('azure')">Лазурь</button>
-          </div>
-        </section>
-        <script>
-        
+    <main class="container grid-page-products">
+      <section class="left-side">
+        <div id="menubar" class="menubar">
+          <button
+            class="btn active"
+            id="color"
+            onclick="filterSelection('card')"
+          >
+            Вся продукция
+          </button>
+          <button class="btn" id="color" onclick="filterSelection('paint')">
+            Краски
+          </button>
+          <button class="btn" id="color" onclick="filterSelection('putty')">
+            Шпатлевки
+          </button>
+          <button class="btn" id="color" onclick="filterSelection('primers')">
+            Грунтовки
+          </button>
+          <button class="btn" id="color" onclick="filterSelection('plasters')">
+            Штукатурки
+          </button>
+          <button class="btn" id="color" onclick="filterSelection('glue')">
+            Клей
+          </button>
+          <button class="btn" id="color" onclick="filterSelection('azure')">
+            Лазурь
+          </button>
+        </div>
+      </section>
+      <script>
         function filterSelection(type) {
-          var products = document.getElementsByClassName('card')
+          var products = document.getElementsByClassName("card");
           for (var i = 0; i < products.length; i++) {
             if (products[i].className.includes(type)) {
-              products[i].className += ' show';
+              products[i].className += " show";
             } else {
-              while (products[i].className.includes('show')) {
-                products[i].className = products[i].className.replace(' show', '');
+              while (products[i].className.includes("show")) {
+                products[i].className = products[i].className.replace(
+                  " show",
+                  ""
+                );
               }
             }
           }
-        };
-        </script>
-        <section class='products'>
-            <input class='searchbar' id='search' type='text' placeholder="поиск по названию">
-            <div class='product-columns' id='test'>
-            </div>
-        </section>
+        }
+      </script>
+      <section class="products">
+        <input
+          class="searchbar"
+          id="search"
+          type="text"
+          placeholder="поиск по названию"
+          onkeyup="filterName()"
+        />
+        <div class="product-columns" id="test"></div>
+      </section>
+    </main>
+    <script>
+      function filterName() {
+        var input, filter, products, i;
+        input = document.getElementById("search");
+        filter = input.value.toUpperCase();
+        products = document.getElementsByClassName("card");
 
-      </main>
+        for (i = 0; i < products.length; i++) {
+          title = products[i].getElementsByTagName("h3")[0];
 
-      <!-- <script src= "filterSelection.js"></script> -->
-      <script type='module' src= "./js/productions.js"></script>
-    </body>
+          if (title.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            products[i].className += " show";
+          } else {
+            while (products[i].className.includes("show")) {
+              products[i].className = products[i].className.replace(
+                " show",
+                ""
+              );
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- <script src= "filterSelection.js"></script> -->
+    <script type="module" src="./js/productions.js"></script>
+  </body>
 </html>
