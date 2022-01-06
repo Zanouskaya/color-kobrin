@@ -17,7 +17,14 @@ export const postsList = [
     id: "post_3",
     name: "Выбираем цвет из палитры Колор-буццард",
     image: "./images/palitra.jpg",
-    imageAlt: "Советы по подбору декоративной штукатурки",
+    imageAlt: "Выбираем цвет из палитры Колор-буццард",
+    link: "#",
+  },
+  {
+    id: "post_3",
+    name: "Экологичность красок Колор-буццард",
+    image: "./images/palitra.jpg",
+    imageAlt: "Экологичность красок Колор-буццард",
     link: "#",
   },
 ];
