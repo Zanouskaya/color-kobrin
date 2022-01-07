@@ -25,6 +25,25 @@
     <main>
       <div data-include="nav"></div>
       <section class="container">
+        <div class="top-line">
+          <div class="buttons-wrapper" id="btnsWrapper">
+            <button class="color-btn active" id="rgb_o">Оригинальный</button>
+            <button class="color-btn" id="rgb_1">1:1</button>
+            <button class="color-btn" id="rgb_2">1:2</button>
+            <button class="color-btn" id="rgb_4">1:4</button>
+            <button class="color-btn" id="rgb_8">1:8</button>
+            <button class="color-btn" id="rgb_16">1:16</button>
+            <button class="color-btn" id="rgb_40">1:40</button>
+            <button class="color-btn" id="rgb_80">1:80</button>
+          </div>
+          <input
+            class="searchbar"
+            id="search"
+            type="text"
+            placeholder="поиск по названию"
+          />
+        </div>
+
         <div class="palitra-columns" id="colors"></div>
         <div id="all-colors"></div>
       </section>

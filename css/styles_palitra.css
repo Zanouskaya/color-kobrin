@@ -1,3 +1,8 @@
+.top-line {
+  display: flex;
+  justify-content: space-between;
+}
+
 .palitra-columns {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -7,10 +12,19 @@
 }
 
 .color-card {
+  display: none;
   border-radius: 18px;
   box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.08);
   transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
 }
+
+.show {
+  display: block;
+  border-radius: 18px;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
+}
+
 .color-card:hover {
   box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.16);
   transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
@@ -29,10 +43,19 @@ h3 {
   font-size: 1rem;
   padding: 10px;
 }
+
 .all-colors-columns {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(7, 1fr);
   gap: 10px;
   justify-content: center;
   margin-top: 50px;
+}
+
+.color-btn {
+  padding: 10px;
+}
+
+.buttons-wrapper .active {
+  color: red;
 }
