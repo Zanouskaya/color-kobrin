@@ -6,7 +6,7 @@
 
 .palitra-columns {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 30px;
   justify-content: center;
   margin-top: 50px;
@@ -51,6 +51,7 @@ h3 {
   flex-direction: column;
   position: fixed;
   bottom: 0;
+  /* z-index: 1; */
   width: 100%;
   background-color: #f5f5f7;
   /* justify-content: space-between; */
@@ -58,12 +59,22 @@ h3 {
 }
 .modal-btn {
   border: none;
-  height: 30px;
+  height: 50px;
   background-color: #f5f5f7;
+  font-size: 1rem;
+  font-family: inherit;
+}
+.modal-btn:after {
+  content: "\25B2";
+  padding-left: 5px;
+}
+.modal .active:after {
+  content: "\25BC";
+  padding-left: 5px;
 }
 
 .modal-btn:hover {
-  background-color: rgba(5, 126, 190, 1);
+  color: rgba(5, 126, 190, 1);
 }
 
 /* .modal-btn::before {
@@ -76,7 +87,7 @@ h3 {
   grid-template-columns: repeat(7, 1fr);
   gap: 10px;
   width: 80%;
-  margin: 20px auto 0 auto;
+  margin: 0 auto;
   /* justify-content: center; */
   /* margin-top: 50px; */
 }

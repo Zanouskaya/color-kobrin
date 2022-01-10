@@ -60,62 +60,88 @@ function showCards(rgb) {
   }
 }
 
+let btn = document.getElementById("modal-btn");
+let allColors = document.getElementById("allColors");
+btn.addEventListener("click", closeModal);
+
+function closeModal() {
+  if (allColors.style.display === "block") {
+    allColors.style.display = "none";
+  } else {
+    allColors.style.display = "block";
+  }
+}
+window.onclick = function (event) {
+  if (event.target == allColors) {
+    allColors.style.display = "none";
+  }
+};
+document.getElementById("modal-btn").innerHTML =
+  "Выберите цвет, чтобы увидеть оттенки";
 function showAll(elemId) {
   for (let i = 0; i < cards.length; i++) {
-    if (cards[i].id != elemId || cards[i].className.includes("more-colors")) {
-      cards[i].className = cards[i].className.replace(" more-colors", "");
-    } else if (cards[i].id == elemId) {
-      cards[i].className += " more-colors";
-      let re = new RegExp(/\d+/);
-      let id = elemId.match(re)[0];
-      allColors(id);
-    }
+    let re = new RegExp(/\d+/);
+    let id = elemId.match(re)[0];
+    colorsList.forEach((item) => {
+      if (item.id == id) {
+        (document.getElementById("modal-btn").innerHTML = `
+        ${item.name}`),
+          (document.getElementById("allColors").innerHTML = `
+        <div class='all-colors-columns'>
+          <div class='color-card show'>
+              <div class='color-back' style= "background-color: ${item.rgb_1}">
+              </div>
+              <h3>1:1</h3>
+          </div>
+          <div class='color-card show'>
+              <div class='color-back' style= "background-color: ${item.rgb_2}">
+              </div>
+              <h3>1:2</h3>
+          </div>
+          <div class='color-card show'>
+              <div class='color-back' style= "background-color: ${item.rgb_4}">
+              </div>
+              <h3>1:4</h3>
+          </div>
+          <div class='color-card show'>
+              <div class='color-back' style= "background-color: ${item.rgb_8}">
+              </div>
+              <h3>1:8</h3>
+          </div>
+          <div class='color-card show'>
+              <div class='color-back' style= "background-color: ${item.rgb_16}">
+              </div>
+              <h3>1:16</h3>
+          </div>
+          <div class='color-card show'>
+              <div class='color-back' style= "background-color: ${item.rgb_40}">
+              </div>
+              <h3>1:40</h3>
+          </div>
+          <div class='color-card show'>
+              <div class='color-back' style= "background-color: ${item.rgb_80}">
+              </div>
+              <h3>1:80</h3>
+          </div>
+          </div>
+          `);
+      }
+    });
   }
 }
 
-function allColors(id) {
-  colorsList.forEach((item) => {
-    if (item.id == id) {
-      document.getElementById(
-        "all-colors"
-      ).innerHTML = `<div class='all-colors-columns'>
-      <div class='color-card show'>
-          <div class='color-back' style= "background-color: ${item.rgb_1}">
-          </div>
-          <h3>1:1</h3>
-      </div>
-      <div class='color-card show'>
-          <div class='color-back' style= "background-color: ${item.rgb_2}">
-          </div>
-          <h3>1:2</h3>
-      </div>
-      <div class='color-card show'>
-          <div class='color-back' style= "background-color: ${item.rgb_4}">
-          </div>
-          <h3>1:4</h3>
-      </div>
-      <div class='color-card show'>
-          <div class='color-back' style= "background-color: ${item.rgb_8}">
-          </div>
-          <h3>1:8</h3>
-      </div>
-      <div class='color-card show'>
-          <div class='color-back' style= "background-color: ${item.rgb_16}">
-          </div>
-          <h3>1:16</h3>
-      </div>
-      <div class='color-card show'>
-          <div class='color-back' style= "background-color: ${item.rgb_40}">
-          </div>
-          <h3>1:40</h3>
-      </div>
-      <div class='color-card show'>
-          <div class='color-back' style= "background-color: ${item.rgb_80}">
-          </div>
-          <h3>1:80</h3>
-      </div>
-      </div>
-      `;
-    }
-  });
-}
+// // console: print <body>
+
+// let btns = btnsWrapper.getElementsByTagName("button");
+// modalBtn.addEventListener("click", openModal);
+// console.log(modalBtn);
+// function openModal() {
+//   console.log(modalBtn);
+// }
+
+// window.onclick = function (e) {
+//   var modal = document.getElementById("color-card");
+//   if (e.target == modal) {
+//     modal.style.display = "none";
+//   }
+// };
