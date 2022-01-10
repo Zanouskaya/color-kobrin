@@ -1,43 +1,140 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset='utf-8' lang='ru'>
-        <title>Главная</title>
-        <link href=''>
-        <link rel='stylesheet' href='styles.css'>
-        <script src='jquery.js'></script>
-        <script src="https://kit.fontawesome.com/0a8f206dea.js" crossorigin="anonymous"></script>
-    </head>
-    <body>
-      <nav class='container'>
-          <a href='./index.html'><img src='./images/color-buzzard-logo.gif' alt='колор-буццард кобрин' class='logo'></a>
-          <div class='nav-right'>
-            <div class='nav-top'>
-              <span>8(016)42-46-6-35</span>
-              <div class='nav-adds'>
-                <i class="fas fa-bookmark"></i>
-                <i class="fas fa-search"></i>
-              </div>
+  <head>
+    <meta charset="utf-8" lang="ru" />
+    <title>Белоснежка</title>
+    <link href="" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(function () {
+        var includes = $("[data-include]");
+        $.each(includes, function () {
+          var file = "html/" + $(this).data("include") + ".html";
+          $(this).load(file);
+        });
+      });
+    </script>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/styles_product.css" />
+    <script
+      src="https://kit.fontawesome.com/0a8f206dea.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <section class="container">
+      <div data-include="nav"></div>
+      <div class="info-wrapper">
+        <div class="left-side card">
+          <img
+            src="./images/belosnezhka.png"
+            alt="краска белоснежка колор-буццард"
+          />
+        </div>
+        <div class="right-side">
+          <p>Краска</p>
+          <h2>Белоснежка</h2>
+          <p>
+            Применяется для покрытия внутренних стен и потолков жилых,
+            подвальных помещений по кирпичным, бетонным, оштукатуренным
+            поверхностям а также ДСП, ДВП, гипсокартону.
+          </p>
+          <div class="wrapper-grid">
+            <button class="collapsible">
+              <span>Состав</span>
+            </button>
+            <div class="content">
+              <p>
+                Вода, акриловый сополимер, мраморный наполнитель, пигменты,
+                модифицирующие добавки.
+              </p>
             </div>
-            <ul class='nav-bottom'>
-              <li><a href='./about.html'>О компании</a></li>
-              <li><a href='./productions.html'>Продукция</a></li>
-              <li><a href='./contacts.html'>Контакты</a></li>
-            </ul>
-          </div>
-      </nav>
 
-      <section class='container'>
-        <div class='columns'>
-          <div>
-            <img src='./images/belosnezhka.png' alt='краска белоснежка колор-буццард'>
-          </div>
-          <div>
-            <h3>Белоснежка</h3>
+            <button class="collapsible"><span>Свойства</span></button>
+            <div class="content">
+              <p>
+                Ультрабелая, хорошо наносимая, матовая, прочная к влажному
+                истиранию, паропроницаемая, пожаровзрывобезопасная.
+              </p>
+            </div>
+
+            <button class="collapsible">
+              <span>Требования к покрываемой поверхности</span>
+            </button>
+            <div class="content">
+              <p>
+                Покрываемая поверхность должна быть ровной, сухой, плотной,
+                очищенной от веществ, препятствующей адгезии (жир, битум, пыль и
+                т.п.). Существующие загрязнения, слои с низкой прочностью,
+                известковые, меловые, клеевые краски необходимо полностью
+                удалить, поверхность промыть водой. Основания, ранее
+                оштукатуренные минеральными составами (цементно – песчаные,
+                цементно – известковые), свежие бетонные покрытия – должны иметь
+                возраст не менее 28 суток для нейтрализации щелочности. Перед
+                нанесением краски поверхность необходимо прогрунтовать
+                «Грунтовкой ЛФ» щелочные основания (силикатный кирпич,
+                газосиликат, гипсокартон требуют двукратного грунтования).
+              </p>
+            </div>
+            <button class="collapsible"><span>Порядок применения</span></button>
+            <div class="content">
+              <p>
+                Готовая к применению. Тщательно перемешать, не использовать
+                оржавляемый инструмент. Наносить при помощи кисти, валика в два
+                слоя. Вязкость для первого слоя допускается регулировать
+                добавлением воды, но не более 10% по объему, второй слой
+                наносить не разбавленным через 3-4 часа при температуре
+                окружающего воздуха и поверхности 20oС и относительной влажности
+                воздуха 60%. При более низких температурах и высокой влажности
+                время сушки увеличивается. Возможно добавление тонирующих
+                пигментов. Окрасочные работы проводить в сухих условиях при
+                температуре окружающего воздуха и основания от + 5oС до +25oС и
+                относительной влажности воздуха не более 80%. Не допускается
+                проведение работ при высоких температурах (выше 25oС) под
+                воздействием прямых солнечных лучей. После окончания работ
+                инструмент и инвентарь промыть водой с мылом.
+              </p>
+            </div>
+            <button class="collapsible">
+              <span>Безопасное обращение</span>
+            </button>
+            <div class="content">
+              <p>
+                Работы проводить в хорошо проветриваемом помещении, использовать
+                перчатки. В случае попадания на кожу, в глаза – обильно промыть
+                чистой водой. Хранить в недоступных для детей местах. Не
+                сбрасывать в канализацию и водоемы в концентрированном виде.
+              </p>
+            </div>
+            <button class="collapsible"><span>Хранение</span></button>
+            <div class="content">
+              <p>
+                Гарантийный срок хранения 12 месяцев со дня изготовления.
+                Хранить в сухом прохладном в сухом прохладном помещении в
+                оригинальной плотно закрытой упаковке при температуре от +5oС до
+                +30oС вдали от солнечных лучей. Не замораживать.
+              </p>
+            </div>
+            <button class="collapsible"><span>Утилизация</span></button>
+            <div class="content">
+              <p>
+                Остатки высохшей краски подлежат утилизации как бытовой мусор,
+                полимерная тара подлежит сбору для вторичной переработки.
+              </p>
+            </div>
+            <button class="collapsible"><span>Расход</span></button>
+            <div class="content">
+              <p>
+                Ориентировочный расход – 300 – 350 г/м2 по ровному основанию на
+                два слоя.
+              </p>
+            </div>
+            <button class="collapsible"><span>Сертификат</span></button>
+            <p>ТУ РБ 14397461.001-99</p>
           </div>
         </div>
-
-      </section>
-      
-    </body>
+      </div>
+    </section>
+    <script src="./js/product.js"></script>
+  </body>
 </html>

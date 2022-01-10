@@ -5,26 +5,6 @@
 }
 
 /* section search */
-.searchbar {
-  margin: 0 40px 20px 0;
-  padding-left: 60px;
-  font-family: inherit;
-  width: 100%;
-  height: 50px;
-  background-color: #fff;
-  border-style: none;
-  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.08);
-  /* border: 1px solid #d2d2d7; */
-  border-radius: 8px;
-  font-size: 1rem;
-}
-
-#search {
-  background-image: url("../images/search_grey.svg");
-  background-position: 15px;
-  background-size: 3%;
-  background-repeat: no-repeat;
-}
 
 /* section Filter */
 /* .filter input, label {
@@ -177,9 +157,10 @@ a {
 }
 
 .btn:hover {
-  color: grey;
+  color: rgba(5, 126, 190, 1);
 }
 
 .menubar .active {
-  border-bottom: solid 1px;
+  color: rgba(5, 126, 190, 1);
+  border-bottom: solid 2px rgba(5, 126, 190, 1);
 }

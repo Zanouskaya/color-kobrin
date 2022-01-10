@@ -26,86 +26,26 @@
     <main class="container grid-page-products">
       <section class="left-side">
         <div id="menubar" class="menubar">
-          <button class="btn active" id="all" onclick="filterSelection('card')">
-            Вся продукция
-          </button>
-          <button class="btn" id="paint" onclick="filterSelection('paint')">
-            Краски
-          </button>
-          <button class="btn" id="putty" onclick="filterSelection('putty')">
-            Шпатлевки
-          </button>
-          <button class="btn" id="primers" onclick="filterSelection('primers')">
-            Грунтовки
-          </button>
-          <button
-            class="btn"
-            id="plasters"
-            onclick="filterSelection('plasters')"
-          >
-            Штукатурки
-          </button>
-          <button class="btn" id="glue" onclick="filterSelection('glue')">
-            Клей
-          </button>
-          <button class="btn" id="azure" onclick="filterSelection('azure')">
-            Лазурь
-          </button>
+          <button class="btn active" id="card">Вся продукция</button>
+          <button class="btn" id="paint">Краски</button>
+          <button class="btn" id="putty">Шпатлевки</button>
+          <button class="btn" id="primers">Грунтовки</button>
+          <button class="btn" id="plasters">Штукатурки</button>
+          <button class="btn" id="glue">Клей</button>
+          <button class="btn" id="azure">Лазурь</button>
         </div>
       </section>
-      <script>
-        function filterSelection(type) {
-          var products = document.getElementsByClassName("card");
-          for (var i = 0; i < products.length; i++) {
-            if (products[i].className.includes(type)) {
-              products[i].className += " show";
-            } else {
-              while (products[i].className.includes("show")) {
-                products[i].className = products[i].className.replace(
-                  " show",
-                  ""
-                );
-              }
-            }
-          }
-        }
-      </script>
+
       <section class="products">
         <input
           class="searchbar"
           id="search"
           type="text"
           placeholder="поиск по названию"
-          onkeyup="filterName()"
         />
         <div class="product-columns" id="test"></div>
       </section>
     </main>
-    <script>
-      function filterName() {
-        var input, filter, products, i;
-        input = document.getElementById("search");
-        filter = input.value.toUpperCase();
-        products = document.getElementsByClassName("card");
-
-        for (i = 0; i < products.length; i++) {
-          title = products[i].getElementsByTagName("h3")[0];
-
-          if (title.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            products[i].className += " show";
-          } else {
-            while (products[i].className.includes("show")) {
-              products[i].className = products[i].className.replace(
-                " show",
-                ""
-              );
-            }
-          }
-        }
-      }
-    </script>
-
-    <!-- <script src= "filterSelection.js"></script> -->
     <script type="module" src="./js/productions.js"></script>
   </body>
 </html>

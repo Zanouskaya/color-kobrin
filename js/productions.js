@@ -35,20 +35,6 @@ productsList.forEach((item) => {
   }
 }, {});
 
-filterSelection("card");
-// function filterSelection(type) {
-//   var products = document.getElementsByClassName('card')
-//   for (var i = 0; i < products.length; i++) {
-//     if (products[i].className.includes(type)) {
-//       products[i].className += ' show';
-//     } else {
-//       while (products[i].className.includes('show')) {
-//         products[i].className = products[i].className.replace(' show', '');
-//       }
-//     }
-//   }
-// };
-
 var menuBar = document.getElementById("menubar");
 var btns = menuBar.getElementsByClassName("btn");
 for (let i = 0; i < btns.length; i++) {
@@ -61,24 +47,45 @@ function makeActive() {
   this.className += " active";
 }
 
-// function filterName() {
-//   var input, filter, products, i;
-//   input = document.getElementById("search");
-//   filter = input.value.toUpperCase();
-//   products = document.getElementsByClassName("card");
+for (let i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function () {
+    filterSelection(btns[i].id);
+  });
+}
+filterSelection("card");
+function filterSelection(type) {
+  var products = document.getElementsByClassName("card");
+  for (var i = 0; i < products.length; i++) {
+    if (products[i].className.includes(type)) {
+      products[i].className += " show";
+    } else {
+      while (products[i].className.includes("show")) {
+        products[i].className = products[i].className.replace(" show", "");
+      }
+    }
+  }
+}
 
-//   for (i = 0; i < products.length; i++) {
-//     title = products[i].getElementsByTagName("h3")[0];
+var search = document.getElementById("search");
+search.addEventListener("keyup", filterName);
+function filterName() {
+  var input, filter, products, i;
+  input = document.getElementById("search");
+  filter = input.value.toUpperCase();
+  products = document.getElementsByClassName("card");
 
-//     if (title.innerHTML.toUpperCase().indexOf(filter) > -1) {
-//       products[i].className += " show";
-//     } else {
-//       while (products[i].className.includes("show")) {
-//         products[i].className = products[i].className.replace(" show", "");
-//       }
-//     }
-//   }
-// }
+  for (i = 0; i < products.length; i++) {
+    var title = products[i].getElementsByTagName("h3")[0];
+
+    if (title.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      products[i].className += " show";
+    } else {
+      while (products[i].className.includes("show")) {
+        products[i].className = products[i].className.replace(" show", "");
+      }
+    }
+  }
+}
 // calulations
 // function calculate() {
 //   var width = document.getElementById("width").value;
