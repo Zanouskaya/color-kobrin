@@ -12,6 +12,7 @@ document.getElementById("test").innerHTML = productsList
         <div class='card-description'>
           <h3>${item.name}</h3>
           <p>${item.description}</p>
+          <p id='tags' class='hide-tags'>${item.tags}</p>
         </div>
         <img src='${item.image}'>
         </a>
@@ -86,6 +87,32 @@ function filterName() {
     }
   }
 }
+
+var checkboxes = document.querySelectorAll("input[type=checkbox]");
+
+var enableSettings = [];
+checkboxes.forEach((checkbox) => {
+  checkbox.addEventListener("change", function () {
+    enableSettings = Array.from(checkboxes)
+      .filter((ch) => ch.checked)
+      .map((ch) => ch.value);
+    console.log(enableSettings);
+    var products = document.getElementsByClassName("card");
+    for (var i = 0; i < products.length; i++) {
+      var tags = products[i].getElementsByClassName("hide-tags")[0];
+      // console.log(tags);
+      if (tags.innerHTML.includes(enableSettings)) {
+        products[i].className += " red";
+      } else {
+        while (products[i].className.includes("red")) {
+          products[i].className = products[i].className.replace(" red", "");
+        }
+      }
+    }
+  });
+});
+
+// function checkedBox(value) {}
 // calulations
 // function calculate() {
 //   var width = document.getElementById("width").value;
@@ -100,3 +127,18 @@ function filterName() {
 //searchbar
 
 // <button><i class="far fa-heart"></i></button>
+
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function () {
+    this.classList.toggle("filter");
+    var content = this.nextElementSibling;
+    if (content.style.display === "none") {
+      content.style.display = "block";
+    } else {
+      content.style.display = "none";
+    }
+  });
+}

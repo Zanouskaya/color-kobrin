@@ -1,10 +1,57 @@
+.grid-page-products {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  margin-top: 50px;
+}
+
 .info-wrapper {
   display: flex;
   width: 70%;
   justify-content: center;
-  margin: 100px auto 100px auto;
+  margin: 50px auto 100px auto;
 
   /* border: solid 1px; */
+}
+
+.menubar {
+  display: flex;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 30px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.btn::after {
+  content: "\25B2";
+  font-size: 1rem;
+  float: right;
+  margin: 0 5px;
+}
+.menubar .btn,
+.sec-btn {
+  font-family: "Raleway", sans-serif;
+
+  border: none;
+  background: none;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  font-style: inherit;
+  font-size: 1.2rem;
+}
+
+.sec-btn {
+  margin-left: 20px;
+  text-align: left;
+  font-size: 1rem;
+}
+.btn:hover,
+.sec-btn:hover {
+  color: rgba(5, 126, 190, 1);
+}
+
+.menubar .active {
+  color: rgba(5, 126, 190, 1);
+  border-bottom: solid 2px rgba(5, 126, 190, 1);
 }
 
 h2 {
@@ -12,19 +59,9 @@ h2 {
 }
 
 .left-side {
-  min-width: 40%;
+  width: 100%;
   justify-content: center;
-
   /* border: 1px solid; */
-}
-.left-side img {
-  display: flex;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 100px;
-  margin: 50px auto 0 auto;
-
-  /* border: 1px solid red; */
 }
 
 .right-side {
@@ -36,7 +73,7 @@ h2 {
   margin: 20px 0;
 }
 
-.collapsible {
+.title-prop {
   background-color: inherit;
   /* color: white; */
   cursor: pointer;
@@ -50,41 +87,49 @@ h2 {
   font-size: 15px;
   align-content: center;
 }
-.collapsible span {
+.title-prop span {
   font-size: 1.2rem;
   font-weight: 600;
 }
-
+/* 
 .collapsible:after {
   content: "\25B2";
-  font-size: inherit;
+  font-size: 1rem;
   float: right;
   margin: 0 5px;
 }
-
-.active:after {
+/*  */
+/* .active:after {
   content: "\25BC";
 }
+*/
+
 /* .active,
 .collapsible:hover {
   background-color: #ccc;
 } */
 
-.content {
+.wrapper-grid .content {
   padding-bottom: 18px;
   display: block;
-  overflow: hidden;
+
   /* background-color: #f1f1f1; */
-  width: 100%;
+  /* width: 100%; */
+  /* margin-bottom: 18px; */
 }
 
 .card {
   border-radius: 18px;
   display: block;
-  max-height: 500px;
-  margin: 50px;
+  min-height: 300px;
+
+  margin-right: 50px;
   background-color: #fff;
   padding: 20px;
   box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.08);
   transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
+
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20px;
 }

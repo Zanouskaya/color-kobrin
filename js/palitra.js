@@ -60,22 +60,21 @@ function showCards(rgb) {
   }
 }
 
-let btn = document.getElementById("modal-btn");
-let allColors = document.getElementById("allColors");
-btn.addEventListener("click", closeModal);
+var coll = document.getElementsByClassName("collapsible");
+var i;
 
-function closeModal() {
-  if (allColors.style.display === "block") {
-    allColors.style.display = "none";
-  } else {
-    allColors.style.display = "block";
-  }
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function () {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
 }
-window.onclick = function (event) {
-  if (event.target == allColors) {
-    allColors.style.display = "none";
-  }
-};
+
 document.getElementById("modal-btn").innerHTML =
   "Выберите цвет, чтобы увидеть оттенки";
 function showAll(elemId) {

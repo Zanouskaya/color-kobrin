@@ -4,41 +4,6 @@
   margin-top: 50px;
 }
 
-/* section search */
-
-/* section Filter */
-/* .filter input, label {
-  margin: 10px;
-  align-items: center;
-}
-
-.filter .collapsible {
-  padding-bottom: 10px;
-  cursor: pointer;
-  text-align: left;
-}
-
-.collapsible:hover, .filter .active {
-  background-color: #f3f3f3;
-}
-
-.filter .collapsible:after {
-  content: '\2796';
-  font-size: 13px;
-  color: white;
-  float: right;
-  margin-left: 5px;
-}
-
-.filter .active:after {
-  content: "\02795";
-}
-
-.filter .content {
-  display: block;
-  padding: 0 20px;
-} */
-
 /* section Продукция */
 
 .products {
@@ -163,4 +128,54 @@ a {
 .menubar .active {
   color: rgba(5, 126, 190, 1);
   border-bottom: solid 2px rgba(5, 126, 190, 1);
+}
+
+.collapsible {
+  background-color: inherit;
+  /* color: white; */
+  cursor: pointer;
+  padding: 18px 0 18px 0;
+  width: 100%;
+  border: none;
+  border-top: 1px solid grey;
+  font: inherit;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  align-content: center;
+}
+.collapsible span {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.collapsible:after {
+  content: "\25B2";
+  font-size: 1rem;
+  float: right;
+  margin: 0 5px;
+}
+
+.filter:after {
+  content: "\25BC";
+}
+/* .active,
+.collapsible:hover {
+  background-color: #ccc;
+} */
+
+.content {
+  padding-bottom: 18px;
+  display: block;
+  overflow: hidden;
+  /* background-color: #f1f1f1; */
+  width: 100%;
+}
+
+.hide-tags {
+  display: none;
+}
+
+.filter-card {
+  background-color: red;
 }
