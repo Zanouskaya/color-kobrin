@@ -57,12 +57,10 @@ filterSelection("card");
 function filterSelection(type) {
   var products = document.getElementsByClassName("card");
   for (var i = 0; i < products.length; i++) {
-    if (products[i].className.includes(type)) {
+    if (products[i].className.includes(type) && !products[i].className.includes("show")) {
       products[i].className += " show";
-    } else {
-      while (products[i].className.includes("show")) {
+    } else if (!products[i].className.includes(type) ){
         products[i].className = products[i].className.replace(" show", "");
-      }
     }
   }
 }
@@ -78,37 +76,65 @@ function filterName() {
   for (i = 0; i < products.length; i++) {
     var title = products[i].getElementsByTagName("h3")[0];
 
-    if (title.innerHTML.toUpperCase().indexOf(filter) > -1) {
+    if (title.innerHTML.toUpperCase().indexOf(filter) > -1 && !products[i].className.includes("show")) {
       products[i].className += " show";
-    } else {
-      while (products[i].className.includes("show")) {
+    } else if(title.innerHTML.toUpperCase().indexOf(filter) == -1){
+      
         products[i].className = products[i].className.replace(" show", "");
-      }
+      
     }
   }
 }
 
 var checkboxes = document.querySelectorAll("input[type=checkbox]");
+var filterBtns = document.querySelectorAll("button[class = filter-btn]");
 
-var enableSettings = [];
-checkboxes.forEach((checkbox) => {
-  checkbox.addEventListener("change", function () {
-    enableSettings = Array.from(checkboxes)
-      .filter((ch) => ch.checked)
-      .map((ch) => ch.value);
-    console.log(enableSettings);
+console.log(filterBtns)
+var filterOptions = [];
+filterBtns.forEach((btn) => {
+  btn.addEventListener("click", function () {
+    filterOptions = Array.from(filterBtns)
+      // .filter((i) => i.click)
+      .map((i) => i.id);
+    console.log(filterOptions);
     var products = document.getElementsByClassName("card");
+    
     for (var i = 0; i < products.length; i++) {
       var tags = products[i].getElementsByClassName("hide-tags")[0];
+      var count = 0
       // console.log(tags);
-      if (tags.innerHTML.includes(enableSettings)) {
-        products[i].className += " red";
-      } else {
-        while (products[i].className.includes("red")) {
-          products[i].className = products[i].className.replace(" red", "");
-        }
+      for (var j=0; j<filterOptions.length; j++){
+
+        if (tags.innerHTML.includes(filterOptions[j])) {
+          count += 1
+          // console.log(count)
+        } 
       }
+      
+      if (count == filterOptions.length && !products[i].className.includes("show")) {
+        products[i].className += ' show'
+      } else if (count != filterOptions.length ){
+        products[i].className = products[i].className.replace(" show", "");
+      }
+
+        
+
+          //products[i].className = products[i].className.replace(" show", "");}
+        // } else if (tags.innerHTML.includes(filterOption) && checkbox.checked) {
+        //   products[i].className += ' show';
+        // } else if (checkbox.checked === false && !products[i].className.includes('show')){
+        //   products[i].className += ' show';
+        // }
+      
     }
+
+      
+      
+    //  else if (checkbox.checked === false){
+    //   for (var i = 0; i < products.length; i++) {
+    //   products[i].className += " show";}
+    // }
+    
   });
 });
 

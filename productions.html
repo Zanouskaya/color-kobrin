@@ -35,23 +35,15 @@
           <button class="btn" id="glue">Клей</button>
 
           <button class="collapsible" id="filter">Фильтр</button>
-          <div class="content">
-            <input type="checkbox" id="works1" value="for-indoor" />
-            <label for="for-indoor">для внутренних работ </label><br />
-            <input type="checkbox" id="works2" value="for-outdoor" />
-            <label for="for-outdoor">для наружных работ</label><br />
-            <input type="checkbox" id="placement1" value="living-room" />
-            <label>жилые помещения</label><br />
-            <input type="checkbox" id="placement2" value="basement" />
-            <label>подвальные помещения</label><br />
-            <input type="checkbox" id="placement3" value="with-high-humidity" />
-            <label>с высокой влажностью</label><br />
-            <input
-              type="checkbox"
-              id="placement4"
-              value="with-active-chemical-environment"
-            />
-            <label>с активной химической средой</label><br />
+          <div class="filterBtns" id='fliterBtns'>
+            <button class='filter-btn' id="for-indoor" >для внутренних работ </button>
+            
+            <button  class='filter-btn'  id="for-outdoor" >для наружных работ</button>
+            <button class='filter-btn'  id="living-room" >жилые помещения</button>
+            <button class='filter-btn'  id="basement" >подвальные помещения</button>
+            <button class='filter-btn'  id="with-high-humidity" >с высокой влажностью</button>
+            <button class='filter-btn' id="with-active-chemical-environment"
+            >с активной химической средой</button>
             <input type="checkbox" id="surface1" value="brick" />
             <label>кирпич</label><br />
             <input type="checkbox" id="surface2" value="concrete" />

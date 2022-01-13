@@ -88,7 +88,7 @@ export const productsList = [
     description:
       "Предназначена для выравнивания дефектов поверхностей (для наружных работ)",
     image: "./images/np1ps.png",
-    tags: "for-indoor for-leveling-the-surface",
+    tags: "for-outdoor for-leveling-the-surface",
   },
   {
     id: "pt_vp1ps",
