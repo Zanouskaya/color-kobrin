@@ -15,24 +15,24 @@ import { productsList } from "./modules/products_data.js";
 //   });
 // }
 
-var menuBar = document.getElementById("menubar");
-var btns = menuBar.getElementsByClassName("btn");
-for (let i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function () {
-    openSub(btns[i].id);
-  });
-}
+// let menuBar = document.getElementById("menubar");
+// let btns = menuBar.getElementsByClassName("btn");
+// for (let i = 0; i < btns.length; i++) {
+//   btns[i].addEventListener("click", function () {
+//     openSub(btns[i].id);
+//   });
+// }
 
-function openSub(id) {
-  for (var i = 0; i < productsList.length; i++) {
-    if (productsList[i].type == "paint") {
-      document.getElementById("paintName").innerHTML = productsList
-        .map(
-          (item) =>
-            `<li><button class='sec-btn'>${item.name}</button></li>
-       `
-        )
-        .join("");
-    }
-  }
-}
+// function openSub(id) {
+//   for (var i = 0; i < productsList.length; i++) {
+//     if (productsList[i].type == "paint") {
+//       document.getElementById("paintName").innerHTML = productsList
+//         .map(
+//           (item) =>
+//             `<li><button class='sec-btn'>${item.name}</button></li>
+//        `
+//         )
+//         .join("");
+//     }
+//   }
+// }

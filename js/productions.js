@@ -57,10 +57,13 @@ filterSelection("card");
 function filterSelection(type) {
   var products = document.getElementsByClassName("card");
   for (var i = 0; i < products.length; i++) {
-    if (products[i].className.includes(type) && !products[i].className.includes("show")) {
+    if (
+      products[i].className.includes(type) &&
+      !products[i].className.includes("show")
+    ) {
       products[i].className += " show";
-    } else if (!products[i].className.includes(type) ){
-        products[i].className = products[i].className.replace(" show", "");
+    } else if (!products[i].className.includes(type)) {
+      products[i].className = products[i].className.replace(" show", "");
     }
   }
 }
@@ -76,83 +79,49 @@ function filterName() {
   for (i = 0; i < products.length; i++) {
     var title = products[i].getElementsByTagName("h3")[0];
 
-    if (title.innerHTML.toUpperCase().indexOf(filter) > -1 && !products[i].className.includes("show")) {
+    if (
+      title.innerHTML.toUpperCase().indexOf(filter) > -1 &&
+      !products[i].className.includes("show")
+    ) {
       products[i].className += " show";
-    } else if(title.innerHTML.toUpperCase().indexOf(filter) == -1){
-      
-        products[i].className = products[i].className.replace(" show", "");
-      
+    } else if (title.innerHTML.toUpperCase().indexOf(filter) == -1) {
+      products[i].className = products[i].className.replace(" show", "");
     }
   }
 }
 
 var checkboxes = document.querySelectorAll("input[type=checkbox]");
-var filterBtns = document.querySelectorAll("button[class = filter-btn]");
 
-console.log(filterBtns)
+console.log(checkboxes);
 var filterOptions = [];
-filterBtns.forEach((btn) => {
-  btn.addEventListener("click", function () {
-    filterOptions = Array.from(filterBtns)
-      // .filter((i) => i.click)
-      .map((i) => i.id);
+checkboxes.forEach((checkbox) => {
+  checkbox.addEventListener("change", function () {
+    filterOptions = Array.from(checkboxes)
+      .filter((i) => i.checked)
+      .map((i) => i.value);
     console.log(filterOptions);
     var products = document.getElementsByClassName("card");
-    
+
     for (var i = 0; i < products.length; i++) {
       var tags = products[i].getElementsByClassName("hide-tags")[0];
-      var count = 0
-      // console.log(tags);
-      for (var j=0; j<filterOptions.length; j++){
-
+      var count = 0;
+      for (var j = 0; j < filterOptions.length; j++) {
         if (tags.innerHTML.includes(filterOptions[j])) {
-          count += 1
-          // console.log(count)
-        } 
+          count += 1;
+        }
       }
-      
-      if (count == filterOptions.length && !products[i].className.includes("show")) {
-        products[i].className += ' show'
-      } else if (count != filterOptions.length ){
+
+      if (
+        count == filterOptions.length &&
+        !products[i].className.includes("show")
+      ) {
+        products[i].className += " show";
+      } else if (count != filterOptions.length) {
         products[i].className = products[i].className.replace(" show", "");
       }
-
-        
-
-          //products[i].className = products[i].className.replace(" show", "");}
-        // } else if (tags.innerHTML.includes(filterOption) && checkbox.checked) {
-        //   products[i].className += ' show';
-        // } else if (checkbox.checked === false && !products[i].className.includes('show')){
-        //   products[i].className += ' show';
-        // }
-      
     }
-
-      
-      
-    //  else if (checkbox.checked === false){
-    //   for (var i = 0; i < products.length; i++) {
-    //   products[i].className += " show";}
-    // }
-    
   });
 });
-
-// function checkedBox(value) {}
-// calulations
-// function calculate() {
-//   var width = document.getElementById("width").value;
-//   var height = document.getElementById("height").value;
-//   var result = width*height;
-//   event.preventDefault();
-//   return (document.getElementById("result").innerHTML = `<p>площадь помещения: ${result} </p>`);
-// }
-
-//active page
-
-//searchbar
-
-// <button><i class="far fa-heart"></i></button>
 
 var coll = document.getElementsByClassName("collapsible");
 var i;
@@ -162,7 +131,7 @@ for (i = 0; i < coll.length; i++) {
     this.classList.toggle("filter");
     var content = this.nextElementSibling;
     if (content.style.display === "none") {
-      content.style.display = "block";
+      content.style.display = "flex";
     } else {
       content.style.display = "none";
     }

@@ -17,7 +17,7 @@ function activeBtn() {
   this.className += " active";
 }
 
-search = document.getElementById("search");
+let search = document.getElementById("search");
 search.addEventListener("keyup", filterName);
 
 function filterName() {
@@ -28,13 +28,13 @@ function filterName() {
 
   for (i = 0; i < cards.length; i++) {
     let title = cards[i].getElementsByTagName("h3")[0];
-
-    if (title.innerHTML.toUpperCase().indexOf(filter) > -1) {
+    if (
+      title.innerHTML.toUpperCase().indexOf(filter) > -1 &&
+      !cards[i].className.includes("show")
+    ) {
       cards[i].className += " show";
-    } else {
-      while (cards[i].className.includes("show")) {
-        cards[i].className = cards[i].className.replace(" show", "");
-      }
+    } else if (title.innerHTML.toUpperCase().indexOf(filter) == -1) {
+      cards[i].className = cards[i].className.replace(" show", "");
     }
   }
 }
@@ -60,12 +60,14 @@ function showCards(rgb) {
   }
 }
 
-var coll = document.getElementsByClassName("collapsible");
+var coll = document.getElementsByClassName("modal-btn collapsible");
+console.log(coll);
 var i;
 
 for (i = 0; i < coll.length; i++) {
+  console.log(coll);
   coll[i].addEventListener("click", function () {
-    this.classList.toggle("active");
+    this.classList.toggle("openModal");
     var content = this.nextElementSibling;
     if (content.style.display === "block") {
       content.style.display = "none";
@@ -74,6 +76,15 @@ for (i = 0; i < coll.length; i++) {
     }
   });
 }
+// coll.addEventListener("click", function () {
+//     this.classList.toggle("openModal");
+//     var content = this.nextElementSibling;
+//   if (content.style.display === "block") {
+//     content.style.display = "none";
+//   } else {
+//     content.style.display = "block";
+//   }
+// });
 
 document.getElementById("modal-btn").innerHTML =
   "Выберите цвет, чтобы увидеть оттенки";

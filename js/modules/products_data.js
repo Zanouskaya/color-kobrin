@@ -138,7 +138,7 @@ export const productsList = [
     description:
       "Глубокого проникновения, бесцветная, прозрачная при высыхании.",
     image: "./images/lf_indoor.png",
-    tags: "for-indoor for-outdoor",
+    tags: "for-indoor",
   },
   {
     id: "pr_lf_outdoor",

@@ -1,15 +1,46 @@
-<section class="calculate">
-  <h4>Калькулятор</h4>
+<section class="calculate container">
+  <h2>Калькулятор</h2>
   <div>
-    <form>
-      <label for="height">Высота</label>
-      <input type="number" id="height" value="0" min="0" /><br />
+    <form class="card">
+      <label for="height"
+        >Высота<input type="text" id="height" value="0" min="0"
+      /></label>
 
-      <label for="width">Ширина</label>
-      <input type="number" id="width" value="0" min="0" /><br />
+      <label for="width"
+        >Ширина<input type="text" id="width" value="0" min="0"
+      /></label>
+      <select name="products" id="productsSelect">
+        <option value="belosnezhka">Белоснежка</option>
+        <option value="master">Мастер</option>
+      </select>
 
-      <button type="submit" id="submit" onclick="calculate()">Вычислить</button>
+      <button type="submit" id="submit" onclick="calculator()">
+        Вычислить
+      </button>
       <div id="result"></div>
     </form>
   </div>
 </section>
+<script>
+  const belosnezhka = 350;
+  const master = 250;
+  var productsSelect = document.getElementsByTagName("option");
+  for (i = 0; i < productsSelect.length; i++) {
+    if (productsSelect[i].value == "belosnezhka") {
+      var rashod = belosnezhka;
+    } else if (productsSelect[i].value == "master") {
+      var rashod = master;
+    }
+  }
+  function calculator() {
+    var width = parseInt(document.getElementById("width").value);
+    var height = document.getElementById("height").value;
+    var square = width * height;
+    var result = square * rashod;
+    event.preventDefault();
+    document.getElementById(
+      "result"
+    ).innerHTML = `<p>площадь помещения: ${square} м2</p>
+     <p>необходимое количество краски: ${result} </p>`;
+  }
+</script>
