@@ -10,8 +10,8 @@
         >Ширина<input type="text" id="width" value="0" min="0"
       /></label>
       <select name="products" id="productsSelect">
-        <option value="belosnezhka">Белоснежка</option>
-        <option value="master">Мастер</option>
+        <option value="350">Белоснежка</option>
+        <option value="250">Мастер</option>
       </select>
 
       <button type="submit" id="submit" onclick="calculator()">
@@ -22,25 +22,26 @@
   </div>
 </section>
 <script>
-  const belosnezhka = 350;
-  const master = 250;
+  // const belosnezhka = 350;
+  // const master = 250;
   var productsSelect = document.getElementsByTagName("option");
   for (i = 0; i < productsSelect.length; i++) {
-    if (productsSelect[i].value == "belosnezhka") {
-      var rashod = belosnezhka;
-    } else if (productsSelect[i].value == "master") {
-      var rashod = master;
-    }
+    productsSelect[i].addEventListener('change', function () {
+      calculator(productsSelect[i].value)
+    } )
+   
   }
-  function calculator() {
+  function calculator(rashod) {
     var width = parseInt(document.getElementById("width").value);
-    var height = document.getElementById("height").value;
+    var height = parseInt(document.getElementById("height").value);
     var square = width * height;
-    var result = square * rashod;
+  
+    var result = square * parseInt(rashod);
     event.preventDefault();
     document.getElementById(
       "result"
     ).innerHTML = `<p>площадь помещения: ${square} м2</p>
+    <p>расход краски: ${rashod} </p>
      <p>необходимое количество краски: ${result} </p>`;
   }
 </script>
