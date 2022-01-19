@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" lang="ru" />
+    <title>О компании</title>
+    <link href="" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(function () {
+        var includes = $("[data-include]");
+        $.each(includes, function () {
+          var file = "html/" + $(this).data("include") + ".html";
+          $(this).load(file);
+        });
+      });
+    </script>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/0a8f206dea.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div data-include="nav"></div>
+  </body>
+</html>

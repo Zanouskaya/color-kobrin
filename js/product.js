@@ -1,38 +1,38 @@
 import { productsList } from "./modules/products_data.js";
+import { colorsList } from "./modules/colors.js";
 
-// var coll = document.getElementsByClassName("collapsible");
-// var i;
+function getRandom(arr, n) {
+  //   const n = 5;
+  var result = new Array(n),
+    len = arr.length,
+    taken = new Array(len);
+  if (n > len)
+    throw new RangeError("getRandom: more elements taken than available");
+  while (n--) {
+    var x = Math.floor(Math.random() * len);
+    result[n] = arr[x in taken ? taken[x] : x];
+    taken[x] = --len in taken ? taken[len] : len;
+  }
+  return result;
+}
 
-// for (i = 0; i < coll.length; i++) {
-//   coll[i].addEventListener("click", function () {
-//     this.classList.toggle("active");
-//     var content = this.nextElementSibling;
-//     if (content.style.display === "none") {
-//       content.style.display = "block";
-//     } else {
-//       content.style.display = "none";
-//     }
-//   });
-// }
+// console.log(getRandom(colorsList, 5));
+getRandom(colorsList, 5);
 
-// let menuBar = document.getElementById("menubar");
-// let btns = menuBar.getElementsByClassName("btn");
-// for (let i = 0; i < btns.length; i++) {
-//   btns[i].addEventListener("click", function () {
-//     openSub(btns[i].id);
-//   });
-// }
+// let cards = document.getElementsByClassName("color-card");
+// const palitraBtn = document.querySelector(".trigger-btn");
+// palitraBtn.addEventListener("click", showCards);
+// function showCards(event) {
+var randomColors = getRandom(colorsList, 5);
 
-// function openSub(id) {
-//   for (var i = 0; i < productsList.length; i++) {
-//     if (productsList[i].type == "paint") {
-//       document.getElementById("paintName").innerHTML = productsList
-//         .map(
-//           (item) =>
-//             `<li><button class='sec-btn'>${item.name}</button></li>
-//        `
-//         )
-//         .join("");
-//     }
-//   }
+document.getElementById("colors").innerHTML = randomColors
+  .map(
+    (color) =>
+      `<div class='color-card show' id='colorCard_${color.id}' >
+            <div class='color-back' style= "background-color: ${color.rgb_1}">
+            </div>
+            <h3>${color.name}</h3>
+          </div>`
+  )
+  .join("");
 // }

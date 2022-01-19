@@ -3,45 +3,41 @@
   <div>
     <form class="card">
       <label for="height"
-        >Высота<input type="text" id="height" value="0" min="0"
+        >Высота в метрах<input type="text" id="height" value="0" min="0"
       /></label>
 
       <label for="width"
-        >Ширина<input type="text" id="width" value="0" min="0"
+        >Ширина в метрах<input type="text" id="width" value="0" min="0"
       /></label>
-      <select name="products" id="productsSelect">
-        <option value="350">Белоснежка</option>
-        <option value="250">Мастер</option>
-      </select>
+      <label for="productsSelect"
+        >Выбери краску
+        <select name="products" id="productsSelect" class="product-select">
+          <option value="350">Белоснежка</option>
+          <option value="250">Мастер</option>
+        </select>
+      </label>
 
-      <button type="submit" id="submit" onclick="calculator()">
-        Вычислить
-      </button>
+      <button type="submit" id="submit" class="submitBtn">Расчитать</button>
       <div id="result"></div>
     </form>
   </div>
 </section>
 <script>
-  // const belosnezhka = 350;
-  // const master = 250;
-  var productsSelect = document.getElementsByTagName("option");
-  for (i = 0; i < productsSelect.length; i++) {
-    productsSelect[i].addEventListener('change', function () {
-      calculator(productsSelect[i].value)
-    } )
-   
-  }
-  function calculator(rashod) {
+  const submitCalculate = document.querySelector(".submitBtn");
+  submitCalculate.addEventListener("click", calculator);
+
+  function calculator(event) {
+    const productsSelect = document.querySelector(".product-select");
+    var rashod = productsSelect.value;
     var width = parseInt(document.getElementById("width").value);
     var height = parseInt(document.getElementById("height").value);
     var square = width * height;
-  
-    var result = square * parseInt(rashod);
+    var result = square * rashod;
     event.preventDefault();
     document.getElementById(
       "result"
     ).innerHTML = `<p>площадь помещения: ${square} м2</p>
-    <p>расход краски: ${rashod} </p>
-     <p>необходимое количество краски: ${result} </p>`;
+      <p>расход краски: ${rashod} г/м2</p>
+       <p>необходимое количество краски: ${result} грамм </p>`;
   }
 </script>
