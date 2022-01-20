@@ -44,8 +44,12 @@ for (let i = 0; i < btns.length; i++) {
 
 function makeActive() {
   var current = document.getElementsByClassName("active");
+
   current[0].className = current[0].className.replace(" active", "");
   this.className += " active";
+  if (this.id == "paint") {
+    console.log("work");
+  }
 }
 
 for (let i = 0; i < btns.length; i++) {
@@ -92,7 +96,7 @@ function filterName() {
 
 var checkboxes = document.querySelectorAll("input[type=checkbox]");
 
-console.log(checkboxes);
+// console.log(checkboxes);
 var filterOptions = [];
 checkboxes.forEach((checkbox) => {
   checkbox.addEventListener("change", function () {
