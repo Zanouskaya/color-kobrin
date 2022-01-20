@@ -1,51 +1,93 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset='utf-8' lang='ru'>
-        <title>Главная</title>
-        <link href=''>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
-        </script>
-        <script>
-          $(function () {
-            var includes = $('[data-include]')
-            $.each(includes, function () {
-              var file = 'html/' + $(this).data('include') + '.html'
-              $(this).load(file)
-            })
-          })
-        </script>
-        <link rel='stylesheet' href='./css/styles.css'>
-        <script src="https://kit.fontawesome.com/0a8f206dea.js" crossorigin="anonymous">
-        </script>
-    </head>
-    <body>
-        <div data-include='nav'></div>
-        
-        <section class='hero-background'>
-          
-            <div class='hero-presentation'>
-              <h1>Совместное белорусско-германское производство
-                водно-дисперсионных акриловых материалов</h1>
-                <p>Качественные краски по доступной цене</p>
-                <button>Посмотреть продукцию</button>
-            </div>
-         
-          
-        </section>
+  <head>
+    <meta charset="utf-8" lang="ru" />
+    <title>Главная</title>
+    <link href="" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(function () {
+        var includes = $("[data-include]");
+        $.each(includes, function () {
+          var file = "html/" + $(this).data("include") + ".html";
+          $(this).load(file);
+        });
+      });
+    </script>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/0a8f206dea.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div data-include="nav"></div>
 
-        <main class='container'>
-            <section class='blog-section'>
-              <h2>Колор-буццард рекомендует:</h2>
-              <div class='blog-grid' id='posts'>
-              </div>
-            </section>
-        </main>
+    <section class="hero-background">
+      <div class="hero-presentation">
+        <h1>
+          Высококачественные, экологически безопасные материалы для
+          строительства и ремонта
+        </h1>
+        <p>Большое выбор и доступная цена</p>
+        <a href="./productions.html"><p>Посмотреть продукцию ></p></a>
+      </div>
+    </section>
 
-        <div data-include='footer'></div>
-        
+    <main class="container">
+      <section class="section-benefits">
+        <div class="section-title"><h3>Колор-буццард это:</h3></div>
 
-        <script type='module' src= "./js/index.js"></script>
+        <div class="grid-benefits">
+          <div class="benefit">
+            <img src="./images/eco.png" />
+            <p>Экологически безопасные акриловые материалы</p>
+          </div>
+          <div class="benefit">
+            <img src="./images/system.png" />
+            <p>Современное технологическое оборудование</p>
+          </div>
+          <div class="benefit">
+            <img src="./images/certificate.png" />
+            <p>
+              Вся продукция имеет сертификаты соответствия требованиям
+              нормативных документов
+            </p>
+          </div>
 
-    </body>
+          <div class="benefit">
+            <img src="./images/catalog.png" />
+            <p>Большое выбор красителей для красок и декоративной штукатурки</p>
+          </div>
+          <div class="benefit">
+            <img src="./images/group.png" />
+            <p>Работаем с физическими и юридическими лицами</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <section class="grid-production">
+      <div class="square paint">
+        <h2>Краски</h2>
+        <p>для фасадов и интерьеров ></p>
+      </div>
+
+      <div class="square putty">
+        <h2>Шпатлевки</h2>
+        <p>для внутренних и наружных работ ></p>
+      </div>
+      <div class="square plaster">
+        <h2>Декоративная штукатурка</h2>
+        <p>короед, под шубу ></p>
+      </div>
+      <div class="square palette">
+        <h2>Палитра цветов</h2>
+        <p>для красок и декоративных штукатурок ></p>
+      </div>
+    </section>
+
+    <div data-include="footer"></div>
+
+    <script type="module" src="./js/index.js"></script>
+  </body>
 </html>

@@ -1,7 +1,7 @@
 import { productsList } from "./modules/products_data.js";
 // import { filterSelection } from './modules/filterSelection.js';
 
-document.getElementById("test").innerHTML = productsList
+document.getElementById("products").innerHTML = productsList
   .map(
     (item) =>
       `<div class='card ${item.type}' id=${item.id}> <a href=${item.link}>
