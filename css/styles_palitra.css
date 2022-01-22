@@ -1,16 +1,28 @@
 .top-line {
   display: flex;
-  justify-content: space-between;
   margin: 50px 0;
-  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn {
+  margin: 0 20px 0 0;
+  padding: 5px;
+}
+
+.searchbar {
+  width: 50%;
+  margin-right: 0;
+  margin-bottom: 0;
 }
 
 .palitra-columns {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 30px;
-  justify-content: center;
   margin-top: 50px;
+  margin-bottom: 50px;
+  justify-content: center;
 }
 
 .color-card {
@@ -23,9 +35,6 @@
 
 .show {
   display: block;
-  /* border-radius: 18px; */
-  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
 }
 
 .color-card:hover {
@@ -40,22 +49,22 @@
   border-radius: 18px 18px 0 0;
 }
 
-h3 {
+h4 {
   text-align: center;
   font-weight: 400;
-  font-size: 1rem;
   padding: 10px;
 }
 
+/* ===================
+show all colors - modal
+=================== */
 .modal {
   display: flex;
   flex-direction: column;
   position: fixed;
   bottom: 0;
-
   width: 100%;
   background-color: #f5f5f7;
-  /* justify-content: space-between; */
   box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.16);
 }
 .modal-btn {
@@ -69,13 +78,13 @@ h3 {
   content: "\25B2";
   padding-left: 5px;
 }
-.modal .openModal:after {
+.modal .close:after {
   content: "\25BC";
   padding-left: 5px;
 }
 
 .modal-btn:hover {
-  color: rgba(5, 126, 190, 1);
+  color: var(--hover-color);
 }
 
 .all-colors-columns {
@@ -84,29 +93,4 @@ h3 {
   gap: 10px;
   width: 80%;
   margin: 0 auto;
-}
-
-.color-btn {
-  padding: 5px 10px;
-  /* border: 1px solid grey; */
-  margin: 5px;
-  background: none;
-  font: inherit;
-  font-size: 1rem;
-  border: none;
-}
-
-.color-btn:hover {
-  color: rgba(5, 126, 190, 1);
-}
-
-.buttons-wrapper .active {
-  color: rgba(5, 126, 190, 1);
-  border-bottom: 2px solid rgba(5, 126, 190, 1);
-}
-
-.searchbar {
-  width: 50%;
-  margin-right: 0;
-  margin-bottom: 0;
 }

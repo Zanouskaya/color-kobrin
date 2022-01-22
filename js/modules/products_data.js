@@ -48,7 +48,7 @@ export const productsList = [
     description:
       "Применяется для покрытия внутренних стен и потолков жилых, подвальных помещений по кирпичным, бетонным, оштукатуренным поверхностям а также ДСП, ДВП, гипсокартону.",
     image: "./images/evrostar.png",
-    tags: "for-indoor ceiling basement brick concrete DSP plaster drywall",
+    tags: "for-indoor living-room ceiling basement brick concrete DSP plaster drywall",
   },
   {
     id: "p_dahavaya",
@@ -68,7 +68,7 @@ export const productsList = [
     description:
       "Применяется для наружных и внутренних покрытий по натуральной древесине, минеральной основе (штукатурка, бетон, кирпич), ДСП, ДВП, гипсокартону, обоям.",
     image: "./images/master.png",
-    tags: "for-outdoor for-indoor for-wood wallpaper DSP plaster brick concrete",
+    tags: "for-outdoor for-indoor living-room for-wood wallpaper DSP plaster brick concrete",
   },
   {
     id: "p_master_m",
@@ -78,7 +78,7 @@ export const productsList = [
     description:
       "Применяется для наружных и внутренних покрытий по натуральной древесине, минеральной основе (штукатурка, бетон, кирпич), ДСП, ДВП, гипсокартону, обоям.",
     image: "./images/master_m.png",
-    tags: "for-outdoor for-wood wallpaper",
+    tags: "for-outdoor for-indoor living-room for-wood wallpaper DSP plaster brick concrete",
   },
   {
     id: "pt_np1ps",
@@ -98,7 +98,7 @@ export const productsList = [
     description:
       "Предназначена для выравнивания дефектов поверхностей (для внутренних работ)",
     image: "./images/vp1ps.png",
-    tags: "for-indoor for-leveling-the-surface",
+    tags: "for-indoor living-room for-leveling-the-surface",
   },
   {
     id: "pl_inraib_vp1ps",
@@ -138,7 +138,7 @@ export const productsList = [
     description:
       "Глубокого проникновения, бесцветная, прозрачная при высыхании.",
     image: "./images/lf_indoor.png",
-    tags: "for-indoor",
+    tags: "for-indoor living-room",
   },
   {
     id: "pr_lf_outdoor",
@@ -148,7 +148,7 @@ export const productsList = [
     description:
       "Глубокого проникновения, бесцветная, прозрачная при высыхании.",
     image: "./images/lf_outdoor.png",
-    tags: "for-indoor for-outdoor concrete",
+    tags: "for-indoor living-room for-outdoor concrete",
   },
   {
     id: "pr_shf_concrete",

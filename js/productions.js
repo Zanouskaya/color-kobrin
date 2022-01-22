@@ -1,6 +1,6 @@
 import { productsList } from "./modules/products_data.js";
-// import { filterSelection } from './modules/filterSelection.js';
 
+// render cards with products
 document.getElementById("products").innerHTML = productsList
   .map(
     (item) =>
@@ -10,7 +10,7 @@ document.getElementById("products").innerHTML = productsList
         
         </div>
         <div class='card-description'>
-          <h3>${item.name}</h3>
+          <h2>${item.name}</h2>
           <p>${item.description}</p>
           <p id='tags' class='hide-tags'>${item.tags}</p>
         </div>
@@ -20,6 +20,7 @@ document.getElementById("products").innerHTML = productsList
   )
   .join("");
 
+//make cards tags coloring
 productsList.forEach((item) => {
   if (item.type == "paint") {
     document.getElementById(`${item.id}_title`).style.color = "#fa7f0e";
@@ -36,29 +37,24 @@ productsList.forEach((item) => {
   }
 }, {});
 
+//make underline (by adding className active) buttons in the left
 var menuBar = document.getElementById("menubar");
 var btns = menuBar.getElementsByClassName("btn");
 for (let i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", makeActive);
+  btns[i].addEventListener("click", function () {
+    showByType(btns[i].id);
+  });
 }
 
 function makeActive() {
   var current = document.getElementsByClassName("active");
-
   current[0].className = current[0].className.replace(" active", "");
   this.className += " active";
-  if (this.id == "paint") {
-    console.log("work");
-  }
 }
-
-for (let i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function () {
-    filterSelection(btns[i].id);
-  });
-}
-filterSelection("card");
-function filterSelection(type) {
+//show cards depending on the active button
+showByType("card");
+function showByType(type) {
   var products = document.getElementsByClassName("card");
   for (var i = 0; i < products.length; i++) {
     if (
@@ -72,6 +68,7 @@ function filterSelection(type) {
   }
 }
 
+//serch by title of cards
 var search = document.getElementById("search");
 search.addEventListener("keyup", filterName);
 function filterName() {
@@ -81,8 +78,7 @@ function filterName() {
   products = document.getElementsByClassName("card");
 
   for (i = 0; i < products.length; i++) {
-    var title = products[i].getElementsByTagName("h3")[0];
-
+    var title = products[i].getElementsByTagName("h2")[0];
     if (
       title.innerHTML.toUpperCase().indexOf(filter) > -1 &&
       !products[i].className.includes("show")
@@ -94,9 +90,9 @@ function filterName() {
   }
 }
 
+//filtering cards by checkboxes. show is class that display card. default: class='card type show'
 var checkboxes = document.querySelectorAll("input[type=checkbox]");
 
-// console.log(checkboxes);
 var filterOptions = [];
 checkboxes.forEach((checkbox) => {
   checkbox.addEventListener("change", function () {
@@ -127,12 +123,12 @@ checkboxes.forEach((checkbox) => {
   });
 });
 
+//hide checkboxes
 var coll = document.getElementsByClassName("collapsible");
-var i;
 
-for (i = 0; i < coll.length; i++) {
+for (let i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function () {
-    this.classList.toggle("filter");
+    this.classList.toggle("close");
     var content = this.nextElementSibling;
     if (content.style.display === "none") {
       content.style.display = "flex";

@@ -25,20 +25,21 @@
   <body>
     <div data-include="nav"></div>
 
-    <div class="info-wrapper container">
+    <div class="container">
+      <section class='info-wrapper'>
       <div class="left-side">
-        <div class="card">
+        <div class="product-image">
           <img
             src="./images/belosnezhka.png"
             alt="краска белоснежка колор-буццард"
           />
         </div>
-        <h3>Рассчитать необходимое количество краски ></h3>
+        <a href='calculator.html'>Рассчитать необходимое количество краски ></a>
       </div>
 
       <div class="right-side">
         <p>Краска</p>
-        <h2>Белоснежка</h2>
+        <h1>Белоснежка</h1>
         <p>
           Применяется для покрытия внутренних стен и потолков жилых, подвальных
           помещений по кирпичным, бетонным, оштукатуренным поверхностям а также
@@ -46,7 +47,7 @@
         </p>
         <div class="wrapper-grid">
           <button class="title-prop">
-            <span>Состав</span>
+            <h3>Состав</h3>
           </button>
           <div class="content">
             <p>
@@ -55,7 +56,7 @@
             </p>
           </div>
 
-          <button class="title-prop"><span>Свойства</span></button>
+          <button class="title-prop"><h3>Свойства</h3></button>
           <div class="content">
             <p>
               Ультрабелая, хорошо наносимая, матовая, прочная к влажному
@@ -64,7 +65,7 @@
           </div>
 
           <button class="title-prop">
-            <span>Требования к покрываемой поверхности</span>
+            <h3>Требования к покрываемой поверхности</h3>
           </button>
           <div class="content">
             <p>
@@ -82,7 +83,7 @@
             </p>
           </div>
           <button class="title-prop">
-            <span>Порядок применения</span>
+            <h3>Порядок применения</h3>
           </button>
           <div class="content">
             <p>
@@ -103,7 +104,7 @@
             </p>
           </div>
           <button class="title-prop">
-            <span>Безопасное обращение</span>
+            <h3>Безопасное обращение</h3>
           </button>
           <div class="content">
             <p>
@@ -113,7 +114,7 @@
               сбрасывать в канализацию и водоемы в концентрированном виде.
             </p>
           </div>
-          <button class="title-prop"><span>Хранение</span></button>
+          <button class="title-prop"><h3>Хранение</h3></button>
           <div class="content">
             <p>
               Гарантийный срок хранения 12 месяцев со дня изготовления. Хранить
@@ -122,32 +123,36 @@
               солнечных лучей. Не замораживать.
             </p>
           </div>
-          <button class="title-prop"><span>Утилизация</span></button>
+          <button class="title-prop"><h3>Утилизация</h3></button>
           <div class="content">
             <p>
               Остатки высохшей краски подлежат утилизации как бытовой мусор,
               полимерная тара подлежит сбору для вторичной переработки.
             </p>
           </div>
-          <button class="title-prop"><span>Расход</span></button>
+          <button class="title-prop"><h3>Расход</h3></button>
           <div class="content">
             <p>
               Ориентировочный расход – 300 – 350 г/м2 по ровному основанию на
               два слоя.
             </p>
           </div>
-          <button class="title-prop"><span>Сертификат</span></button>
+          <button class="title-prop"><h3>Сертификат</h3></button>
           <p>ТУ РБ 14397461.001-99</p>
         </div>
       </div>
-    </div>
-    <div class="container">
+    </section>
+    <section class='palitra'>
       <h2>Палитра</h2>
       <a href='palitra.html' target="_blank">Посмотреть всю палитру></h3></a>
       <div class="palitra-columns" id="colors"></div>
-      <div data-include="footer"></div>
-   
+      
+    </section>
+    <div data-include="footer"></div>
     </div>
+  
+  
+    
 
     <script type="module" src="./js/product.js"></script>
   </body>

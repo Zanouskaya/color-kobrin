@@ -1,82 +1,118 @@
 .grid-page-products {
   display: grid;
   grid-template-columns: 1fr 5fr;
-  margin-top: 50px;
+  gap: 20px;
+  margin: 50px auto;
+}
+/* 
+=====================
+left-side 
+===================== */
+
+.menubar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: auto;
 }
 
-/* section Продукция */
-
-.products {
-  text-align: center;
-  margin: 0 auto 50px 20px;
+.filterbar h3 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  margin: 20px 0 10px;
 }
+.collapsible {
+  font-family: "Raleway", sans-serif;
+  background-color: inherit;
+  cursor: pointer;
+  padding: 18px 0 18px 0;
+  width: 100%;
+  border-top: 1px solid grey;
+  font: inherit;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  align-content: center;
+}
+
+.collapsible span {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.2rem;
+}
+
+.collapsible:after {
+  content: "\25B2";
+  font-size: 1rem;
+  float: right;
+  margin: 0 5px;
+}
+
+.close:after {
+  content: "\25BC";
+  float: right;
+}
+
+.content {
+  padding-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.content > label {
+  margin-bottom: 10px;
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+}
+.content > label:hover {
+  color: var(--hover-color);
+  cursor: pointer;
+}
+.content input {
+  margin-right: 10px;
+}
+
+/* 
+=====================
+right-side 
+===================== */
+
+/* 
+=====================
+searchbar in styles.css
+===================== */
 
 .product-columns {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
-  text-align: center;
   margin-top: 20px;
 }
 
-.products .card {
-  /* background-color: #f3f3f3; */
-  /* padding: 20px; */
-  /* border: solid 1px; */
-  /* border-radius: 18px; */
+.right-side .card {
   display: none;
-  background-color: #fff;
   padding: 20px;
+  border-radius: 18px;
+  background-color: #fff;
   box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.08);
   transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
 }
 
-.products .show {
+.right-side .show {
   display: block;
 }
 
-a {
+.card a {
   color: black;
 }
 
 .card:hover {
-  /* background: #f3f3f3; */
   cursor: pointer;
   box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.16);
   transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
   transform: scale3d(1.02, 1.02, 1.02);
 }
 
-.card-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  /* margin-top: 20px; */
-}
-
-.card-top button {
-  background: none;
-  border: none;
-  align-items: center;
-  margin-right: 15px;
-  padding: 5px;
-  font-size: 1.5rem;
-  color: #cccccc;
-}
-
-.card-top button:hover {
-  color: #fa7f0e;
-  cursor: pointer;
-}
-/* .card-top i {
-  font-size: 2em;
-  color: #cccccc;
-} */
-
 .card-top .tag {
-  width: 40%;
-  /* border-radius: 0 0 20px 0; */
-  /* padding: 10px; */
   color: white;
   text-align: left;
   padding: 20px;
@@ -91,102 +127,14 @@ a {
   min-height: 250px;
 }
 
-.card-description h3 {
-  font-size: 1.5rem;
-  padding-bottom: 10px;
+.card-description h2 {
+  padding-bottom: 20px;
 }
+
 .card img {
   display: block;
   float: bottom;
   margin: auto auto 10px auto;
-}
-
-.menubar {
-  display: flex;
-  /* position: -webkit-sticky;
-  position: sticky;
-  top: 30px;  */
-  flex-direction: column;
-  align-items: flex-start;
-  overflow: auto;
-}
-
-.menubar .btn {
-  font-family: "Raleway", sans-serif;
-  border: none;
-  background: none;
-  padding-bottom: 5px;
-  margin-bottom: 15px;
-  font-style: inherit;
-  font-size: 1.2rem;
-}
-
-.btn:hover {
-  color: rgba(5, 126, 190, 1);
-}
-
-.menubar .active {
-  color: rgba(5, 126, 190, 1);
-  border-bottom: solid 2px rgba(5, 126, 190, 1);
-}
-
-h3 {
-  padding: 20px 0 10px 0;
-  font-weight: 400;
-  font-family: "Raleway", sans-serif;
-}
-.collapsible {
-  font-family: "Raleway", sans-serif;
-  background-color: inherit;
-  cursor: pointer;
-  padding: 18px 0 18px 0;
-  width: 100%;
-
-  border-top: 1px solid grey;
-  font: inherit;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-  align-content: center;
-}
-
-.collapsible span {
-  font-family: "Raleway", sans-serif;
-  margin-bottom: 15px;
-  font-size: 1.2rem;
-}
-
-.collapsible:after {
-  content: "\25B2";
-  font-size: 1rem;
-  float: right;
-  margin: 0 5px;
-  display: flex;
-  flex-direction: column;
-}
-
-.filter:after {
-  content: "\25BC";
-  float: right;
-}
-
-.content {
-  padding-bottom: 18px;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  font-family: "Raleway", sans-serif;
-  /* background-color: #f1f1f1; */
-  width: 100%;
-}
-.content > label {
-  margin-bottom: 10px;
-}
-.content > label:hover {
-  color: rgba(5, 126, 190, 1);
-}
-.content input {
-  margin: 0 10px 0 0;
 }
 
 .hide-tags {

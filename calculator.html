@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" lang="ru" />
+    <title>Продукция</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/styles_productions.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(function () {
+        var includes = $("[data-include]");
+        $.each(includes, function () {
+          var file = "html/" + $(this).data("include") + ".html";
+          $(this).load(file);
+        });
+      });
+    </script>
+    <script
+      src="https://kit.fontawesome.com/0a8f206dea.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div data-include="nav"></div>
+    <div data-include="calculator"></div>
+    <div data-include="footer"></div>
+  </body>
+</html>

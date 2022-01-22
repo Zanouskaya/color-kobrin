@@ -1,9 +1,8 @@
 import { colorsList } from "./modules/colors.js";
 
-// change class name for buttons
+//make underline (by adding className active) buttons
 let btnsWrapper = document.getElementById("btnsWrapper");
 let btns = btnsWrapper.getElementsByTagName("button");
-// console.log(btns);
 for (let i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", activeBtn);
   btns[i].addEventListener("click", function () {
@@ -17,6 +16,7 @@ function activeBtn() {
   this.className += " active";
 }
 
+//search cards by title card name
 let search = document.getElementById("search");
 search.addEventListener("keyup", filterName);
 
@@ -27,7 +27,7 @@ function filterName() {
   filter = input.value.toUpperCase();
 
   for (i = 0; i < cards.length; i++) {
-    let title = cards[i].getElementsByTagName("h3")[0];
+    let title = cards[i].getElementsByTagName("h4")[0];
     if (
       title.innerHTML.toUpperCase().indexOf(filter) > -1 &&
       !cards[i].className.includes("show")
@@ -39,6 +39,7 @@ function filterName() {
   }
 }
 
+//rendering cards
 let cards = document.getElementsByClassName("color-card");
 
 showCards("rgb_o");
@@ -49,7 +50,7 @@ function showCards(rgb) {
         `<div class='color-card show' id='colorCard_${color.id}' >
           <div class='color-back' style= "background-color: ${color[rgb]}">
           </div>
-          <h3>${color.name}</h3>
+          <h4>${color.name}</h4>
         </div>`
     )
     .join("");
@@ -61,13 +62,11 @@ function showCards(rgb) {
 }
 
 var coll = document.getElementsByClassName("modal-btn collapsible");
-console.log(coll);
-var i;
 
-for (i = 0; i < coll.length; i++) {
-  console.log(coll);
+for (let i = 0; i < coll.length; i++) {
+  console.log(coll.length);
   coll[i].addEventListener("click", function () {
-    this.classList.toggle("openModal");
+    this.classList.toggle("close");
     var content = this.nextElementSibling;
     if (content.style.display === "block") {
       content.style.display = "none";
@@ -76,18 +75,11 @@ for (i = 0; i < coll.length; i++) {
     }
   });
 }
-// coll.addEventListener("click", function () {
-//     this.classList.toggle("openModal");
-//     var content = this.nextElementSibling;
-//   if (content.style.display === "block") {
-//     content.style.display = "none";
-//   } else {
-//     content.style.display = "block";
-//   }
-// });
 
-document.getElementById("modal-btn").innerHTML =
-  "Выберите цвет, чтобы увидеть оттенки";
+//rendering all-colors-card
+document.getElementById(
+  "modal-btn"
+).innerHTML = `Выберите цвет, чтобы увидеть оттенки`;
 function showAll(elemId) {
   for (let i = 0; i < cards.length; i++) {
     let re = new RegExp(/\d+/);
@@ -101,37 +93,37 @@ function showAll(elemId) {
           <div class='color-card show'>
               <div class='color-back' style= "background-color: ${item.rgb_1}">
               </div>
-              <h3>1:1</h3>
+              <h4>1:1</h4>
           </div>
           <div class='color-card show'>
               <div class='color-back' style= "background-color: ${item.rgb_2}">
               </div>
-              <h3>1:2</h3>
+              <h4>1:2</h4>
           </div>
           <div class='color-card show'>
               <div class='color-back' style= "background-color: ${item.rgb_4}">
               </div>
-              <h3>1:4</h3>
+              <h4>1:4</h4>
           </div>
           <div class='color-card show'>
               <div class='color-back' style= "background-color: ${item.rgb_8}">
               </div>
-              <h3>1:8</h3>
+              <h4>1:8</h4>
           </div>
           <div class='color-card show'>
               <div class='color-back' style= "background-color: ${item.rgb_16}">
               </div>
-              <h3>1:16</h3>
+              <h4>1:16</h4>
           </div>
           <div class='color-card show'>
               <div class='color-back' style= "background-color: ${item.rgb_40}">
               </div>
-              <h3>1:40</h3>
+              <h4>1:40</h4>
           </div>
           <div class='color-card show'>
               <div class='color-back' style= "background-color: ${item.rgb_80}">
               </div>
-              <h3>1:80</h3>
+              <h4>1:80</h4>
           </div>
           </div>
           `);
@@ -139,15 +131,6 @@ function showAll(elemId) {
     });
   }
 }
-
-// // console: print <body>
-
-// let btns = btnsWrapper.getElementsByTagName("button");
-// modalBtn.addEventListener("click", openModal);
-// console.log(modalBtn);
-// function openModal() {
-//   console.log(modalBtn);
-// }
 
 // window.onclick = function (e) {
 //   var modal = document.getElementById("color-card");

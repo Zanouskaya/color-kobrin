@@ -25,17 +25,19 @@
   <body>
     <main>
       <div data-include="nav"></div>
-      <section class="container">
+      <div class="container">
         <div class="top-line">
-          <div class="buttons-wrapper" id="btnsWrapper">
-            <button class="color-btn active" id="rgb_o">Оригинальный</button>
-            <button class="color-btn" id="rgb_1">1:1</button>
-            <button class="color-btn" id="rgb_2">1:2</button>
-            <button class="color-btn" id="rgb_4">1:4</button>
-            <button class="color-btn" id="rgb_8">1:8</button>
-            <button class="color-btn" id="rgb_16">1:16</button>
-            <button class="color-btn" id="rgb_40">1:40</button>
-            <button class="color-btn" id="rgb_80">1:80</button>
+          <div class="btns-wrapper" id="btnsWrapper">
+            <button class="btn active" id="rgb_o">
+              <h3>Оригинальный</h3>
+            </button>
+            <button class="btn" id="rgb_1"><h3>1:1</h3></button>
+            <button class="btn" id="rgb_2"><h3>1:2</h3></button>
+            <button class="btn" id="rgb_4"><h3>1:4</h3></button>
+            <button class="btn" id="rgb_8"><h3>1:8</h3></button>
+            <button class="btn" id="rgb_16"><h3>1:16</h3></button>
+            <button class="btn" id="rgb_40"><h3>1:40</h3></button>
+            <button class="btn" id="rgb_80"><h3>1:80</h3></button>
           </div>
           <input
             class="searchbar"
@@ -46,7 +48,7 @@
         </div>
 
         <div class="palitra-columns" id="colors"></div>
-      </section>
+      </div>
       <div class="modal" id="modalWrapper">
         <button class="modal-btn collapsible" id="modal-btn"></button>
         <div class="all-colors content" id="allColors"></div>
