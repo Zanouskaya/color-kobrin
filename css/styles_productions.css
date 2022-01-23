@@ -22,22 +22,19 @@ left-side
   margin: 20px 0 10px;
 }
 .collapsible {
-  font-family: "Raleway", sans-serif;
   background-color: inherit;
   cursor: pointer;
   padding: 18px 0 18px 0;
   width: 100%;
   border-top: 1px solid grey;
-  font: inherit;
   text-align: left;
   outline: none;
-  font-size: 15px;
   align-content: center;
 }
 
 .collapsible span {
   font-family: "Raleway", sans-serif;
-  font-size: 1.2rem;
+  font-size: 20px;
 }
 
 .collapsible:after {
@@ -61,7 +58,7 @@ left-side
 .content > label {
   margin-bottom: 10px;
   font-family: "Raleway", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
 }
 .content > label:hover {
   color: var(--hover-color);
@@ -88,6 +85,11 @@ searchbar in styles.css
   margin-top: 20px;
 }
 
+@media (max-width: 1200px) {
+  .product-columns {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 .right-side .card {
   display: none;
   padding: 20px;

@@ -67,25 +67,42 @@ show all colors - modal
   background-color: #f5f5f7;
   box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.16);
 }
-.modal-btn {
+.modal-close-line {
+  display: flex;
   border: none;
   height: 50px;
   background-color: #f5f5f7;
-  font-size: 1rem;
-  font-family: inherit;
+  align-content: center;
 }
-.modal-btn:after {
-  content: "\25B2";
-  padding-left: 5px;
-}
-.modal .close:after {
-  content: "\25BC";
-  padding-left: 5px;
-}
-
-.modal-btn:hover {
+.modal-close-line button:hover {
   color: var(--hover-color);
 }
+
+.modal-close-line button {
+  border: none;
+  background: none;
+  padding: 5px 0 5px 0;
+  font: inherit;
+  font-size: 16px;
+  margin: 10px auto;
+  /* justify-self: center; */
+  /* justify-items: center; */
+}
+.modal-title {
+  position: relative;
+  /* left: 0; */
+  /* top: 50%; */
+}
+.modal-close {
+  display: none;
+  position: absolute;
+  right: 10px;
+  /* justify-self: right; */
+}
+
+/* .modal-close-line:hover {
+  color: var(--hover-color);
+} */
 
 .all-colors-columns {
   display: grid;

@@ -41,7 +41,9 @@ function filterName() {
 
 //rendering cards
 let cards = document.getElementsByClassName("color-card");
-
+let allColors = document.getElementById("allColors");
+let closeLine = document.getElementById("close-line");
+let closeBtn = document.getElementById("btn-close");
 showCards("rgb_o");
 function showCards(rgb) {
   document.getElementById("colors").innerHTML = colorsList
@@ -56,29 +58,38 @@ function showCards(rgb) {
     .join("");
   for (let i = 0; i < cards.length; i++) {
     cards[i].addEventListener("click", function () {
-      showAll(cards[i].id);
+      if (!cards[i].className.includes(" show-modal")) {
+        showAll(cards[i].id);
+        cards[i].className += " show-modal";
+        allColors.style.display = "block";
+        closeBtn.style.display = "block";
+        for (let j = 0; j < cards.length; j++) {
+          if (j != i && cards[j].className.includes(" show-modal")) {
+            cards[j].className = cards[j].className.replace(" show-modal", "");
+          }
+        }
+      } else if (cards[i].className.includes(" show-modal")) {
+        cards[i].className = cards[i].className.replace(" show-modal", "");
+        allColors.style.display = "none";
+        closeBtn.style.display = "none";
+      }
     });
   }
 }
 
-var coll = document.getElementsByClassName("modal-btn collapsible");
-
-for (let i = 0; i < coll.length; i++) {
-  console.log(coll.length);
-  coll[i].addEventListener("click", function () {
-    this.classList.toggle("close");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
-}
+closeLine.addEventListener("click", function () {
+  if (allColors.style.display === "none" && closeBtn.style.display === "none") {
+    allColors.style.display = "block";
+    closeBtn.style.display = "block";
+  } else {
+    allColors.style.display = "none";
+    closeBtn.style.display = "none";
+  }
+});
 
 //rendering all-colors-card
 document.getElementById(
-  "modal-btn"
+  "modal-title"
 ).innerHTML = `Выберите цвет, чтобы увидеть оттенки`;
 function showAll(elemId) {
   for (let i = 0; i < cards.length; i++) {
@@ -86,7 +97,7 @@ function showAll(elemId) {
     let id = elemId.match(re)[0];
     colorsList.forEach((item) => {
       if (item.id == id) {
-        (document.getElementById("modal-btn").innerHTML = `
+        (document.getElementById("modal-title").innerHTML = `
         ${item.name}`),
           (document.getElementById("allColors").innerHTML = `
         <div class='all-colors-columns'>
@@ -132,9 +143,9 @@ function showAll(elemId) {
   }
 }
 
-// window.onclick = function (e) {
-//   var modal = document.getElementById("color-card");
-//   if (e.target == modal) {
-//     modal.style.display = "none";
-//   }
-// };
+document.addEventListener("mouseup", function (e) {
+  var modal = document.getElementById("modalWrapper");
+  if (!modal.contains(e.target)) {
+    allColors.style.display = "none";
+  }
+});

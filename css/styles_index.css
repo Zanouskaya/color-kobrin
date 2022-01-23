@@ -15,8 +15,8 @@ hero-section
   bottom: -15vh;
   z-index: 2;
   padding: 50px;
-  max-width: 700px;
-  max-height: 270px;
+  max-width: 40vw;
+  max-height: 40vh;
   background-color: var(--main-bg-color);
 }
 
@@ -32,6 +32,12 @@ hero-section
   color: var(--hover-color);
 }
 
+@media (max-width: 1400px) {
+  .hero-presentation {
+    max-width: 60vw;
+    max-height: 40vw;
+  }
+}
 /* 
 ==========================
 benefits-section
@@ -111,4 +117,23 @@ productions-section
   box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.16);
   transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
   transform: scale3d(1.02, 1.02, 1.02);
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/*  Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 1400px) {
 }

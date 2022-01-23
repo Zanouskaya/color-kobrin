@@ -22,6 +22,11 @@ body {
   width: 80vw;
   margin: auto;
 }
+@media (max-width: 1400px) {
+  .container {
+    width: 90vw;
+  }
+}
 a {
   text-decoration: none;
   color: black;
@@ -36,16 +41,19 @@ a:hover {
   border-bottom: solid 2px var(--hover-color);
 }
 h1 {
-  font-size: 1.5rem;
+  font-size: 25px;
 }
 h2 {
-  font-size: 1.3rem;
+  font-size: 22px;
 }
 h3 {
-  font-size: 1.2rem;
+  font-size: 20px;
 }
 h4 {
-  font-size: 1rem;
+  font-size: 16px;
+}
+p {
+  font-size: 16px;
 }
 /* 
 ==========================
@@ -54,6 +62,7 @@ navigation
 
 nav {
   display: flex;
+  width: 100%;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -86,13 +95,19 @@ nav {
   list-style: none;
   font-family: "Raleway", sans-serif;
   font-weight: 400;
-  font-size: 1.2rem;
+  font-size: 20px;
 }
 
 a .logo {
   display: inline-block;
   width: 50%;
   height: 50%;
+}
+
+@media (max-width: 1200px) {
+  .nav-right {
+    width: 40vw;
+  }
 }
 
 /* 
