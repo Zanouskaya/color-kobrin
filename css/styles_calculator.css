@@ -1,0 +1,77 @@
+.calculator {
+  margin-bottom: 50px;
+}
+form > div {
+  margin-bottom: 20px;
+}
+
+h2 {
+  padding: 20px 0;
+}
+.calculator {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.result-area {
+  background-color: #fff;
+  padding: 50px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+  border: 1px solid #fff;
+}
+
+.result-paint {
+  width: 150px;
+  padding: 20px;
+  background-color: var(--main-bg-color);
+}
+.surface-area {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin-bottom: 20px;
+}
+input,
+select {
+  width: 35%;
+  height: 50px;
+  margin: 0 0 0 10px;
+  padding-left: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  background-color: #fff;
+  border-style: none;
+  border-radius: 8px;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+form button,
+.submit {
+  border: none;
+  padding: 10px 5px 0 5px;
+  background-color: inherit;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+.add-surface {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+select {
+  margin-top: 20px;
+  margin-left: 0;
+  width: 50%;
+  padding: 10px;
+  position: relative;
+}
+
+.hide {
+  display: none;
+}

@@ -38,8 +38,8 @@ productsList.forEach((item) => {
 }, {});
 
 //make underline (by adding className active) buttons in the left
-var menuBar = document.getElementById("menubar");
-var btns = menuBar.getElementsByClassName("btn");
+let menuBar = document.getElementById("menubar");
+let btns = menuBar.getElementsByClassName("btn");
 for (let i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", makeActive);
   btns[i].addEventListener("click", function () {
@@ -48,15 +48,15 @@ for (let i = 0; i < btns.length; i++) {
 }
 
 function makeActive() {
-  var current = document.getElementsByClassName("active");
+  let current = document.getElementsByClassName("active");
   current[0].className = current[0].className.replace(" active", "");
   this.className += " active";
 }
 //show cards depending on the active button
 showByType("card");
 function showByType(type) {
-  var products = document.getElementsByClassName("card");
-  for (var i = 0; i < products.length; i++) {
+  let products = document.getElementsByClassName("card");
+  for (let i = 0; i < products.length; i++) {
     if (
       products[i].className.includes(type) &&
       !products[i].className.includes("show")
@@ -69,16 +69,15 @@ function showByType(type) {
 }
 
 //serch by title of cards
-var search = document.getElementById("search");
+let search = document.getElementById("search");
 search.addEventListener("keyup", filterName);
 function filterName() {
-  var input, filter, products, i;
-  input = document.getElementById("search");
-  filter = input.value.toUpperCase();
-  products = document.getElementsByClassName("card");
+  let input = document.getElementById("search");
+  let filter = input.value.toUpperCase();
+  let products = document.getElementsByClassName("card");
 
-  for (i = 0; i < products.length; i++) {
-    var title = products[i].getElementsByTagName("h2")[0];
+  for (let i = 0; i < products.length; i++) {
+    let title = products[i].getElementsByTagName("h2")[0];
     if (
       title.innerHTML.toUpperCase().indexOf(filter) > -1 &&
       !products[i].className.includes("show")
@@ -91,21 +90,21 @@ function filterName() {
 }
 
 //filtering cards by checkboxes. show is class that display card. default: class='card type show'
-var checkboxes = document.querySelectorAll("input[type=checkbox]");
+let checkboxes = document.querySelectorAll("input[type=checkbox]");
 
-var filterOptions = [];
+let filterOptions = [];
 checkboxes.forEach((checkbox) => {
   checkbox.addEventListener("change", function () {
     filterOptions = Array.from(checkboxes)
       .filter((i) => i.checked)
       .map((i) => i.value);
     console.log(filterOptions);
-    var products = document.getElementsByClassName("card");
+    let products = document.getElementsByClassName("card");
 
-    for (var i = 0; i < products.length; i++) {
-      var tags = products[i].getElementsByClassName("hide-tags")[0];
-      var count = 0;
-      for (var j = 0; j < filterOptions.length; j++) {
+    for (let i = 0; i < products.length; i++) {
+      let tags = products[i].getElementsByClassName("hide-tags")[0];
+      let count = 0;
+      for (let j = 0; j < filterOptions.length; j++) {
         if (tags.innerHTML.includes(filterOptions[j])) {
           count += 1;
         }
@@ -124,12 +123,12 @@ checkboxes.forEach((checkbox) => {
 });
 
 //hide checkboxes
-var coll = document.getElementsByClassName("collapsible");
+let coll = document.getElementsByClassName("collapsible");
 
 for (let i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function () {
     this.classList.toggle("close");
-    var content = this.nextElementSibling;
+    let content = this.nextElementSibling;
     if (content.style.display === "none") {
       content.style.display = "flex";
     } else {

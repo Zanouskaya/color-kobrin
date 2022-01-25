@@ -96,7 +96,7 @@ show all colors - modal
 .modal-close {
   display: none;
   position: absolute;
-  right: 10px;
+  right: 20px;
   /* justify-self: right; */
 }
 

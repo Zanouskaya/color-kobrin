@@ -22,22 +22,3 @@
     </form>
   </div>
 </section>
-<script>
-  const submitCalculate = document.querySelector(".submitBtn");
-  submitCalculate.addEventListener("click", calculator);
-
-  function calculator(event) {
-    const productsSelect = document.querySelector(".product-select");
-    var rashod = productsSelect.value;
-    var width = parseInt(document.getElementById("width").value);
-    var height = parseInt(document.getElementById("height").value);
-    var square = width * height;
-    var result = square * rashod;
-    event.preventDefault();
-    document.getElementById(
-      "result"
-    ).innerHTML = `<p>площадь помещения: ${square} м2</p>
-      <p>расход краски: ${rashod} г/м2</p>
-       <p>необходимое количество краски: ${result} грамм </p>`;
-  }
-</script>

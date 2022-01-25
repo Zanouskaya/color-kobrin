@@ -21,12 +21,11 @@ let search = document.getElementById("search");
 search.addEventListener("keyup", filterName);
 
 function filterName() {
-  let input, filter, i, cards;
-  input = document.getElementById("search");
-  cards = document.getElementsByClassName("color-card");
-  filter = input.value.toUpperCase();
+  let input = document.getElementById("search");
+  let cards = document.getElementsByClassName("color-card");
+  let filter = input.value.toUpperCase();
 
-  for (i = 0; i < cards.length; i++) {
+  for (let i = 0; i < cards.length; i++) {
     let title = cards[i].getElementsByTagName("h4")[0];
     if (
       title.innerHTML.toUpperCase().indexOf(filter) > -1 &&
@@ -44,6 +43,7 @@ let cards = document.getElementsByClassName("color-card");
 let allColors = document.getElementById("allColors");
 let closeLine = document.getElementById("close-line");
 let closeBtn = document.getElementById("btn-close");
+
 showCards("rgb_o");
 function showCards(rgb) {
   document.getElementById("colors").innerHTML = colorsList
@@ -56,36 +56,7 @@ function showCards(rgb) {
         </div>`
     )
     .join("");
-  for (let i = 0; i < cards.length; i++) {
-    cards[i].addEventListener("click", function () {
-      if (!cards[i].className.includes(" show-modal")) {
-        showAll(cards[i].id);
-        cards[i].className += " show-modal";
-        allColors.style.display = "block";
-        closeBtn.style.display = "block";
-        for (let j = 0; j < cards.length; j++) {
-          if (j != i && cards[j].className.includes(" show-modal")) {
-            cards[j].className = cards[j].className.replace(" show-modal", "");
-          }
-        }
-      } else if (cards[i].className.includes(" show-modal")) {
-        cards[i].className = cards[i].className.replace(" show-modal", "");
-        allColors.style.display = "none";
-        closeBtn.style.display = "none";
-      }
-    });
-  }
 }
-
-closeLine.addEventListener("click", function () {
-  if (allColors.style.display === "none" && closeBtn.style.display === "none") {
-    allColors.style.display = "block";
-    closeBtn.style.display = "block";
-  } else {
-    allColors.style.display = "none";
-    closeBtn.style.display = "none";
-  }
-});
 
 //rendering all-colors-card
 document.getElementById(
@@ -142,10 +113,46 @@ function showAll(elemId) {
     });
   }
 }
-
+//add event listener for cards => open modal (allColors palitra)
+for (let i = 0; i < cards.length; i++) {
+  cards[i].addEventListener("click", function () {
+    if (!cards[i].className.includes(" show-modal")) {
+      showAll(cards[i].id);
+      cards[i].className += " show-modal";
+      allColors.style.display = "block";
+      closeBtn.style.display = "block";
+      for (let j = 0; j < cards.length; j++) {
+        if (j != i && cards[j].className.includes(" show-modal")) {
+          cards[j].className = cards[j].className.replace(" show-modal", "");
+        }
+      }
+    } else if (cards[i].className.includes(" show-modal")) {
+      cards[i].className = cards[i].className.replace(" show-modal", "");
+      allColors.style.display = "none";
+      closeBtn.style.display = "none";
+    }
+  });
+}
+//close modal by click on top line of modal
+closeLine.addEventListener("click", function () {
+  if (allColors.style.display === "none" && closeBtn.style.display === "none") {
+    allColors.style.display = "block";
+    closeBtn.style.display = "block";
+  } else {
+    allColors.style.display = "none";
+    closeBtn.style.display = "none";
+  }
+});
+//close modal by click not on the modal
 document.addEventListener("mouseup", function (e) {
   var modal = document.getElementById("modalWrapper");
   if (!modal.contains(e.target)) {
     allColors.style.display = "none";
+    closeBtn.style.display = "none";
+    for (let i = 0; i < cards.length; i++) {
+      if (cards[i].className.includes(" show-modal")) {
+        cards[i].className = cards[i].className.replace(" show-modal", "");
+      }
+    }
   }
 });

@@ -4,7 +4,8 @@
     <meta charset="utf-8" lang="ru" />
     <title>Продукция</title>
     <link rel="stylesheet" href="./css/styles.css" />
-    <link rel="stylesheet" href="./css/styles_productions.css" />
+    <link rel="stylesheet" href="./css/styles_calculator.css" />
+    <!-- <link rel="stylesheet" href="./css/styles_productions.css" /> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
       $(function () {
@@ -22,7 +23,64 @@
   </head>
   <body>
     <div data-include="nav"></div>
-    <div data-include="calculator"></div>
+    <div class="container">
+      <h2>Калькулятор</h2>
+      <section class="calculator">
+        <form>
+          <div class="surface-title">
+            <h4>Введите размеры покрываемой поверхности</h4>
+          </div>
+          <div class="surface-areas" id="surfaceAreas">
+            <div class="surface-area">
+              <label for="surface"
+                >Площадь 1<input
+                  type="text"
+                  id="height"
+                  value="0"
+                  min="0" /><input
+                  type="text"
+                  id="width"
+                  value="0"
+                  min="0" /></label
+              ><button class="btn del-surface">
+                <i class="far fa-times-circle"></i>
+              </button>
+            </div>
+          </div>
+          <div class="add-surface">
+            <button class="btn">+ Добавить площадь</button>
+          </div>
+          <div class="product-select-area">
+            <label for="productsSelect"
+              >Выбери краску, которой будете покрывать поверхность
+              <select
+                name="products"
+                id="productsSelect"
+                class="product-select"
+              >
+                <option value="350">Белоснежка</option>
+                <option value="250">Мастер</option>
+              </select>
+            </label>
+          </div>
+          <button type="submit" id="submit" class="btn submitBtn">
+            Расчитать
+          </button>
+        </form>
+        <div class="result-area">
+          <div class="result-title">
+            <h4>Сколько краски нужно для покрытия поверхности в 2 слоя</h4>
+          </div>
+          <div class="surface-summ" id="surfaceSumm">м2</div>
+          <div class="result-paint">
+            <div class="result-text">Краска</div>
+            <div class="calc-paint">кг</div>
+          </div>
+          <div id="result"></div>
+        </div>
+      </section>
+    </div>
     <div data-include="footer"></div>
   </body>
+  <script type="module" src="./js/calculator.js"></script>
 </html>
