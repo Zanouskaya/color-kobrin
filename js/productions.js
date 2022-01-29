@@ -98,7 +98,6 @@ checkboxes.forEach((checkbox) => {
     filterOptions = Array.from(checkboxes)
       .filter((i) => i.checked)
       .map((i) => i.value);
-    console.log(filterOptions);
     let products = document.getElementsByClassName("card");
 
     for (let i = 0; i < products.length; i++) {

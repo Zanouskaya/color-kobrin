@@ -1,89 +1,85 @@
-// let inputSurface = document.querySelectorAll("input");
-// console.log(inputSurface);
-// inputSurface.addEventListener('change', calculator);
-
-
-// function calculator(event) {
-//   const productsSelect = document.querySelector(".product-select");
-//   var rashod = productsSelect.value;
-//   var width = parseInt(document.getElementById("width").value);
-//   var height = parseInt(document.getElementById("height").value);
-//   var square = width * height;
-//   var result = square * rashod;
-//   event.preventDefault();
-//   document.getElementById(
-//     "result"
-//   ).innerHTML = `<p>площадь помещения: ${square} м2</p>
-//       <p>расход краски: ${rashod} г/м2</p>
-//        <p>необходимое количество краски: ${result} грамм </p>
-//        <p>количество грунтовки</p>`;
-// }
-
 let addSurfaceBtn = document.querySelector(".add-surface");
+console.log(addSurfaceBtn);
+let count = 0;
+addSurface();
+// addSurfaceBtn.addEventListener("click", addSurface);
+addSurfaceBtn.addEventListener("click", function (event) {
+  addSurface();
+  event.preventDefault();
+});
 
-addSurfaceBtn.addEventListener("click", addSurface);
-
-var clicks = document.getElementById("surfaceAreas").childElementCount;
-function addSurface(e) {
-  e.preventDefault();
-
-  clicks += 1;
+function addSurface() {
+  count += 1;
   document.querySelector(".surface-areas").insertAdjacentHTML(
-    "afterbegin",
-    `<div class="surface-area ${clicks}">
+    "beforeend",
+    `<div class="surface-area" id="sur-${count}">
           <label for="surface"
-            >Площадь ${clicks}<input
+            >Площадь ${count}<input
               type="text"
-              id="height"
-              value="0"
-              min="0" /><input
+              class="height"
+              id="height-${count}"
+              placeholder= 'высота'
+              min="0" />
+              <input
               type="text"
-              id="width"
-              value="0"
+              class="width"
+              id="width-${count}"
+              placeholder= 'ширина'
               min="0" /></label
-          ><button class="btn del-surface ${clicks}"><i class="far fa-times-circle"></i></button>
+          > 
+          <div class='sqr-result'>0</div><p>m2</p>
+          <button class="btn del-surface" id="${count}"><i class="far fa-times-circle"></i></button>
         </div>`
-       
   );
-  let surfaceAreas = document.querySelector(".surface-areas");
-  let delSurfaceBtn = surfaceAreas.querySelectorAll(".del-surface");
-  //   console.log(delSurfaceBtn);
-  for (let i = 0; i < delSurfaceBtn.length; i++) {
-    delSurfaceBtn[i].addEventListener("click", function () {
-      delSurface(delSurfaceBtn[i].classList[2]);
-      //   console.log(delSurfaceBtn[i].classList[2]);
-    });
-  }
-  function delSurface(id) {
-    let current = document.getElementsByClassName("surface-area");
-    for (let j = 0; j < current.length; j++) {
-      if (current[j].className.includes(id)) {
-        current[j].remove();
-      }
-    }
-    
-  }
-  let inputSurface = document.querySelectorAll("input");
+  let el = document.getElementById(`${count}`);
 
-  for (let i=0; i<inputSurface.length; i++) {
-    inputSurface[i].addEventListener('input', calculator);
-    console.log(inputSurface[i])
-  }
+  el.addEventListener("click", function () {
+    delSurface(this.id);
+  });
+
+  let width = document.getElementById(`width-${count}`);
+
+  width.addEventListener("input", (event) => {
+    width.setAttribute("value", event.target.value);
+    calculator();
+  });
+
+  let height = document.getElementById(`height-${count}`);
+
+  height.addEventListener("input", (event) => {
+    height.setAttribute("value", event.target.value);
+    calculator();
+  });
+}
+function delSurface(id) {
+  let el = document.getElementById(`sur-${id}`);
+  el.remove();
 }
 
-function calculator(e) {
-  const productsSelect = document.querySelector(".product-select");
-  var rashod = productsSelect.value;
-  var width = parseInt(document.getElementById("width").value);
-  var height = parseInt(document.getElementById("height").value);
-  var square = width * height;
-  var result = square * rashod;
-  e.preventDefault();
-  document.getElementById(
-    "result"
-  ).innerHTML = `<p>площадь помещения: ${square} м2</p>
-      <p>расход краски: ${rashod} г/м2</p>
-       <p>необходимое количество краски: ${result} грамм </p>
-       <p>количество грунтовки</p>`;
-}
+function calculator() {
+  let surfaces = document.getElementsByClassName("surface-area");
+  let total_sqr = 0;
+  for (let surface of surfaces) {
+    let width = surface.getElementsByClassName("width");
+    let widthValue = width[0].getAttribute("value");
+    let height = surface.getElementsByClassName("height");
+    let heightValue = height[0].getAttribute("value");
+    let sqr = widthValue * heightValue;
+    console.log(surface.getElementsByClassName("sqr-result"));
+    surface.getElementsByClassName("sqr-result")[0].innerHTML = `${sqr.toFixed(
+      2
+    )}`;
+    total_sqr += sqr;
+  }
+  let productsSelect = document.querySelector(".product-select");
+  let rashodPaint = productsSelect.value;
+  let rashodPrimer = 200;
+  let resultPaint = (total_sqr * rashodPaint) / 1000;
+  let resultPrimer = (total_sqr * rashodPrimer) / 1000;
+  //   console.log(total_sqr);
+  document.getElementById("surfaceSumm").innerHTML = ` ${total_sqr.toFixed(2)}`;
 
+  document.getElementById("result-calc-paint").innerHTML = ` ${resultPaint}`;
+
+  document.getElementById("result-calc-primer").innerHTML = ` ${resultPrimer}`;
+}

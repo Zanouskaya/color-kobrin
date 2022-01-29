@@ -25,9 +25,11 @@ form {
   border: 1px solid #fff;
 }
 
-.result-paint {
+.result,
+.paint {
   width: 150px;
   padding: 20px;
+  margin-bottom: 20px;
   background-color: var(--main-bg-color);
 }
 .surface-area {
