@@ -32,11 +32,11 @@
           </div>
           <div class="surface-areas" id="surfaceAreas"></div>
 
-          <button class="add-surface">+ Добавить площадь</button>
+          <button class="btn add-surface">+ Добавить площадь</button>
 
           <div class="product-select-area">
             <label for="productsSelect"
-              >Выбери краску, которой будете покрывать поверхность
+              >Выберите краску, которой будете покрывать поверхность
               <select
                 name="products"
                 id="productsSelect"
@@ -50,23 +50,28 @@
         </form>
         <div class="result-area">
           <div class="result-title">
-            <h4>
-              Сколько краски нужно для покрытия поверхности
-              <div class="surface-summ" id="surfaceSumm">0</div>
-              m2в 2 слоя
-            </h4>
+            <h4>Сколько краски нужно для покрытия поверхности в 2 слоя</h4>
           </div>
-          <div class="surface-summ" id="surfaceSumm">0</div>
-          <span>м2</span>
-          <div class="result paint">
-            <div class="result-text">Краска</div>
-            <div class="calc-paint" id="result-calc-paint">0</div>
-            <span>кг</span>
+
+          <div class="result-surface">
+            Общая площадь:
+            <p class="surface-summ" id="surfaceSumm">0.00</p>
+            <span>м²</span>
           </div>
-          <div class="result primer">
-            <div class="result-text">Грунтовка</div>
-            <div class="calc-primer" id="result-calc-primer">0</div>
-            <span>кг</span>
+
+          <div class="result">
+            <p>Краска</p>
+            <div class="result-num">
+              <p class="calc-paint" id="result-calc-paint">0</p>
+              <p>кг</p>
+            </div>
+          </div>
+          <div class="result">
+            <p>Грунтовка</p>
+            <div class="result-num">
+              <p class="calc-primer" id="result-calc-primer">0</p>
+              <p>кг</p>
+            </div>
           </div>
           <div id="result"></div>
         </div>

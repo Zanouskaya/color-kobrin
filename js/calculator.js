@@ -13,8 +13,7 @@ function addSurface() {
   document.querySelector(".surface-areas").insertAdjacentHTML(
     "beforeend",
     `<div class="surface-area" id="sur-${count}">
-          <label for="surface"
-            >Площадь ${count}<input
+          <p>Площадь ${count}</p><input
               type="text"
               class="height"
               id="height-${count}"
@@ -25,9 +24,8 @@ function addSurface() {
               class="width"
               id="width-${count}"
               placeholder= 'ширина'
-              min="0" /></label
-          > 
-          <div class='sqr-result'>0</div><p>m2</p>
+              min="0" />
+          <div class='sqr-result'>0.00</div><p>м&#178;</p>
           <button class="btn del-surface" id="${count}"><i class="far fa-times-circle"></i></button>
         </div>`
   );
@@ -76,10 +74,13 @@ function calculator() {
   let rashodPrimer = 200;
   let resultPaint = (total_sqr * rashodPaint) / 1000;
   let resultPrimer = (total_sqr * rashodPrimer) / 1000;
-  //   console.log(total_sqr);
   document.getElementById("surfaceSumm").innerHTML = ` ${total_sqr.toFixed(2)}`;
 
-  document.getElementById("result-calc-paint").innerHTML = ` ${resultPaint}`;
+  document.getElementById(
+    "result-calc-paint"
+  ).innerHTML = ` ${resultPaint.toFixed(2)}`;
 
-  document.getElementById("result-calc-primer").innerHTML = ` ${resultPrimer}`;
+  document.getElementById(
+    "result-calc-primer"
+  ).innerHTML = ` ${resultPrimer.toFixed(2)}`;
 }
