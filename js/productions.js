@@ -21,19 +21,23 @@ document.getElementById("products").innerHTML = productsList
   .join("");
 
 //make cards tags coloring
+
 productsList.forEach((item) => {
+  let productCategory = document.getElementById(`${item.id}_title`);
   if (item.type == "paint") {
-    document.getElementById(`${item.id}_title`).style.color = "#fa7f0e";
+    productCategory.style.color = "#fa7f0e";
   } else if (item.type == "putty") {
-    document.getElementById(`${item.id}_title`).style.color = "#0055A9";
+    productCategory.style.color = "#0055A9";
   } else if (item.type == "primers") {
-    document.getElementById(`${item.id}_title`).style.color = "green";
+    productCategory.style.color = "green";
   } else if (item.type == "plasters") {
-    document.getElementById(`${item.id}_title`).style.color = "red";
-  } else if (item.type == "azure") {
-    document.getElementById(`${item.id}_title`).style.color = "purple";
-  } else if (item.type == "glue") {
-    document.getElementById(`${item.id}_title`).style.color = "purple";
+    productCategory.style.color = "red";
+  } else if (
+    item.type == "azure" ||
+    item.type == "glue" ||
+    item.type == "coloring"
+  ) {
+    productCategory.style.color = "purple";
   }
 }, {});
 
