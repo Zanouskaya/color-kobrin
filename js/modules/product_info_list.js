@@ -126,10 +126,6 @@ export const productDataList = [
     consumption:
       "Ориентировочный расход – 300 – 350 г/м2 на лист шифера в два слоя. 200 – 250 г/м2 по ровной минеральной поверхности в два слоя.",
     sertificate: "ТУ РБ 14397461.001-99",
-    color_red: "rgb(168, 66, 52)",
-    color_brown: "rgb(73, 58, 54)",
-    color_blue: "rgb(0, 91, 167)",
-    color_green: "rgb(0, 116, 86)",
   },
   {
     id: "",
