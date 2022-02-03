@@ -7,8 +7,9 @@ export const productsList = [
     description:
       "Применяется для покрытия внутренних стен и потолков жилых, подвальных помещений по кирпичным, бетонным, оштукатуренным поверхностям а также ДСП, ДВП, гипсокартону.",
     image: "./images/belosnezhka.png",
-    link: "./belosnezhka.html",
+
     tags: "for-indoor ceiling living-room basement brick concrete DSP plaster drywall",
+    link: "./belosnezhka.html",
   },
   {
     id: "p_fasadnaya",
@@ -19,6 +20,7 @@ export const productsList = [
       "Применяется для наружных покрытий по минеральной основе (штукатурка, бетон, кирпич)и для внутренних работ в помещениях с более активной химической средой.",
     image: "./images/fasadnaya.png",
     tags: "for-outdoor plaster brick concrete with-active-chemical-environment",
+    link: "./fasadnaya.html",
   },
   {
     id: "p_fasadnaya_silikonovaya",
@@ -29,6 +31,7 @@ export const productsList = [
       "Рекомендуется для ремонта старых, не утративших несущей способности штукатурок, в том числе на основе искусственных смол,а также покрытий, выполненных минеральными силикатными материалами.",
     image: "./images/f_silikonovaya.png",
     tags: "old-plaster silicate",
+    link: "./fasadnaya_silikon.html",
   },
   {
     id: "p_fasadnaya_silikatnaya",
@@ -39,6 +42,19 @@ export const productsList = [
       "Особо рекомендуется для ремонта старых, не утративших несущей способности штукатурок, в том числе на основе искусственных смол, а также покрытий, выполненных разнородными минеральными и силикатными материалами.",
     image: "./images/f_silikatnaya.png",
     tags: "old-plaster silicate",
+    link: "./fasadnaya_silikat.html",
+  },
+
+  {
+    id: "p_dahavaya",
+    type: "paint",
+    category: "Краска",
+    name: "Дахавая",
+    description:
+      "Для окраски шифера и цементно-песчаной черепицы с углом наклона не менее 45. Рекомендуется использовать для окраски минеральных оснований подвергаемых повышенным нагрузкам.",
+    image: "./images/dahavaya.png",
+    tags: "slate",
+    link: "./dahavaya.html",
   },
   {
     id: "p_evrostar",
@@ -49,16 +65,6 @@ export const productsList = [
       "Применяется для покрытия внутренних стен и потолков жилых, подвальных помещений по кирпичным, бетонным, оштукатуренным поверхностям а также ДСП, ДВП, гипсокартону.",
     image: "./images/evrostar.png",
     tags: "for-indoor living-room ceiling basement brick concrete DSP plaster drywall",
-  },
-  {
-    id: "p_dahavaya",
-    type: "paint",
-    category: "Краска",
-    name: "Дахавая",
-    description:
-      "Для окраски шифера и цементно-песчаной черепицы с углом наклона не менее 45. Рекомендуется использовать для окраски минеральных оснований подвергаемых повышенным нагрузкам.",
-    image: "./images/dahavaya.png",
-    tags: "slate",
   },
   {
     id: "p_master",
