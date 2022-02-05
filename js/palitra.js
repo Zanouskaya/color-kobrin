@@ -56,6 +56,7 @@ function showCards(rgb) {
         </div>`
     )
     .join("");
+showModal();
 }
 
 //rendering all-colors-card
@@ -114,25 +115,28 @@ function showAll(elemId) {
   }
 }
 //add event listener for cards => open modal (allColors palitra)
-for (let i = 0; i < cards.length; i++) {
-  cards[i].addEventListener("click", function () {
-    if (!cards[i].className.includes(" show-modal")) {
-      showAll(cards[i].id);
-      cards[i].className += " show-modal";
-      allColors.style.display = "block";
-      closeBtn.style.display = "block";
-      for (let j = 0; j < cards.length; j++) {
-        if (j != i && cards[j].className.includes(" show-modal")) {
-          cards[j].className = cards[j].className.replace(" show-modal", "");
+function showModal () {
+  for (let i = 0; i < cards.length; i++) {
+    cards[i].addEventListener("click", function () {
+      if (!cards[i].className.includes(" show-modal")) {
+        showAll(cards[i].id);
+        cards[i].className += " show-modal";
+        allColors.style.display = "block";
+        closeBtn.style.display = "block";
+        for (let j = 0; j < cards.length; j++) {
+          if (j != i && cards[j].className.includes(" show-modal")) {
+            cards[j].className = cards[j].className.replace(" show-modal", "");
+          }
         }
+      } else if (cards[i].className.includes(" show-modal")) {
+        cards[i].className = cards[i].className.replace(" show-modal", "");
+        allColors.style.display = "none";
+        closeBtn.style.display = "none";
       }
-    } else if (cards[i].className.includes(" show-modal")) {
-      cards[i].className = cards[i].className.replace(" show-modal", "");
-      allColors.style.display = "none";
-      closeBtn.style.display = "none";
-    }
-  });
+    });
+  }
 }
+
 //close modal by click on top line of modal
 closeLine.addEventListener("click", function () {
   if (allColors.style.display === "none" && closeBtn.style.display === "none") {
