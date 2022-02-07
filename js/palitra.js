@@ -51,12 +51,14 @@ function showCards(rgb) {
       (color) =>
         `<div class='color-card show' id='colorCard_${color.id}' >
           <div class='color-back' style= "background-color: ${color[rgb]}">
+          
           </div>
+          
           <h4>${color.name}</h4>
         </div>`
     )
     .join("");
-showModal();
+  showModal();
 }
 
 //rendering all-colors-card
@@ -115,7 +117,7 @@ function showAll(elemId) {
   }
 }
 //add event listener for cards => open modal (allColors palitra)
-function showModal () {
+function showModal() {
   for (let i = 0; i < cards.length; i++) {
     cards[i].addEventListener("click", function () {
       if (!cards[i].className.includes(" show-modal")) {
@@ -159,4 +161,8 @@ document.addEventListener("mouseup", function (e) {
       }
     }
   }
+});
+
+document.getElementById("btn-full").addEventListener("click", () => {
+  document.getElementById("full-screen").style.display = "block";
 });

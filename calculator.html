@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" lang="ru" />
-    <title>Продукция</title>
+    <title>Калькулятор</title>
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/styles_calculator.css" />
     <!-- <link rel="stylesheet" href="./css/styles_productions.css" /> -->
@@ -25,25 +25,47 @@
     <div data-include="nav"></div>
     <div class="container">
       <h2>Калькулятор</h2>
+      <p class="descript">
+        На этой странице вы можете приблизительно рассчитать количество
+        необходимых материалов. <br />
+        В расчетах используется расход краски по ровной гладкой поверхности
+        (гипсокартон, шпатлевка) с предварительной обработкой грунтовкой.<br />
+        Рекомендуем увеличить расход краски на 5%, если поверхность имеет не
+        гладкую поверхность (декоративная штукатурка). <br />Значения вводить
+        через "."
+      </p>
       <section class="calculator">
         <form>
           <div class="surface-title">
             <h3>Введите размеры покрываемой поверхности</h3>
           </div>
-          <div class="surface-areas" id="surfaceAreas"></div>
+          <div class="surface-areas" id="surface-areas"></div>
 
           <button class="btn add-surface">+ Добавить площадь</button>
 
           <div class="product-select-area">
-            <label for="productsSelect"
+            <label for="products-select"
               >Выберите краску, которой будете покрывать поверхность
               <select
                 name="products"
-                id="productsSelect"
+                id="product-select"
                 class="product-select"
               >
-                <option value="350">Белоснежка</option>
-                <option value="250">Мастер</option>
+                <option value="350" value.max="500">Белоснежка</option>
+                <option value="250" value.max="400">Мастер</option>
+              </select>
+            </label>
+          </div>
+          <div class="surface-select-area">
+            <label for="surface-select"
+              >Поверхность: <br />
+              <select
+                name="surface-type"
+                id="surface-select"
+                class="surface-select"
+              >
+                <option value="smooth">Гладкая</option>
+                <option value="rough">Грубая/с дефектами</option>
               </select>
             </label>
           </div>
@@ -72,6 +94,9 @@
               <p class="calc-primer" id="result-calc-primer">0</p>
               <p>кг</p>
             </div>
+          </div>
+          <div class="product-rashod" id="product-rashod">
+            <p>Расход 350 г/м2</p>
           </div>
           <div id="result"></div>
         </div>

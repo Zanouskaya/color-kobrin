@@ -63,3 +63,14 @@ show all colors - modal
   width: 80%;
   margin: 0 auto;
 }
+
+.full-screen {
+  display: none;
+  width: 90vw;
+  height: 100vh;
+  z-index: 3;
+  position: fixed;
+  left: 5vw;
+  top: 0;
+  background-color: rgb(247, 220, 82);
+}
