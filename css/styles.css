@@ -205,8 +205,8 @@ color-cards
 =========================== */
 .palitra-columns {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
   margin-top: 50px;
   margin-bottom: 50px;
   justify-content: center;
@@ -225,9 +225,9 @@ color-cards
 }
 
 .color-card:hover {
-  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.16);
-  transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
-  transform: scale3d(1.02, 1.02, 1.02);
+  /* box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.16); */
+  /* transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
+  transform: scale3d(1.02, 1.02, 1.02); */
 }
 
 .color-back {

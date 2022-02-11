@@ -100,8 +100,13 @@ let filterOptions = [];
 checkboxes.forEach((checkbox) => {
   checkbox.addEventListener("change", function () {
     filterOptions = Array.from(checkboxes)
-      .filter((i) => i.checked)
-      .map((i) => i.value);
+      .filter((el) => el.checked)
+      .map((el) => el.value);
+
+    if (filterOptions.length > 0) {
+      document.getElementById("filter-cancel").style.color = "black";
+      document.getElementById("filter-cancel").style.cursor = "pointer";
+    }
     let products = document.getElementsByClassName("card");
 
     for (let i = 0; i < products.length; i++) {
@@ -124,7 +129,19 @@ checkboxes.forEach((checkbox) => {
     }
   });
 });
-
+document.getElementById("filter-cancel").addEventListener("click", function () {
+  filterOptions = [];
+  document.getElementById("filter-cancel").style.color = "grey";
+  checkboxes.forEach((checkbox) => {
+    checkbox.checked = false;
+  });
+  let products = document.getElementsByClassName("card");
+  for (let i = 0; i < products.length; i++) {
+    if (!products[i].className.includes("show")) {
+      products[i].className += " show";
+    }
+  }
+});
 //hide checkboxes
 let coll = document.getElementsByClassName("collapsible");
 

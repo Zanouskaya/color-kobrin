@@ -15,11 +15,21 @@ left-side
   align-items: flex-start;
   overflow: auto;
 }
-
+.filterbar {
+  margin-top: 50px;
+}
+.filter-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.filter-line span {
+  color: grey;
+}
 .filterbar h3 {
   font-family: "Raleway", sans-serif;
   font-weight: 400;
-  margin: 20px 0 10px;
 }
 .collapsible {
   background-color: inherit;

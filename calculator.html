@@ -101,6 +101,51 @@
           <div id="result"></div>
         </div>
       </section>
+      <section class="calculator">
+        <form>
+          <h2>Расчет в зависимости от фасовки</h2>
+          <div class="product-select-area">
+            <label for="products-select"
+              >Выберите краску, которой будете покрывать поверхность
+              <select
+                name="products"
+                id="product-select2"
+                class="product-select"
+              >
+                <option value="350" value.max="500">Белоснежка</option>
+                <option value="250" value.max="400">Мастер</option>
+              </select>
+            </label>
+          </div>
+          <div class="surface-select-area">
+            <label for="surface-select"
+              >Поверхность: <br />
+              <select
+                name="surface-type"
+                id="surface-select2"
+                class="surface-select"
+              >
+                <option value="smooth">Гладкая</option>
+                <option value="rough">Грубая/с дефектами</option>
+              </select>
+            </label>
+          </div>
+          <div class="fasovka-select-area">
+            <label for="fasovka-select"
+              >Фасовка: <br />
+              <select
+                name="fasovka-type"
+                id="fasovka-select"
+                class="fasovka-select"
+              >
+                <option value="1kg">1 кг</option>
+                <option value="2kg">2 кг</option>
+              </select>
+            </label>
+          </div>
+        </form>
+        <div class="result-area"></div>
+      </section>
     </div>
     <div data-include="footer"></div>
   </body>

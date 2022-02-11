@@ -86,8 +86,8 @@ function calculator() {
     total_sqr += sqr;
   }
 
-  //   let productsSelect = document.querySelector(".product-select");
-  //   let rashodPaint = productsSelect.value;
+  let productsSelect = document.querySelector(".product-select");
+  let rashodPaint = productsSelect.value;
   let rashodPrimer = 200;
   let resultPaint = (total_sqr * rashodPaint) / 1000;
   let resultPrimer = (total_sqr * rashodPrimer) / 1000;
@@ -103,23 +103,23 @@ function calculator() {
   ).innerHTML = ` ${resultPrimer.toFixed(2)}`;
 }
 
-let productsSelect = document.getElementById("product-select");
-productsSelect.addEventListener("change", (event) => {
-  document.getElementById(
-    "product-rashod"
-  ).innerHTML = `<p>Расход ${event.target.value} г/м2</p>`;
-  surfaceSelect();
-  //   console.log(event.target.option);
-});
-function surfaceSelect() {
-  let surfaceSelector = document.getElementById("surface-select");
-  surfaceSelector.addEventListener("change", (event) => {
-    document.getElementById(
-      "product-rashod"
-    ).innerHTML = `<p>Расход ${event.target.value.max} г/м2</p>`;
-  });
-  // console.log(productsSelect);
-  // function changeRashod() {
-  //   //
-  // }
-}
+// let productsSelect = document.getElementById("product-select");
+// productsSelect.addEventListener("change", (event) => {
+//   document.getElementById(
+//     "product-rashod"
+//   ).innerHTML = `<p>Расход ${event.target.value} г/м2</p>`;
+//   surfaceSelect();
+//   //   console.log(event.target.option);
+// });
+// function surfaceSelect() {
+//   let surfaceSelector = document.getElementById("surface-select");
+//   surfaceSelector.addEventListener("change", (event) => {
+//     document.getElementById(
+//       "product-rashod"
+//     ).innerHTML = `<p>Расход ${event.target.value.max} г/м2</p>`;
+//   });
+//   // console.log(productsSelect);
+//   // function changeRashod() {
+//   //   //
+//   // }
+// }
