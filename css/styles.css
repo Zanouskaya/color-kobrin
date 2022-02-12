@@ -223,12 +223,12 @@ color-cards
 .show {
   display: block;
 }
-
+/* 
 .color-card:hover {
-  /* box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.16); */
-  /* transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
-  transform: scale3d(1.02, 1.02, 1.02); */
-}
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.16);
+  transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
+  transform: scale3d(1.02, 1.02, 1.02);
+} */
 
 .color-back {
   width: 100%;
