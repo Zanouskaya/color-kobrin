@@ -5,7 +5,7 @@ hero-section
 .hero-background {
   display: flex;
   height: 80vh;
-  background-image: url("../images/background3.jpg");
+  background-image: url("../images/background4.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -19,6 +19,7 @@ hero-section
   max-height: 40vh;
   background-color: var(--main-bg-color);
   box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 18px;
 }
 
 .hero-presentation h1 {
@@ -95,12 +96,14 @@ productions-section
   background-size: cover;
   background-repeat: no-repeat;
   text-align: right;
+  border-radius: 0 18px 18px 0;
 }
 
 .grid-production .putty {
   background: url(../images/putty.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  border-radius: 18px 0 0 18px;
 }
 
 .grid-production .plaster {
@@ -108,12 +111,14 @@ productions-section
   background-size: cover;
   background-repeat: no-repeat;
   text-align: right;
+  border-radius: 0 18px 18px 0;
 }
 
 .grid-production .palette {
   background: url(../images/pallette.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  border-radius: 18px 0 0 18px;
 }
 
 .grid-production .calculator {
@@ -121,6 +126,7 @@ productions-section
   background-size: cover;
   background-repeat: no-repeat;
   text-align: right;
+  border-radius: 0 18px 18px 0;
 }
 
 .paint:hover,

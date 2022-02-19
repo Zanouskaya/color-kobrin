@@ -172,6 +172,16 @@ let fullScreenBtns = document.getElementsByClassName("btn-full-screen");
 for (let i = 0; i < fullScreenBtns.length; i++) {
   fullScreenBtns[i].addEventListener("click", function () {
     fullScreen(fullScreenBtns[i].id);
+   
+  });
+}
+
+let favoriteBtns = document.getElementsByClassName("palitra-icon");
+// console.log(fullScreenBtns);
+for (let i = 0; i < favoriteBtns.length; i++) {
+  favoriteBtns[i].addEventListener("click", function () {
+    saveToFavorite(favoriteBtns[i].id);
+   
   });
 }
 
@@ -284,3 +294,11 @@ function closeScreen() {
 //     </div>
 //   </div>;
 // }
+
+  
+
+function saveToFavorite(elemId) {
+console.log(elemId)
+  
+
+}

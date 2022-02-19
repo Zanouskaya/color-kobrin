@@ -103,8 +103,8 @@ nav {
 
 a .logo {
   display: inline-block;
-  width: 50%;
-  height: 50%;
+  width: 10%;
+  height: 10%;
 }
 
 @media (max-width: 1200px) {
@@ -171,6 +171,7 @@ search-bar
   background: none;
   padding: 5px 0 5px 0;
   margin-bottom: 10px;
+
 }
 
 .btn:hover {
@@ -183,7 +184,6 @@ search-bar
 }
 
 .link-btn {
-  /* display: block; */
   font-family: inherit;
   font-size: 1rem;
   border: solid 1px grey;
@@ -191,7 +191,7 @@ search-bar
   width: 48%;
   margin-top: 20px;
   text-align: center;
-  /* justify-content: center; */
+  border-radius: 8px;
 }
 
 .link-btn:hover {
