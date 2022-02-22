@@ -53,7 +53,7 @@ function showCards(rgb) {
 
           <div class='color-back' style= "background-color: ${color[rgb]}">
             <div class='icon-wrapper'>
-              <button class='palitra-icon'><img src = './images/icons/bookmark.png' style='width: 20px; '></button>
+              <button class='palitra-icon' id='btn-favorite_${color.id}'><img src = './images/icons/bookmark.png' style='width: 20px; '></button>
               <button class='palitra-icon btn-full-screen' id='btn-screen_${color.id}'><img src = './images/icons/crop.png' style='width: 20px;'></button>
             </div>
           </div>
@@ -143,7 +143,7 @@ function showCards(rgb) {
 //   }
 // }
 
-//close modal by click on top line of modal
+// // close modal by click on top line of modal
 // closeLine.addEventListener("click", function () {
 //   if (allColors.style.display === "none" && closeBtn.style.display === "none") {
 //     allColors.style.display = "block";
@@ -153,7 +153,7 @@ function showCards(rgb) {
 //     closeBtn.style.display = "none";
 //   }
 // });
-//close modal by click not on the modal
+// // close modal by click not on the modal
 // document.addEventListener("mouseup", function (e) {
 //   var modal = document.getElementById("modalWrapper");
 //   if (!modal.contains(e.target)) {
@@ -172,16 +172,16 @@ let fullScreenBtns = document.getElementsByClassName("btn-full-screen");
 for (let i = 0; i < fullScreenBtns.length; i++) {
   fullScreenBtns[i].addEventListener("click", function () {
     fullScreen(fullScreenBtns[i].id);
-   
   });
 }
 
 let favoriteBtns = document.getElementsByClassName("palitra-icon");
 // console.log(fullScreenBtns);
+let divOfFavorite = [];
 for (let i = 0; i < favoriteBtns.length; i++) {
   favoriteBtns[i].addEventListener("click", function () {
-    saveToFavorite(favoriteBtns[i].id);
-   
+    divOfFavorite.push(favoriteBtns[i].id);
+    saveToFavorite();
   });
 }
 
@@ -262,43 +262,40 @@ function closeScreen() {
 //   }
 // });
 
-// {
-//   <div class="all-colors-columns">
-//     <div class="color-card show">
-//       <div class="color-back" style="background-color: ${item.rgb_1}"></div>
-//       <h4>1:1</h4>
-//     </div>
-//     <div class="color-card show">
-//       <div class="color-back" style="background-color: ${item.rgb_2}"></div>
-//       <h4>1:2</h4>
-//     </div>
-//     <div class="color-card show">
-//       <div class="color-back" style="background-color: ${item.rgb_4}"></div>
-//       <h4>1:4</h4>
-//     </div>
-//     <div class="color-card show">
-//       <div class="color-back" style="background-color: ${item.rgb_8}"></div>
-//       <h4>1:8</h4>
-//     </div>
-//     <div class="color-card show">
-//       <div class="color-back" style="background-color: ${item.rgb_16}"></div>
-//       <h4>1:16</h4>
-//     </div>
-//     <div class="color-card show">
-//       <div class="color-back" style="background-color: ${item.rgb_40}"></div>
-//       <h4>1:40</h4>
-//     </div>
-//     <div class="color-card show">
-//       <div class="color-back" style="background-color: ${item.rgb_80}"></div>
-//       <h4>1:80</h4>
-//     </div>
-//   </div>;
-// }
+function saveToFavorite() {
+  let favoriteId = divOfFavorite.map((elem) => {
+    let re = new RegExp(/\d+/);
+    let elemId = elem.match(re)[0];
+    return (elem = elemId);
+  });
+  // console.log(favoriteId);
+  const filterColors = (arr1, arr2) => {
+    let favoriteColors = [];
+    favoriteColors = arr1.filter((colors) => {
+      return arr2.find((el) => {
+        return el == colors.id;
+      });
+    });
+    return favoriteColors;
+  };
+  const newColorsList = filterColors(colorsList, favoriteId);
 
-  
+  let favoriteColorsDiv = document.getElementById("favorite-colors");
+  // favoriteColorsDiv.style.display = "flex";
+  favoriteColorsDiv.innerHTML = newColorsList
+    .map(
+      (colors) =>
+        `
+          <div class="color-card show" id="colorCard_${colors.id}">
+    <div class="color-back" style="background-color: ${colors.rgb_o}">
+      <div class="icon-wrapper">
+      <button class='palitra-icon btn-full-screen' id='btn-screen_${colors.id}'><img src = './images/icons/crop.png' style='width: 20px;'></button>
+      </div>
+    </div>
 
-function saveToFavorite(elemId) {
-console.log(elemId)
-  
-
+    <h4>${colors.name}</h4>
+  </div>
+          `
+    )
+    .join("");
 }
