@@ -27,6 +27,8 @@ show all colors - modal
   width: 100%;
   background-color: #f5f5f7;
   box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.16);
+  max-height: 300px;
+  overflow: scroll;
 }
 .modal-close-line {
   display: flex;
@@ -77,7 +79,6 @@ show all colors - modal
 }
 
 .palitra-icon {
-  float: right;
   padding: 5px;
   margin-top: 10px;
   margin-right: 10px;
@@ -85,6 +86,9 @@ show all colors - modal
   border-radius: 8px;
   width: 40px;
   align-items: center;
+}
+.icon-wrapper {
+  float: right;
 }
 /* 
 .color-card .color-back {

@@ -39,10 +39,10 @@ function filterName() {
 }
 
 //rendering cards
-let cards = document.getElementsByClassName("color-card");
-let allColors = document.getElementById("allColors");
-let closeLine = document.getElementById("close-line");
-let closeBtn = document.getElementById("btn-close");
+// let cards = document.getElementsByClassName("color-card");
+// let allColors = document.getElementById("allColors");
+// let closeLine = document.getElementById("close-line");
+// let closeBtn = document.getElementById("btn-close");
 
 showCards("rgb_o");
 function showCards(rgb) {
@@ -53,8 +53,8 @@ function showCards(rgb) {
 
           <div class='color-back' style= "background-color: ${color[rgb]}">
             <div class='icon-wrapper'>
-              <button class='palitra-icon' id='btn-favorite_${color.id}'><img src = './images/icons/bookmark.png' style='width: 20px; '></button>
               <button class='palitra-icon btn-full-screen' id='btn-screen_${color.id}'><img src = './images/icons/crop.png' style='width: 20px;'></button>
+              <button class='palitra-icon btn-favorite' id='btn-favorite-${color.id}'><img src = './images/icons/bookmark.png' style='width: 20px; '></button>
             </div>
           </div>
           
@@ -65,123 +65,101 @@ function showCards(rgb) {
   // showModal();
 }
 
-//rendering all-colors-card
-// document.getElementById(
-//   "modal-title"
-// ).innerHTML = `Выберите цвет, чтобы увидеть оттенки`;
-// function showAll(elemId) {
-//   for (let i = 0; i < cards.length; i++) {
-//     let re = new RegExp(/\d+/);
-//     let id = elemId.match(re)[0];
-//     colorsList.forEach((item) => {
-//       if (item.id == id) {
-//         (document.getElementById("modal-title").innerHTML = `
-//         ${item.name}`),
-//           (document.getElementById("allColors").innerHTML = `
-//         <div class='all-colors-columns'>
-//           <div class='color-card show'>
-//               <div class='color-back' style= "background-color: ${item.rgb_1}">
-//               </div>
-//               <h4>1:1</h4>
-//           </div>
-//           <div class='color-card show'>
-//               <div class='color-back' style= "background-color: ${item.rgb_2}">
-//               </div>
-//               <h4>1:2</h4>
-//           </div>
-//           <div class='color-card show'>
-//               <div class='color-back' style= "background-color: ${item.rgb_4}">
-//               </div>
-//               <h4>1:4</h4>
-//           </div>
-//           <div class='color-card show'>
-//               <div class='color-back' style= "background-color: ${item.rgb_8}">
-//               </div>
-//               <h4>1:8</h4>
-//           </div>
-//           <div class='color-card show'>
-//               <div class='color-back' style= "background-color: ${item.rgb_16}">
-//               </div>
-//               <h4>1:16</h4>
-//           </div>
-//           <div class='color-card show'>
-//               <div class='color-back' style= "background-color: ${item.rgb_40}">
-//               </div>
-//               <h4>1:40</h4>
-//           </div>
-//           <div class='color-card show'>
-//               <div class='color-back' style= "background-color: ${item.rgb_80}">
-//               </div>
-//               <h4>1:80</h4>
-//           </div>
-//           </div>
-//           `);
-//       }
-//     });
-//   }
-// }
-//add event listener for cards => open modal (allColors palitra)
-// function showModal() {
-//   for (let i = 0; i < cards.length; i++) {
-//     cards[i].addEventListener("click", function () {
-//       if (!cards[i].className.includes(" show-modal")) {
-//         showAll(cards[i].id);
-//         cards[i].className += " show-modal";
-//         allColors.style.display = "block";
-//         closeBtn.style.display = "block";
-//         for (let j = 0; j < cards.length; j++) {
-//           if (j != i && cards[j].className.includes(" show-modal")) {
-//             cards[j].className = cards[j].className.replace(" show-modal", "");
-//           }
-//         }
-//       } else if (cards[i].className.includes(" show-modal")) {
-//         cards[i].className = cards[i].className.replace(" show-modal", "");
-//         allColors.style.display = "none";
-//         closeBtn.style.display = "none";
-//       }
-//     });
-//   }
-// }
+let favoriteBtns = document.getElementsByClassName("btn-favorite");
+// console.log(fullScreenBtns);
+let arrOfFavorite = [];
+for (let i = 0; i < favoriteBtns.length; i++) {
+  favoriteBtns[i].addEventListener("click", function () {
+    if (!arrOfFavorite.includes(favoriteBtns[i].id)) {
+      arrOfFavorite.push(favoriteBtns[i].id);
+      saveToFavorite();
+      addEvent();
+      changeIcon(favoriteBtns[i].id);
+    } else {
+      delFavorite(favoriteBtns[i].id);
+    }
+  });
+}
 
-// // close modal by click on top line of modal
-// closeLine.addEventListener("click", function () {
-//   if (allColors.style.display === "none" && closeBtn.style.display === "none") {
-//     allColors.style.display = "block";
-//     closeBtn.style.display = "block";
-//   } else {
-//     allColors.style.display = "none";
-//     closeBtn.style.display = "none";
-//   }
-// });
-// // close modal by click not on the modal
-// document.addEventListener("mouseup", function (e) {
-//   var modal = document.getElementById("modalWrapper");
-//   if (!modal.contains(e.target)) {
-//     allColors.style.display = "none";
-//     closeBtn.style.display = "none";
-//     for (let i = 0; i < cards.length; i++) {
-//       if (cards[i].className.includes(" show-modal")) {
-//         cards[i].className = cards[i].className.replace(" show-modal", "");
-//       }
-//     }
-//   }
-// });
+function changeIcon(btnId) {
+  let btn = document.getElementById(btnId);
+  let regex = new RegExp(/(?<=\/)\w*(?=.png)/g);
+  let childImg = btn.children[0].src.match(regex);
+  if (childImg[0] === "bookmark") {
+    btn.innerHTML = `<img src = './images/icons/bookmark_fill.png' style='width: 20px;'>`;
+  } else {
+    btn.innerHTML = `<img src = './images/icons/bookmark.png' style='width: 20px;'>`;
+  }
+}
+
+function addEvent() {
+  let module = document.getElementById("modalWrapper");
+  let delFavoriteBtn = module.getElementsByClassName("btn-del-favorite");
+
+  for (let i = 0; i < delFavoriteBtn.length; i++) {
+    delFavoriteBtn[i].addEventListener("click", function (e) {
+      delFavorite(this.id);
+    });
+  }
+}
+
+function delFavorite(btnId) {
+  for (let j = 0; j < arrOfFavorite.length; j++) {
+    if (arrOfFavorite[j] === btnId) {
+      arrOfFavorite.splice(j, 1);
+      saveToFavorite();
+      changeIcon(btnId);
+    }
+  }
+}
+
+function saveToFavorite() {
+  let favoriteId = arrOfFavorite.map((elem) => {
+    let re = new RegExp(/\d+/);
+    let elemId = elem.match(re)[0];
+    return (elem = elemId);
+  });
+  const filterColors = (arr1, arr2) => {
+    let favoriteColors = [];
+    favoriteColors = arr1.filter((colors) => {
+      return arr2.find((el) => {
+        return el == colors.id;
+      });
+    });
+    return favoriteColors;
+  };
+  let newColorsList = filterColors(colorsList, favoriteId);
+
+  let favoriteColorsDiv = document.getElementById("favorite-colors");
+  favoriteColorsDiv.innerHTML = newColorsList
+    .map(
+      (colors) =>
+        `
+          <div class="color-card show" id="colorCard_${colors.id}">
+    <div class="color-back" style="background-color: ${colors.rgb_o}">
+      <div class="icon-wrapper">
+      <button class='palitra-icon btn-full-screen' id='btn-screen-${colors.id}'><img src = './images/icons/crop.png' style='width: 20px;'></button>
+      <button class='palitra-icon btn-del-favorite' id='btn-favorite-${colors.id}'><img src = './images/icons/close.png' style='width: 20px;'></button>
+      </div>
+    </div>
+
+    <h4>${colors.name}</h4>
+  </div>
+          `
+    )
+    .join("");
+  addEvent();
+  let favoriteCount = favoriteColorsDiv.childElementCount;
+  let favoriteCountDiv = document.getElementById("modal-title");
+  console.log(favoriteCount);
+  favoriteCountDiv.innerHTML = `Избранные цвета: ${favoriteCount} `;
+}
 
 let fullScreenBtns = document.getElementsByClassName("btn-full-screen");
 // console.log(fullScreenBtns);
 for (let i = 0; i < fullScreenBtns.length; i++) {
   fullScreenBtns[i].addEventListener("click", function () {
     fullScreen(fullScreenBtns[i].id);
-  });
-}
-
-let favoriteBtns = document.getElementsByClassName("palitra-icon");
-// console.log(fullScreenBtns);
-let divOfFavorite = [];
-for (let i = 0; i < favoriteBtns.length; i++) {
-  favoriteBtns[i].addEventListener("click", function () {
-    divOfFavorite.push(favoriteBtns[i].id);
-    saveToFavorite();
   });
 }
 
@@ -261,41 +239,3 @@ function closeScreen() {
 //     fullScreen.style.display = "none";
 //   }
 // });
-
-function saveToFavorite() {
-  let favoriteId = divOfFavorite.map((elem) => {
-    let re = new RegExp(/\d+/);
-    let elemId = elem.match(re)[0];
-    return (elem = elemId);
-  });
-  // console.log(favoriteId);
-  const filterColors = (arr1, arr2) => {
-    let favoriteColors = [];
-    favoriteColors = arr1.filter((colors) => {
-      return arr2.find((el) => {
-        return el == colors.id;
-      });
-    });
-    return favoriteColors;
-  };
-  const newColorsList = filterColors(colorsList, favoriteId);
-
-  let favoriteColorsDiv = document.getElementById("favorite-colors");
-  // favoriteColorsDiv.style.display = "flex";
-  favoriteColorsDiv.innerHTML = newColorsList
-    .map(
-      (colors) =>
-        `
-          <div class="color-card show" id="colorCard_${colors.id}">
-    <div class="color-back" style="background-color: ${colors.rgb_o}">
-      <div class="icon-wrapper">
-      <button class='palitra-icon btn-full-screen' id='btn-screen_${colors.id}'><img src = './images/icons/crop.png' style='width: 20px;'></button>
-      </div>
-    </div>
-
-    <h4>${colors.name}</h4>
-  </div>
-          `
-    )
-    .join("");
-}
