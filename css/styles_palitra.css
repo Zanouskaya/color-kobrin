@@ -70,18 +70,14 @@ show all colors - modal
   display: none;
   width: 100%;
   height: 100%;
-  z-index: 3;
   position: fixed;
   left: 0;
   top: 0;
-
-  /* background-color: rgb(247, 220, 82); */
 }
 
 .palitra-icon {
   padding: 5px;
-  margin-top: 10px;
-  margin-right: 10px;
+
   border: none;
   border-radius: 8px;
   width: 40px;
@@ -89,14 +85,43 @@ show all colors - modal
 }
 .icon-wrapper {
   float: right;
-}
-/* 
-.color-card .color-back {
-  height: 100px;
+  margin: 10px;
 }
 
-.color-card:hover {
+.favorite-colors {
+  display: none;
+  margin-top: 10px;
+}
+
+.modal-title {
+  border: solid 1px red;
+}
+
+.small .color-card:hover {
   box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.16);
   transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
   transform: scale3d(1.02, 1.02, 1.02);
-} */
+}
+
+.small .color-back {
+  height: 120px;
+}
+
+.small {
+  float: bottom;
+}
+
+.full-screen-background {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.full-screen-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+}

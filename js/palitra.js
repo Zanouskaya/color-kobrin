@@ -4,16 +4,22 @@ import { colorsList } from "./modules/colors.js";
 let btnsWrapper = document.getElementById("btnsWrapper");
 let btns = btnsWrapper.getElementsByTagName("button");
 for (let i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", activeBtn);
+  // btns[i].addEventListener("click", activeBtn);
   btns[i].addEventListener("click", function () {
     showCards(btns[i].id);
+    addFullScreenEvent(btns[i].id);
   });
+  btns[i].addEventListener("click", underline, false);
+  btns[i].addEventListener("click", normal, true);
 }
-
-function activeBtn() {
-  let current = document.getElementsByClassName("active");
-  current[0].className = current[0].className.replace(" active", "");
-  this.className += " active";
+// activeBtn("rgb_o");
+// function activeBtn() {
+//   let current = document.getElementsByClassName("active");
+//   current[0].className = current[0].className.replace(" active", "");
+//   this.className += " active";
+// }
+function underline(e) {
+  e.currentTarget.className += " active";
 }
 
 //search cards by title card name
@@ -39,10 +45,6 @@ function filterName() {
 }
 
 //rendering cards
-// let cards = document.getElementsByClassName("color-card");
-// let allColors = document.getElementById("allColors");
-// let closeLine = document.getElementById("close-line");
-// let closeBtn = document.getElementById("btn-close");
 
 showCards("rgb_o");
 function showCards(rgb) {
@@ -53,7 +55,7 @@ function showCards(rgb) {
 
           <div class='color-back' style= "background-color: ${color[rgb]}">
             <div class='icon-wrapper'>
-              <button class='palitra-icon btn-full-screen' id='btn-screen_${color.id}'><img src = './images/icons/crop.png' style='width: 20px;'></button>
+              <button class='palitra-icon btn-full-screen' id='${rgb}-btn-screen_${color.id}'><img src = './images/icons/crop.png' style='width: 20px;'></button>
               <button class='palitra-icon btn-favorite' id='btn-favorite-${color.id}'><img src = './images/icons/bookmark.png' style='width: 20px; '></button>
             </div>
           </div>
@@ -62,6 +64,7 @@ function showCards(rgb) {
         </div>`
     )
     .join("");
+
   // showModal();
 }
 
@@ -149,75 +152,78 @@ function saveToFavorite() {
     )
     .join("");
   addEvent();
+  addFullScreenEvent();
   let favoriteCount = favoriteColorsDiv.childElementCount;
   let favoriteCountDiv = document.getElementById("modal-title");
-  console.log(favoriteCount);
   favoriteCountDiv.innerHTML = `Избранные цвета: ${favoriteCount} `;
 }
 
-let fullScreenBtns = document.getElementsByClassName("btn-full-screen");
-// console.log(fullScreenBtns);
-for (let i = 0; i < fullScreenBtns.length; i++) {
-  fullScreenBtns[i].addEventListener("click", function () {
-    fullScreen(fullScreenBtns[i].id);
-  });
+function addFullScreenEvent(rgbBtn) {
+  let fullScreenBtns = document.getElementsByClassName("btn-full-screen");
+  for (let i = 0; i < fullScreenBtns.length; i++) {
+    fullScreenBtns[i].addEventListener("click", function () {
+      fullScreen(this.id, rgbBtn);
+    });
+  }
 }
 
-function fullScreen(elemId) {
+function fullScreen(elemId, rgbBtn) {
+  let fullScreenBtns = document.getElementsByClassName("btn-full-screen");
+  // console.log(rgb);
+  let re = new RegExp(/\d{3}/);
+  let id = elemId.match(re)[0];
+  let reRgb = new RegExp(/^\w{5}/);
+  // let rgb = elemId.match(reRgb)[0];
+  let rgb = rgbBtn;
   for (let i = 0; i < fullScreenBtns.length; i++) {
-    let re = new RegExp(/\d+/);
-    let id = elemId.match(re)[0];
     colorsList.forEach((item) => {
       if (item.id == id) {
-        let fullscreenDiv = document.getElementById("full-screen");
-        fullscreenDiv.style.display = "flex";
-        fullscreenDiv.innerHTML = `
-        <div style= 'background-color: ${item.rgb_o}; 
-                      width: 100%; 
-                      height: 100%; 
-                      display: flex; 
-                      flex-direction: column; 
-                      justify-content: space-between;'>
-            <div>
-              <h1 style='padding-top: 10px; padding-left: 10px;'>${item.name} </h1>
-              <button class='palitra-icon btn-close-screen' id='btn-close-screen' style='margin: 0px; '><img src = './images/icons/close.png' style='width: 20px; '></button>
-            </div>
-            <div class="all-colors-columns">
-              <div class="color-card show">
-                <div class="color-back" style="background-color: ${item.rgb_1}"></div>
-                <h4>1:1</h4>
+        let fullScreenDiv = document.getElementById("full-screen");
+        fullScreenDiv.style.display = "flex";
+        fullScreenDiv.innerHTML = `
+            <div class = 'full-screen-background' style= 'background-color: ${item[rgb]}' id='full-screen-background'>
+              <div class= 'full-screen-title'>
+                <h1 >${item.name} </h1>
+                <button class='palitra-icon btn-close-screen' id='btn-close-screen' ><img src = './images/icons/close.png' style='width: 20px; '></button>
               </div>
-              <div class="color-card show">
-                <div class="color-back" style="background-color: ${item.rgb_2}"></div>
-                <h4>1:2</h4>
-              </div>
-              <div class="color-card show">
-                <div class="color-back" style="background-color: ${item.rgb_4}"></div>
-                <h4>1:4</h4>
-              </div>
-              <div class="color-card show">
-                <div class="color-back" style="background-color: ${item.rgb_8}"></div>
-                <h4>1:8</h4>
-              </div>
-              <div class="color-card show">
-                <div class="color-back" style="background-color: ${item.rgb_16}"></div>
-                <h4>1:16</h4>
-              </div>
-              <div class="color-card show">
-                <div class="color-back" style="background-color: ${item.rgb_40}"></div>
-                <h4>1:40</h4>
-              </div>
-              <div class="color-card show">
-                <div class="color-back" style="background-color: ${item.rgb_80}"></div>
-                <h4>1:80</h4>
+              <div class="all-colors-columns small">
+                <div class="color-card show" id='${item.id}-rgb_1'>
+                  <div class="color-back" style="background-color: ${item.rgb_1}"></div>
+                  <h4>1:1</h4>
+                </div>
+                <div class="color-card show">
+                  <div class="color-back" style="background-color: ${item.rgb_2}"></div>
+                  <h4>1:2</h4>
+                </div>
+                <div class="color-card show">
+                  <div class="color-back" style="background-color: ${item.rgb_4}"></div>
+                  <h4>1:4</h4>
+                </div>
+                <div class="color-card show">
+                  <div class="color-back" style="background-color: ${item.rgb_8}"></div>
+                  <h4>1:8</h4>
+                </div>
+                <div class="color-card show">
+                  <div class="color-back" style="background-color: ${item.rgb_16}"></div>
+                  <h4>1:16</h4>
+                </div>
+                <div class="color-card show">
+                  <div class="color-back" style="background-color: ${item.rgb_40}"></div>
+                  <h4>1:40</h4>
+                </div>
+                <div class="color-card show">
+                  <div class="color-back" style="background-color: ${item.rgb_80}"></div>
+                  <h4>1:80</h4>
+                </div>
               </div>
             </div>
-        </div>
+        
         `;
       }
     });
   }
   closeScreen();
+  changeBackground();
 }
 
 function closeScreen() {
@@ -233,6 +239,28 @@ function closeScreen() {
   }
 }
 
+function changeBackground() {
+  let fullScreenDiv = document.getElementById("full-screen");
+  let card = fullScreenDiv.getElementsByClassName("color-back");
+  for (let i = 0; i < card.length; i++) {
+    card[i].addEventListener("click", function () {
+      let bgColor = this.style.backgroundColor;
+      let bg = document.getElementById("full-screen-background");
+      bg.style.backgroundColor = bgColor;
+    });
+  }
+}
+
+let favorBtn = document.getElementById("modal-title");
+
+favorBtn.addEventListener("click", function () {
+  let favorColorDiv = document.getElementById("favorite-colors");
+  if (favorColorDiv.style.display == "grid") {
+    favorColorDiv.style.display = "none";
+  } else {
+    favorColorDiv.style.display = "grid";
+  }
+});
 // document.addEventListener("mouseup", function (e) {
 //   var fullScreen = document.getElementById("full-screen");
 //   if (!fullScreen.contains(e.target)) {
