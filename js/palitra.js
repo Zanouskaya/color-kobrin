@@ -4,22 +4,21 @@ import { colorsList } from "./modules/colors.js";
 let btnsWrapper = document.getElementById("btnsWrapper");
 let btns = btnsWrapper.getElementsByTagName("button");
 for (let i = 0; i < btns.length; i++) {
-  // btns[i].addEventListener("click", activeBtn);
+  if (btns[i].className.includes(" active")) {
+    showCards(btns[i].id);
+  }
+  btns[i].addEventListener("click", activeBtn);
   btns[i].addEventListener("click", function () {
     showCards(btns[i].id);
-    addFullScreenEvent(btns[i].id);
   });
-  btns[i].addEventListener("click", underline, false);
-  btns[i].addEventListener("click", normal, true);
 }
-// activeBtn("rgb_o");
-// function activeBtn() {
-//   let current = document.getElementsByClassName("active");
-//   current[0].className = current[0].className.replace(" active", "");
-//   this.className += " active";
-// }
-function underline(e) {
-  e.currentTarget.className += " active";
+
+//
+
+function activeBtn() {
+  let current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
 }
 
 //search cards by title card name
@@ -45,8 +44,8 @@ function filterName() {
 }
 
 //rendering cards
+let arrOfFavorite = [];
 
-showCards("rgb_o");
 function showCards(rgb) {
   document.getElementById("colors").innerHTML = colorsList
     .map(
@@ -56,7 +55,7 @@ function showCards(rgb) {
           <div class='color-back' style= "background-color: ${color[rgb]}">
             <div class='icon-wrapper'>
               <button class='palitra-icon btn-full-screen' id='${rgb}-btn-screen_${color.id}'><img src = './images/icons/crop.png' style='width: 20px;'></button>
-              <button class='palitra-icon btn-favorite' id='btn-favorite-${color.id}'><img src = './images/icons/bookmark.png' style='width: 20px; '></button>
+              <button class='palitra-icon btn-favorite' id='${rgb}-btn-favorite-${color.id}'><img src = './images/icons/bookmark.png' style='width: 20px; '></button>
             </div>
           </div>
           
@@ -64,24 +63,26 @@ function showCards(rgb) {
         </div>`
     )
     .join("");
-
-  // showModal();
+  addFullScreenEvent(rgb);
+  addFavoriteEvent(rgb);
 }
 
-let favoriteBtns = document.getElementsByClassName("btn-favorite");
-// console.log(fullScreenBtns);
-let arrOfFavorite = [];
-for (let i = 0; i < favoriteBtns.length; i++) {
-  favoriteBtns[i].addEventListener("click", function () {
-    if (!arrOfFavorite.includes(favoriteBtns[i].id)) {
-      arrOfFavorite.push(favoriteBtns[i].id);
-      saveToFavorite();
-      addEvent();
-      changeIcon(favoriteBtns[i].id);
-    } else {
-      delFavorite(favoriteBtns[i].id);
-    }
-  });
+function addFavoriteEvent(rgb) {
+  let favoriteBtns = document.getElementsByClassName("btn-favorite");
+  for (let i = 0; i < favoriteBtns.length; i++) {
+    favoriteBtns[i].addEventListener("click", function () {
+      console.log(favoriteBtns[i].id);
+      if (!arrOfFavorite.includes(favoriteBtns[i].id)) {
+        arrOfFavorite.push(favoriteBtns[i].id);
+        console.log(arrOfFavorite);
+        saveToFavorite(rgb);
+        // addDelEvent();
+        changeIcon(favoriteBtns[i].id);
+      } else {
+        delFavorite(favoriteBtns[i].id);
+      }
+    });
+  }
 }
 
 function changeIcon(btnId) {
@@ -95,7 +96,7 @@ function changeIcon(btnId) {
   }
 }
 
-function addEvent() {
+function addDelEvent() {
   let module = document.getElementById("modalWrapper");
   let delFavoriteBtn = module.getElementsByClassName("btn-del-favorite");
 
@@ -116,12 +117,13 @@ function delFavorite(btnId) {
   }
 }
 
-function saveToFavorite() {
+function saveToFavorite(rgb) {
   let favoriteId = arrOfFavorite.map((elem) => {
-    let re = new RegExp(/\d+/);
+    let re = new RegExp(/\d{3}/);
     let elemId = elem.match(re)[0];
     return (elem = elemId);
   });
+  console.log(favoriteId);
   const filterColors = (arr1, arr2) => {
     let favoriteColors = [];
     favoriteColors = arr1.filter((colors) => {
@@ -132,17 +134,17 @@ function saveToFavorite() {
     return favoriteColors;
   };
   let newColorsList = filterColors(colorsList, favoriteId);
-
+  console.log(newColorsList);
   let favoriteColorsDiv = document.getElementById("favorite-colors");
   favoriteColorsDiv.innerHTML = newColorsList
     .map(
       (colors) =>
         `
           <div class="color-card show" id="colorCard_${colors.id}">
-    <div class="color-back" style="background-color: ${colors.rgb_o}">
+    <div class="color-back" style="background-color: ${colors[rgb]}">
       <div class="icon-wrapper">
-      <button class='palitra-icon btn-full-screen' id='btn-screen-${colors.id}'><img src = './images/icons/crop.png' style='width: 20px;'></button>
-      <button class='palitra-icon btn-del-favorite' id='btn-favorite-${colors.id}'><img src = './images/icons/close.png' style='width: 20px;'></button>
+      <button class='palitra-icon btn-full-screen' id='${rgb}-btn-screen_${colors.id}'><img src = './images/icons/crop.png' style='width: 20px;'></button>
+      <button class='palitra-icon btn-del-favorite' id='${rgb}-btn-favorite-${colors.id}'><img src = './images/icons/close.png' style='width: 20px;'></button>
       </div>
     </div>
 
@@ -151,8 +153,8 @@ function saveToFavorite() {
           `
     )
     .join("");
-  addEvent();
-  addFullScreenEvent();
+  addDelEvent();
+  addFullScreenEvent(rgb);
   let favoriteCount = favoriteColorsDiv.childElementCount;
   let favoriteCountDiv = document.getElementById("modal-title");
   favoriteCountDiv.innerHTML = `Избранные цвета: ${favoriteCount} `;
@@ -160,9 +162,12 @@ function saveToFavorite() {
 
 function addFullScreenEvent(rgbBtn) {
   let fullScreenBtns = document.getElementsByClassName("btn-full-screen");
+  // console.log(rgbBtn);
+  // console.log(fullScreenBtns[2]);
   for (let i = 0; i < fullScreenBtns.length; i++) {
     fullScreenBtns[i].addEventListener("click", function () {
       fullScreen(this.id, rgbBtn);
+      console.log(this.id);
     });
   }
 }
@@ -172,7 +177,7 @@ function fullScreen(elemId, rgbBtn) {
   // console.log(rgb);
   let re = new RegExp(/\d{3}/);
   let id = elemId.match(re)[0];
-  let reRgb = new RegExp(/^\w{5}/);
+  // let reRgb = new RegExp(/^\w{5}/);
   // let rgb = elemId.match(reRgb)[0];
   let rgb = rgbBtn;
   for (let i = 0; i < fullScreenBtns.length; i++) {
@@ -252,7 +257,6 @@ function changeBackground() {
 }
 
 let favorBtn = document.getElementById("modal-title");
-
 favorBtn.addEventListener("click", function () {
   let favorColorDiv = document.getElementById("favorite-colors");
   if (favorColorDiv.style.display == "grid") {
