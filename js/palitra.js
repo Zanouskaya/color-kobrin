@@ -44,8 +44,8 @@ function filterName() {
 }
 
 //rendering cards
-let arrOfFavorite = [];
-
+let arrOfFavoriteIds = [];
+let arrOfFavoriteColors = [];
 function showCards(rgb) {
   document.getElementById("colors").innerHTML = colorsList
     .map(
@@ -55,7 +55,7 @@ function showCards(rgb) {
           <div class='color-back' style= "background-color: ${color[rgb]}">
             <div class='icon-wrapper'>
               <button class='palitra-icon btn-full-screen' id='${rgb}-btn-screen_${color.id}'><img src = './images/icons/crop.png' style='width: 20px;'></button>
-              <button class='palitra-icon btn-favorite' id='${rgb}-btn-favorite-${color.id}'><img src = './images/icons/bookmark.png' style='width: 20px; '></button>
+              <button class='palitra-icon btn-favorite' conc='${rgb}' color='${color.id}'  id='${rgb}-btn-favorite-${color.id}'><img src = './images/icons/bookmark.png' style='width: 20px; '></button>
             </div>
           </div>
           
@@ -64,18 +64,18 @@ function showCards(rgb) {
     )
     .join("");
   addFullScreenEvent(rgb);
-  addFavoriteEvent(rgb);
+  addFavoriteEvent();
 }
 
-function addFavoriteEvent(rgb) {
+function addFavoriteEvent() {
   let favoriteBtns = document.getElementsByClassName("btn-favorite");
   for (let i = 0; i < favoriteBtns.length; i++) {
     favoriteBtns[i].addEventListener("click", function () {
       console.log(favoriteBtns[i].id);
-      if (!arrOfFavorite.includes(favoriteBtns[i].id)) {
-        arrOfFavorite.push(favoriteBtns[i].id);
-        console.log(arrOfFavorite);
-        saveToFavorite(rgb);
+      if (!arrOfFavoriteIds.includes(favoriteBtns[i].id)) {
+        arrOfFavoriteIds.push(favoriteBtns[i].id);
+        console.log(arrOfFavoriteIds);
+        saveToFavorite(favoriteBtns[i].id);
         // addDelEvent();
         changeIcon(favoriteBtns[i].id);
       } else {
@@ -108,43 +108,44 @@ function addDelEvent() {
 }
 
 function delFavorite(btnId) {
-  for (let j = 0; j < arrOfFavorite.length; j++) {
-    if (arrOfFavorite[j] === btnId) {
-      arrOfFavorite.splice(j, 1);
-      saveToFavorite();
+  for (let j = 0; j < arrOfFavoriteColors.length; j++) {
+    if (arrOfFavoriteColors[j].id === btnId) {
+      arrOfFavoriteColors.splice(j, 1);
+      saveToFavorite(btnId);
       changeIcon(btnId);
+      console.log("del");
+      console.log(arrOfFavoriteColors);
     }
   }
 }
 
-function saveToFavorite(rgb) {
-  let favoriteId = arrOfFavorite.map((elem) => {
-    let re = new RegExp(/\d{3}/);
-    let elemId = elem.match(re)[0];
-    return (elem = elemId);
+function saveToFavorite(btnId) {
+  let elem = document.getElementById(btnId);
+  let favoriteConc = elem.getAttribute("conc");
+  let favoriteColor = elem.getAttribute("color");
+  arrOfFavoriteColors.push({
+    id: btnId,
+    conc: favoriteConc,
+    color: favoriteColor,
   });
-  console.log(favoriteId);
-  const filterColors = (arr1, arr2) => {
-    let favoriteColors = [];
-    favoriteColors = arr1.filter((colors) => {
-      return arr2.find((el) => {
-        return el == colors.id;
-      });
-    });
-    return favoriteColors;
-  };
-  let newColorsList = filterColors(colorsList, favoriteId);
-  console.log(newColorsList);
+
+  for (let elem of arrOfFavoriteColors) {
+    let colorDetails = colorsList.find((el) => el.id == elem["color"]);
+    elem["name"] = colorDetails["name"];
+    elem["rgb"] = colorDetails[elem["conc"]];
+  }
+  console.log(arrOfFavoriteColors);
   let favoriteColorsDiv = document.getElementById("favorite-colors");
-  favoriteColorsDiv.innerHTML = newColorsList
+
+  favoriteColorsDiv.innerHTML = arrOfFavoriteColors
     .map(
       (colors) =>
         `
           <div class="color-card show" id="colorCard_${colors.id}">
-    <div class="color-back" style="background-color: ${colors[rgb]}">
+    <div class="color-back" style="background-color: ${colors.rgb}">
       <div class="icon-wrapper">
-      <button class='palitra-icon btn-full-screen' id='${rgb}-btn-screen_${colors.id}'><img src = './images/icons/crop.png' style='width: 20px;'></button>
-      <button class='palitra-icon btn-del-favorite' id='${rgb}-btn-favorite-${colors.id}'><img src = './images/icons/close.png' style='width: 20px;'></button>
+      <button class='palitra-icon btn-full-screen'  id='${colors.rgb}-btn-screen_${colors.id}'><img src = './images/icons/crop.png' style='width: 20px;'></button>
+      <button class='palitra-icon btn-del-favorite'   id='${colors.rgb}-btn-favorite-${colors.id}'><img src = './images/icons/close.png' style='width: 20px;'></button>
       </div>
     </div>
 
@@ -153,8 +154,9 @@ function saveToFavorite(rgb) {
           `
     )
     .join("");
+
   addDelEvent();
-  addFullScreenEvent(rgb);
+  addFullScreenEvent(btnId);
   let favoriteCount = favoriteColorsDiv.childElementCount;
   let favoriteCountDiv = document.getElementById("modal-title");
   favoriteCountDiv.innerHTML = `Избранные цвета: ${favoriteCount} `;
