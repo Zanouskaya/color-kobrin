@@ -1,75 +1,98 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" lang="ru" />
-    <title>Палитра</title>
-    <link href="" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-      $(function () {
-        var includes = $("[data-include]");
-        $.each(includes, function () {
-          var file = "html/" + $(this).data("include") + ".html";
-          $(this).load(file);
-        });
-      });
-    </script>
-    <link rel="stylesheet" href="./css/styles.css" />
-    <link rel="stylesheet" href="./css/styles_palitra.css" />
 
-    <script
-      src="https://kit.fontawesome.com/0a8f206dea.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
-  </head>
-  <body>
-    <main>
-      <div data-include="nav"></div>
-      <div class="container">
-        <div class="top-line">
+<head>
+  <meta charset="utf-8" lang="ru" />
+  <title>Палитра</title>
+  <link href="" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(function () {
+      var includes = $("[data-include]");
+      $.each(includes, function () {
+        var file = "html/" + $(this).data("include") + ".html";
+        $(this).load(file);
+      });
+    });
+  </script>
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/styles_palitra.css" />
+
+  <script src="https://kit.fontawesome.com/0a8f206dea.js" crossorigin="anonymous"></script>
+  <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+  <main>
+    <div data-include="nav"></div>
+    <div class="container">
+      <div class="grid-page-palitra">
+        <div class="left-side">
+
           <div class="btns-wrapper" id="btnsWrapper">
+            <h4>Насыщенность цвета <br>
+              краситель : краска</h4>
             <button class="btn active" id="rgb_o">
               <h3>Оригинальный</h3>
+            </button><br>
+            <button class="btn" id="rgb_1">
+              <h3>1:1</h3>
+            </button><br>
+            <button class="btn" id="rgb_2">
+              <h3>1:2</h3>
+            </button><br>
+            <button class="btn" id="rgb_4">
+              <h3>1:4</h3>
+            </button><br>
+            <button class="btn" id="rgb_8">
+              <h3>1:8</h3>
+            </button><br>
+            <button class="btn" id="rgb_16">
+              <h3>1:16</h3>
+            </button><br>
+            <button class="btn" id="rgb_40">
+              <h3>1:40</h3>
+            </button><br>
+            <button class="btn" id="rgb_80">
+              <h3>1:80</h3>
+            </button><br>
+            <button class="btn" id="fav_col">
+              <h3>Избранные цвета:</h3>
+              <h3>0</h3>
             </button>
-            <button class="btn" id="rgb_1"><h3>1:1</h3></button>
-            <button class="btn" id="rgb_2"><h3>1:2</h3></button>
-            <button class="btn" id="rgb_4"><h3>1:4</h3></button>
-            <button class="btn" id="rgb_8"><h3>1:8</h3></button>
-            <button class="btn" id="rgb_16"><h3>1:16</h3></button>
-            <button class="btn" id="rgb_40"><h3>1:40</h3></button>
-            <button class="btn" id="rgb_80"><h3>1:80</h3></button>
           </div>
-          <input
-            class="searchbar"
-            id="search"
-            type="text"
-            placeholder="Поиск по названию"
-          />
+
+        </div>
+        <div class="right-side" id="right-side">
+
+          <input class="searchbar" id="search" type="text" placeholder="Поиск по названию" />
+          <div class='comments' id="comments">
+            <p>Нажмите на <img src='./images/icons/bookmark.png' style='width: 20px;'> чтобы увидеть карточки в
+              избранных</p>
+          </div>
+          <div class="palitra-columns" id="colors"></div>
+          <!-- <div class="favorite-colors palitra-columns container" id="favorite-colors"></div> -->
         </div>
 
-        <div class="palitra-columns" id="colors"></div>
-      </div>
-      <div class="modal" id="modalWrapper">
-        <div class="modal-close-line" id="close-line">
-          <button class="modal-title" id="modal-title">
-            Избранные цвета: 0
-          </button>
-          <button class="modal-close" id="btn-close">
-            <i class="far fa-times-circle"></i>
-          </button>
-        </div>
-        <div
-          class="favorite-colors palitra-columns container"
-          id="favorite-colors"
-        ></div>
-        <div class="all-colors" id="allColors"></div>
       </div>
 
-      <div class="full-screen" id="full-screen"></div>
-      <div data-include="footer"></div>
-    </main>
+    </div>
+    <!-- <div class="modal" id="modalWrapper">
+      <div class="modal-close-line" id="close-line">
 
-    <script type="module" src="./js/palitra.js"></script>
-  </body>
+        <button class="modal-close" id="btn-close">
+          <i class="far fa-times-circle"></i>
+        </button>
+      </div>
+
+      <div class="all-colors" id="allColors"></div>
+    </div> -->
+
+    <div class="full-screen" id="full-screen"></div>
+    <div data-include="footer"></div>
+  </main>
+
+  <script type="module" src="./js/palitra.js"></script>
+</body>
+
 </html>

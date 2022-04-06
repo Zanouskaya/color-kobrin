@@ -21,6 +21,7 @@ body {
 .container {
   width: 80vw;
   margin: auto;
+  
 }
 @media (max-width: 1400px) {
   .container {
@@ -74,7 +75,7 @@ nav {
 .nav-right {
   display: flex;
   flex-direction: column;
-  width: 30vw;
+  min-width: 400px;
 }
 
 .nav-top {
@@ -207,7 +208,7 @@ color-cards
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 40px;
-  margin-top: 50px;
+  margin-top: 20px;
   margin-bottom: 50px;
   justify-content: center;
 }
