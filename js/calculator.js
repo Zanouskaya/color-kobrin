@@ -1,11 +1,17 @@
+let titleName = document.getElementById('title');
+console.log(titleName);
+
+
 let addSurfaceBtn = document.querySelector(".add-surface");
 let count = 0;
 addSurface();
-// addSurfaceBtn.addEventListener("click", addSurface);
 addSurfaceBtn.addEventListener("click", function (event) {
   addSurface();
   event.preventDefault();
 });
+
+let paintIndex = 0;
+let surfaceIndex = 0;
 
 function addSurface() {
   count += 1;
@@ -31,9 +37,9 @@ function addSurface() {
           <button class="btn del-surface" id="${count}"><i class="far fa-times-circle"></i></button>
         </div>`
   );
-  let el = document.getElementById(`${count}`);
+  let delBtn = document.getElementById(`${count}`);
 
-  el.addEventListener("click", function () {
+  delBtn.addEventListener("click", function () {
     delSurface(this.id);
   });
 
@@ -41,14 +47,14 @@ function addSurface() {
 
   width.addEventListener("input", (event) => {
     width.setAttribute("value", event.target.value);
-    calculator();
+    defineRashod(paintIndex, surfaceIndex);
   });
 
   let height = document.getElementById(`height-${count}`);
 
   height.addEventListener("input", (event) => {
     height.setAttribute("value", event.target.value);
-    calculator();
+    defineRashod(paintIndex, surfaceIndex);
   });
   divCount();
 }
@@ -64,13 +70,52 @@ function divCount() {
 }
 
 function delSurface(id) {
-  let el = document.getElementById(`sur-${id}`);
-  el.remove();
-  calculator();
+  let delDiv = document.getElementById(`sur-${id}`);
+  delDiv.remove();
+  defineRashod(paintIndex, surfaceIndex);
   divCount();
 }
 
-function calculator() {
+
+
+let paintSet = document.getElementById('product-select')
+paintSet.addEventListener('change', function () {
+  paintIndex = paintSet.selectedIndex;
+
+  defineRashod(paintIndex, surfaceIndex)
+})
+
+let surfaceSet = document.getElementById('surface-select')
+surfaceSet.addEventListener('change', function () {
+  surfaceIndex = surfaceSet.selectedIndex;
+  defineRashod(paintIndex, surfaceIndex)
+})
+
+
+function defineRashod(paintIndex, surfaceIndex) {
+  let paintSet = document.getElementById('product-select')
+  let paintName = paintSet.getElementsByTagName("option")[paintIndex]
+  let paintRashod, primerRashod;
+  if (surfaceIndex == 0) {
+    paintRashod = paintName.getAttribute('value.min')
+    primerRashod = 110;
+
+  } else {
+    paintRashod = paintName.getAttribute('value.max')
+    primerRashod = 120;
+  }
+
+  console.log(paintIndex);
+  console.log(surfaceIndex);
+
+  document.getElementById('product-paint-rashod').children[1].innerHTML = `${paintRashod}`
+  document.getElementById('product-primer-rashod').children[1].innerHTML = `${primerRashod}`
+
+  calculator(paintRashod, primerRashod)
+}
+
+
+function calculator(rashodPaint, rashodPrimer) {
   let surfaces = document.getElementsByClassName("surface-area");
   let total_sqr = 0;
 
@@ -86,9 +131,8 @@ function calculator() {
     total_sqr += sqr;
   }
 
-  let productsSelect = document.querySelector(".product-select");
-  let rashodPaint = productsSelect.value;
-  let rashodPrimer = 200;
+
+  // let rashodPrimer = 200;
   let resultPaint = (total_sqr * rashodPaint) / 1000;
   let resultPrimer = (total_sqr * rashodPrimer) / 1000;
 
@@ -103,23 +147,3 @@ function calculator() {
   ).innerHTML = ` ${resultPrimer.toFixed(2)}`;
 }
 
-// let productsSelect = document.getElementById("product-select");
-// productsSelect.addEventListener("change", (event) => {
-//   document.getElementById(
-//     "product-rashod"
-//   ).innerHTML = `<p>Расход ${event.target.value} г/м2</p>`;
-//   surfaceSelect();
-//   //   console.log(event.target.option);
-// });
-// function surfaceSelect() {
-//   let surfaceSelector = document.getElementById("surface-select");
-//   surfaceSelector.addEventListener("change", (event) => {
-//     document.getElementById(
-//       "product-rashod"
-//     ).innerHTML = `<p>Расход ${event.target.value.max} г/м2</p>`;
-//   });
-//   // console.log(productsSelect);
-//   // function changeRashod() {
-//   //   //
-//   // }
-// }
