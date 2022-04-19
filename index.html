@@ -1,126 +1,128 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" lang="ru" />
-    <title>Главная</title>
-    <link href="" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-      $(function () {
-        var includes = $("[data-include]");
-        $.each(includes, function () {
-          var file = "html/" + $(this).data("include") + ".html";
-          $(this).load(file);
-        });
-      });
-    </script>
-    <link rel="stylesheet" href="./css/styles.css" />
-    <link rel="stylesheet" href="./css/styles_index.css" />
-    <script
-      src="https://kit.fontawesome.com/0a8f206dea.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
-  </head>
-  <body>
-    <div data-include="nav"></div>
 
-    <section class="hero-background">
-      <div class="container">
-        <div class="hero-presentation">
-          <h1>
-            Высококачественные, экологически безопасные материалы для
-            строительства и ремонта
-          </h1>
-          <p>Большой выбор и доступная цена</p>
-          <a href="./productions.html" class="btn link-btn">
-            Посмотреть продукцию
-          </a>
+<head>
+  <meta charset="utf-8" lang="ru" />
+  <title>Главная</title>
+  <link href="" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(function () {
+      var includes = $("[data-include]");
+      $.each(includes, function () {
+        var file = "html/" + $(this).data("include") + ".html";
+        $(this).load(file);
+      });
+    });
+  </script>
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/styles_index.css" />
+  <link rel="stylesheet" href="./css/styles_small.css" media="screen and (max-width: 768px) " />
+  <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <div data-include="nav"></div>
+
+  <section class="hero-background">
+    <div class="container">
+      <div class="hero-presentation">
+        <h1>
+          Высококачественные, экологически безопасные материалы для
+          строительства и ремонта
+        </h1>
+        <p>Большой выбор и доступная цена</p>
+        <a href="./productions.html" class="btn link-btn">
+          Посмотреть продукцию
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <section class="section-benefits" id="about">
+      <div class="section-title">
+        <h1>О компании</h1>
+      </div>
+
+      <div class="grid-benefits">
+        <div class="benefit">
+          <img src="./images/tree.png" />
+          <p>Наша компания имеет большой опыт производства с 1994 года</p>
+        </div>
+        <div class="benefit">
+          <img src="./images/system.png" />
+          <p>
+            На производстве используется современное технологическое
+            оборудование из Германии
+          </p>
+        </div>
+        <div class="benefit">
+          <img src="./images/group.png" />
+          <p>Работаем с физическими и юридическими лицами</p>
+        </div>
+        <div class="benefit">
+          <img src="./images/certificate.png" />
+          <p>
+            Вся продукция имеет сертификаты соответствия требованиям
+            нормативных документов
+          </p>
+        </div>
+
+        <div class="benefit">
+          <img src="./images/catalog.png" />
+          <p>Большой выбор красителей для красок и декоративной штукатурки</p>
+        </div>
+
+        <div class="benefit">
+          <img src="./images/truck.png" />
+          <p>Доставка в пункты продаж осуществляется по запросу</p>
+        </div>
+        <div class="benefit">
+          <img src="./images/eco.png" />
+          <p>Экологически безопасные акриловые материалы</p>
+        </div>
+        <div class="benefit">
+          <img src="./images/european-union.png" />
+          <p>Основные компоненты используем из стран ЕС</p>
         </div>
       </div>
     </section>
-
-    <div class="container">
-      <section class="section-benefits" id="about">
-        <div class="section-title"><h1>О компании</h1></div>
-
-        <div class="grid-benefits">
-          <div class="benefit">
-            <img src="./images/tree.png" />
-            <p>Наша компания имеет большой опыт производства с 1994 года</p>
-          </div>
-          <div class="benefit">
-            <img src="./images/system.png" />
-            <p>
-              На производстве используется современное технологическое
-              оборудование из Германии
-            </p>
-          </div>
-          <div class="benefit">
-            <img src="./images/group.png" />
-            <p>Работаем с физическими и юридическими лицами</p>
-          </div>
-          <div class="benefit">
-            <img src="./images/certificate.png" />
-            <p>
-              Вся продукция имеет сертификаты соответствия требованиям
-              нормативных документов
-            </p>
-          </div>
-
-          <div class="benefit">
-            <img src="./images/catalog.png" />
-            <p>Большой выбор красителей для красок и декоративной штукатурки</p>
-          </div>
-
-          <div class="benefit">
-            <img src="./images/truck.png" />
-            <p>Доставка в пункты продаж осуществляется по запросу</p>
-          </div>
-          <div class="benefit">
-            <img src="./images/eco.png" />
-            <p>Экологически безопасные акриловые материалы</p>
-          </div>
-          <div class="benefit">
-            <img src="./images/european-union.png" />
-            <p>Основные компоненты используем из стран ЕС</p>
-          </div>
+  </div>
+  <section class="square-section">
+    <div class="grid-production">
+      <a href="./productions.html">
+        <div class="square paint" id="squarePaint">
+          <h2>Краски</h2>
+          <p>для фасадов и интерьеров ></p>
         </div>
-      </section>
-    </div>
-    <section class="square-section">
-      <div class="grid-production">
-        <a href="./productions.html">
-          <div class="square paint" id="squarePaint">
-            <h2>Краски</h2>
-            <p>для фасадов и интерьеров ></p>
-          </div>
-        </a>
-        <div class="square putty">
+      </a>
+      <!-- <div class="square putty">
           <h2>Шпатлевки</h2>
           <p>для внутренних и наружных работ ></p>
-        </div>
-        <div class="square plaster">
+        </div> -->
+      <!-- <div class="square plaster">
           <h2>Декоративная штукатурка</h2>
           <p>короед, под шубу ></p>
+        </div> -->
+      <a href="./palitra.html">
+        <div class="square palette">
+          <h2>Палитра цветов</h2>
+          <p>для красок и декоративных штукатурок ></p>
         </div>
-        <a href="./palitra.html"
-          ><div class="square palette">
-            <h2>Палитра цветов</h2>
-            <p>для красок и декоративных штукатурок ></p>
-          </div></a
-        >
-        <a href="./calculator.html">
-          <div class="square calculator">
-            <h2>Калькулятор</h2>
-            <p>Рассчитайте сколько материала вам нужно ></p>
-          </div>
-        </a>
-      </div>
-    </section>
+      </a>
+      <a href="./calculator.html">
+        <div class="square calculator">
+          <h2>Калькулятор</h2>
+          <p>Рассчитайте сколько материала вам нужно ></p>
+        </div>
+      </a>
+    </div>
+  </section>
 
-    <div data-include="footer"></div>
+  <div data-include="footer"></div>
 
-    <script type="module" src="./js/index.js"></script>
-  </body>
+  <script type="module" src="./js/index.js"></script>
+</body>
+
 </html>

@@ -95,11 +95,11 @@ searchbar in styles.css
   margin-top: 20px;
 }
 
-@media (max-width: 1200px) {
+/* @media (max-width: 1200px) {
   .product-columns {
     grid-template-columns: 1fr 1fr;
   }
-}
+} */
 .right-side .card {
   display: none;
   padding: 20px;

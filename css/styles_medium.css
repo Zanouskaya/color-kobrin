@@ -1,0 +1,132 @@
+.container{
+    width: 95%;
+}
+
+/*==================
+index page 
+====================*/
+.hero-presentation{
+    display:flex;
+    flex-direction: column;
+    position:inherit;
+    min-width: 100%;
+    margin:0;
+    max-height: fit-content;
+  }
+.hero-presentation .btn{
+    width: 100%;
+    margin: 0px;
+}
+    
+.hero-background{
+    max-height: fit-content;
+}
+     
+.section-benefits{
+    margin: 50px 0;
+}
+
+.grid-benefits{
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+}
+.benefit {
+    flex-direction: row;
+    gap: 30px;
+    text-align: left;
+}
+
+.benefit img {
+    width: 80px;
+    margin: auto 0;
+}
+
+.grid-production {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+}
+
+.grid-production .calculator,
+.grid-production .palette,
+.grid-production .paint {
+    border-radius: 0px;
+}
+
+.grid-production .square {
+    padding: 50px;
+    min-height: 300px;
+}
+      
+/*==================
+production page 
+====================*/
+
+.grid-page-products {
+    grid-template-columns: 1fr;
+}
+
+.menubar {
+    display:block;
+}
+
+.menubar .btn{
+    margin-right: 20px;
+}
+
+.product-columns {
+    grid-template-columns: 1fr 1fr;
+}
+.card-description{
+    min-height: fit-content;
+}
+
+/*==================
+palitra page 
+====================*/
+.grid-page-palitra{
+    grid-template-columns: 1fr;
+}
+
+.palitra-columns{
+    grid-template-columns: 1fr;
+}
+.btns-wrapper{
+    display: block;
+    
+    /* flex-direction: row; */
+}
+.btns-wrapper .btn{
+    margin-right: 20px;
+}
+/*==================
+contact page 
+====================*/
+.contact-info{
+    grid-template-columns: 1fr;
+    padding: 50px;
+}
+.info-right{
+    text-align: left;
+}
+
+/*==================
+calculator page 
+====================*/
+.calculator{
+    grid-template-columns: 1fr;
+
+}
+form{
+    padding: 30px;
+    border-radius: 18px 18px 0 0;
+}
+.surface-area{
+    grid-template-columns: 2fr 3fr 3fr;
+    gap:10px;
+}
+.result-area{
+    border-radius: 0 0 18px 18px;
+}
+select{
+    width: 100%;
+}

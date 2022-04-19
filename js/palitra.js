@@ -127,8 +127,8 @@ function addFavoriteEvent() {
         arrOfFavoriteColors.push({ id: favoriteBtns[i].id, number: favoriteBtns[i].getAttribute("number"), conc: favoriteBtns[i].getAttribute("conc") })
         for (let elem of arrOfFavoriteColors) {
           let colorDetails = colorsList.find((el) => el.id == elem.number);
-          elem["name"] = colorDetails["name"];
-          elem["rgb"] = colorDetails[elem["conc"]];
+          elem.name = colorDetails.name;
+          elem.rgb = colorDetails[elem.conc];
         }
         console.log(arrOfFavoriteColors)
         favoriteBtns[i].innerHTML = `<img src = './images/icons/bookmark_fill.png' style='width: 20px;'>`;

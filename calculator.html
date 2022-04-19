@@ -6,7 +6,7 @@
   <title>Калькулятор</title>
   <link rel="stylesheet" href="./css/styles.css" />
   <link rel="stylesheet" href="./css/styles_calculator.css" />
-  <!-- <link rel="stylesheet" href="./css/styles_productions.css" /> -->
+  <link rel=" stylesheet" href="./css/styles_small.css" media="screen and (max-width: 768px)  " />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
     $(function () {
@@ -17,8 +17,8 @@
       });
     });
   </script>
-  <script src="https://kit.fontawesome.com/0a8f206dea.js" crossorigin="anonymous"></script>
   <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+
 </head>
 
 <body>
@@ -38,8 +38,8 @@
             <select name="products" id="product-select" class="product-select">
               <option value.min="300" value.max="350">Белоснежка</option>
               <option value.min="300" value.max="350">Фасадная</option>
-              <!-- <option value.min="170" value.max="250">Фасадная силикатная</option> -->
-              <!-- <option value.min="170" value.max="250">Фасадная силиконовая</option> -->
+              <option value.min="170" value.max="250">Фасадная силикатная</option>
+              <option value.min="170" value.max="250">Фасадная силиконовая</option>
               <option value.min="250" value.max="350">Дахавая</option>
               <option value.min="200" value.max="250">Мастер</option>
             </select>
@@ -68,26 +68,26 @@
         <div class="result">
           <p>Краска</p>
           <div class="result-num">
-            <p class="calc-paint" id="result-calc-paint">0</p>
+            <p class="calc-paint" id="result-calc-paint">0.00</p>
             <p>кг</p>
           </div>
         </div>
         <div class="result">
           <p>Грунтовка</p>
           <div class="result-num">
-            <p class="calc-primer" id="result-calc-primer">0</p>
+            <p class="calc-primer" id="result-calc-primer">0.00</p>
             <p>кг</p>
           </div>
         </div>
         <div class="product-rashod" id="product-paint-rashod">
           <p>Расход краски</p>
           <p>300</p>
-          <p>г/м2</p>
+          <p>г/м²</p>
         </div>
         <div class="product-rashod" id="product-primer-rashod">
           <p>Расход грунтовки</p>
           <p>110</p>
-          <p>г/м2 (на один слой)</p>
+          <p>г/м² (на один слой)</p>
         </div>
         <div id="result"></div>
       </div>

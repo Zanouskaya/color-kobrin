@@ -96,6 +96,12 @@
   padding-right: 2px;
 }
 
+.btns-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .btns-wrapper h4 {
 text-align:left;
 padding-left:  0;

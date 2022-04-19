@@ -37,12 +37,12 @@ hero-section
   color: var(--hover-color);
 }
 
-@media (max-width: 1400px) {
+/* @media (max-width: 1400px) {
   .hero-presentation {
     max-width: 60vw;
     max-height: 40vw;
   }
-}
+} */
 /* 
 ==========================
 benefits-section
@@ -141,20 +141,21 @@ productions-section
 }
 
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-}
+/* @media screen and (max-width: 576px) {
+ 
+} */
 
 /*  Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-}
+/* @media (min-width: 768px) {
+} */
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-}
+/* @media (min-width: 992px) {
+} */
 
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-}
+/* @media (min-width: 1200px) {
+} */
 
-@media (min-width: 1400px) {
-}
+/* @media (min-width: 1400px) {
+}  */

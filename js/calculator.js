@@ -1,6 +1,3 @@
-let titleName = document.getElementById('title');
-console.log(titleName);
-
 
 let addSurfaceBtn = document.querySelector(".add-surface");
 let count = 0;
@@ -18,13 +15,15 @@ function addSurface() {
   document.querySelector(".surface-areas").insertAdjacentHTML(
     "beforeend",
     `<div class="surface-area" id="sur-${count}">
-          <p>Площадь ${count}</p><input
+          <p>Площадь ${count}</p>
+              <input
               type="text"
               class="height"
               id="height-${count}"
               placeholder= 'высота'
               min="0" 
               pattern ='^$|^(0*[1-9][0-9]*(\.[0-9]+)?|0+\.[0-9]*[1-9][0-9]*)$'
+              onkeyup="this.value=this.value.replace(/,/g, '.')"
               title ='Введите число'/>
               <input
               type="text"
@@ -32,9 +31,11 @@ function addSurface() {
               id="width-${count}"
               placeholder= 'ширина'
               min="0" 
-              pattern ='^$|^(0*[1-9][0-9]*(\.[0-9]+)?|0+\.[0-9]*[1-9][0-9]*)$'/>
+              pattern ='^$|^(0*[1-9][0-9]*(\.[0-9]+)?|0+\.[0-9]*[1-9][0-9]*)$' 
+              onkeyup="this.value=this.value.replace(/,/g, '.')"
+              title ='Введите число'/>
           <div class='sqr-result'>0.00</div><p>м&#178;</p>
-          <button class="btn del-surface" id="${count}"><i class="far fa-times-circle"></i></button>
+          <button class="btn del-surface" id="${count}"><img src = './images/icons/close.png'  style='width: 20px;'</button>
         </div>`
   );
   let delBtn = document.getElementById(`${count}`);
@@ -77,7 +78,6 @@ function delSurface(id) {
 }
 
 
-
 let paintSet = document.getElementById('product-select')
 paintSet.addEventListener('change', function () {
   paintIndex = paintSet.selectedIndex;
@@ -104,9 +104,6 @@ function defineRashod(paintIndex, surfaceIndex) {
     paintRashod = paintName.getAttribute('value.max')
     primerRashod = 120;
   }
-
-  console.log(paintIndex);
-  console.log(surfaceIndex);
 
   document.getElementById('product-paint-rashod').children[1].innerHTML = `${paintRashod}`
   document.getElementById('product-primer-rashod').children[1].innerHTML = `${primerRashod}`
@@ -145,5 +142,10 @@ function calculator(rashodPaint, rashodPrimer) {
   document.getElementById(
     "result-calc-primer"
   ).innerHTML = ` ${resultPrimer.toFixed(2)}`;
+
+
 }
+
+
+
 

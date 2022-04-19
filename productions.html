@@ -1,226 +1,124 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" lang="ru" />
-    <title>Продукция</title>
-    <link rel="stylesheet" href="./css/styles.css" />
-    <link rel="stylesheet" href="./css/styles_productions.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-      $(function () {
-        var includes = $("[data-include]");
-        $.each(includes, function () {
-          var file = "html/" + $(this).data("include") + ".html";
-          $(this).load(file);
-        });
+
+<head>
+  <meta charset="utf-8" lang="ru" />
+  <title>Продукция</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/styles_productions.css" />
+  <link rel="stylesheet" href="./css/styles_small.css" media="screen and (max-width: 768px) " />
+  <link rel="stylesheet" href="./css/styles_medium.css" media="screen and (min-width: 769px) and (max-width: 992px)" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(function () {
+      var includes = $("[data-include]");
+      $.each(includes, function () {
+        var file = "html/" + $(this).data("include") + ".html";
+        $(this).load(file);
       });
-    </script>
-    <script
-      src="https://kit.fontawesome.com/0a8f206dea.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
-  </head>
-  <body>
-    <div data-include="nav"></div>
+    });
+  </script>
+  <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+</head>
 
-    <main class="container">
-      <div class="grid-page-products">
-        <div class="left-side">
-          <div id="menubar" class="menubar">
-            <button class="btn active" id="card"><h3>Вся продукция</h3></button>
-            <button class="btn" id="paint"><h3>Краски</h3></button>
-            <button class="btn" id="putty"><h3>Шпатлевки</h3></button>
-            <button class="btn" id="plasters"><h3>Штукатурки</h3></button>
-            <button class="btn" id="primers">
-              <h3>Грунтовки</h3>
-            </button>
-            <button class="btn" id="azure"><h3>Лазурь</h3></button>
-            <button class="btn" id="glue"><h3>Клей</h3></button>
-            <button class="btn" id="coloring"><h3>Краситель</h3></button>
-          </div>
-          <div class="filterbar">
-            <div class="filter-line">
-              <h3>Фильтр</h3>
-              <span class="filter-cancel" id="filter-cancel">х очистить</span>
-            </div>
+<body>
+  <div data-include="nav"></div>
 
-            <div class="filterBtns" id="fliterBtns">
-              <div class="collapsible">
-                <span>Вид работ</span>
-              </div>
-              <div class="content">
-                <label class="checkbox"
-                  ><input
-                    type="checkbox"
-                    id="placement1"
-                    value="for-indoor"
-                  />для внутренних работ</label
-                >
-                <label
-                  ><input
-                    type="checkbox"
-                    id="placement2"
-                    value="for-outdoor"
-                  />для наружных работ</label
-                >
-                <label
-                  ><input
-                    type="checkbox"
-                    id="assignment1"
-                    value="decorative-plaster"
-                  />для декоративной отделки</label
-                >
-
-                <label
-                  ><input type="checkbox" id="assignment2" value="ceiling" />для
-                  отделки потолков</label
-                >
-
-                <label
-                  ><input
-                    type="checkbox"
-                    id="assignment3"
-                    value="for-wood"
-                  />для защиты натуральной древесины</label
-                >
-
-                <label
-                  ><input
-                    type="checkbox"
-                    id="assignment4"
-                    value="coroed"
-                  />короед/под шубу</label
-                >
-
-                <label
-                  ><input
-                    type="checkbox"
-                    id="assignment5"
-                    value="for-leveling-the-surface"
-                  />для выравнивания поверхности</label
-                >
-              </div>
-              <div class="collapsible"><span>Тип помещения</span></div>
-              <div class="content">
-                <label
-                  ><input
-                    type="checkbox"
-                    id="placement3"
-                    value="living-room"
-                  />жилые помещения</label
-                >
-                <label
-                  ><input
-                    type="checkbox"
-                    id="placement4"
-                    value="basement"
-                  />подвальные помещения</label
-                >
-                <label
-                  ><input
-                    type="checkbox"
-                    id="placement5"
-                    value="with-high-humidity"
-                  />с высокой влажностью</label
-                >
-                <label
-                  ><input
-                    type="checkbox"
-                    id="placement6"
-                    value="with-active-chemical-environment"
-                  />с активной химической средой</label
-                >
-              </div>
-              <div class="collapsible"><span>Поверхность</span></div>
-              <div class="content">
-                <label
-                  ><input
-                    type="checkbox"
-                    id="surface1"
-                    value="brick"
-                  />кирпич</label
-                >
-
-                <label
-                  ><input
-                    type="checkbox"
-                    id="surface2"
-                    value="concrete"
-                  />бетон</label
-                >
-
-                <label
-                  ><input
-                    type="checkbox"
-                    id="surface3"
-                    value="plaster"
-                  />штукатурка</label
-                >
-
-                <label
-                  ><input
-                    type="checkbox"
-                    id="surface4"
-                    value="DSP"
-                  />ДСП/ДВП</label
-                >
-
-                <label
-                  ><input
-                    type="checkbox"
-                    id="surface5"
-                    value="drywall"
-                  />гипсокартон</label
-                >
-                <label
-                  ><input
-                    type="checkbox"
-                    id="surface6"
-                    value="silicate"
-                  />силикат</label
-                >
-
-                <label
-                  ><input
-                    type="checkbox"
-                    id="surface7"
-                    value="old-plaster"
-                  />старая штукатурка</label
-                >
-
-                <label
-                  ><input
-                    type="checkbox"
-                    id="surface8"
-                    value="slate"
-                  />шифер/цементно-песчаная черепица</label
-                >
-
-                <label
-                  ><input
-                    type="checkbox"
-                    id="surface9"
-                    value="wallpaper"
-                  />обои</label
-                >
-              </div>
-            </div>
-          </div>
+  <main class="container">
+    <div class="grid-page-products">
+      <div class="left-side">
+        <div id="menubar" class="menubar">
+          <button class="btn active" id="card">
+            <h3>Вся продукция</h3>
+          </button>
+          <button class="btn" id="paint">
+            <h3>Краски</h3>
+          </button>
+          <button class="btn" id="putty">
+            <h3>Шпатлевки</h3>
+          </button>
+          <button class="btn" id="plasters">
+            <h3>Штукатурки</h3>
+          </button>
+          <button class="btn" id="primers">
+            <h3>Грунтовки</h3>
+          </button>
+          <button class="btn" id="azure">
+            <h3>Лазурь</h3>
+          </button>
+          <button class="btn" id="glue">
+            <h3>Клей</h3>
+          </button>
+          <button class="btn" id="coloring">
+            <h3>Краситель</h3>
+          </button>
         </div>
+        <div class="filterbar">
+          <div class="filter-line">
+            <h3>Фильтр</h3>
+            <span class="filter-cancel" id="filter-cancel">х очистить</span>
+          </div>
 
-        <div class="right-side">
-          <input
-            class="searchbar"
-            id="search"
-            type="text"
-            placeholder="Поиск по названию"
-          />
-          <div class="product-columns" id="products"></div>
+          <div class="filterBtns" id="fliterBtns">
+            <div class="collapsible">
+              <span>Вид работ</span>
+            </div>
+            <div class="content">
+              <label class="checkbox"><input type="checkbox" id="placement1" value="for-indoor" />для внутренних
+                работ</label>
+              <label><input type="checkbox" id="placement2" value="for-outdoor" />для наружных работ</label>
+              <label><input type="checkbox" id="assignment1" value="decorative-plaster" />для декоративной
+                отделки</label>
+
+              <label><input type="checkbox" id="assignment2" value="ceiling" />для
+                отделки потолков</label>
+
+              <label><input type="checkbox" id="assignment3" value="for-wood" />для защиты натуральной древесины</label>
+
+              <label><input type="checkbox" id="assignment4" value="coroed" />короед/под шубу</label>
+
+              <label><input type="checkbox" id="assignment5" value="for-leveling-the-surface" />для выравнивания
+                поверхности</label>
+            </div>
+            <div class="collapsible"><span>Тип помещения</span></div>
+            <div class="content">
+              <label><input type="checkbox" id="placement3" value="living-room" />жилые помещения</label>
+              <label><input type="checkbox" id="placement4" value="basement" />подвальные помещения</label>
+              <label><input type="checkbox" id="placement5" value="with-high-humidity" />с высокой влажностью</label>
+              <label><input type="checkbox" id="placement6" value="with-active-chemical-environment" />с активной
+                химической средой</label>
+            </div>
+            <div class="collapsible"><span>Поверхность</span></div>
+            <div class="content">
+              <label><input type="checkbox" id="surface1" value="brick" />кирпич</label>
+
+              <label><input type="checkbox" id="surface2" value="concrete" />бетон</label>
+
+              <label><input type="checkbox" id="surface3" value="plaster" />штукатурка</label>
+
+              <label><input type="checkbox" id="surface4" value="DSP" />ДСП/ДВП</label>
+
+              <label><input type="checkbox" id="surface5" value="drywall" />гипсокартон</label>
+              <label><input type="checkbox" id="surface6" value="silicate" />силикат</label>
+
+              <label><input type="checkbox" id="surface7" value="old-plaster" />старая штукатурка</label>
+
+              <label><input type="checkbox" id="surface8" value="slate" />шифер/цементно-песчаная черепица</label>
+
+              <label><input type="checkbox" id="surface9" value="wallpaper" />обои</label>
+            </div>
+          </div>
         </div>
       </div>
-    </main>
-    <div data-include="footer"></div>
-    <script type="module" src="./js/productions.js"></script>
-  </body>
+
+      <div class="right-side">
+        <input class="searchbar" id="search" type="text" placeholder="Поиск по названию" />
+        <div class="product-columns" id="products"></div>
+      </div>
+    </div>
+  </main>
+  <div data-include="footer"></div>
+  <script type="module" src="./js/productions.js"></script>
+</body>
+
 </html>
