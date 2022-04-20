@@ -15,7 +15,20 @@
       <li><a href="./contacts.html" id="contacts">Контакты</a></li>
     </ul>
   </div>
+  <div class="nav-burger">
+    <button class="collapsible btn-burger" id="btn-burger">
+    </button>
+  </div>
 </nav>
+<div class="content-menu container" id="content-menu">
+  <ul class="nav-bottom">
+    <li><a href="./productions.html" id="productions">Продукция</a></li>
+    <li><a href="./palitra.html" id='palitra'>Палитра</a></li>
+    <li><a href="./contacts.html" id="contacts">Контакты</a></li>
+    <li><a href="calculator.html" id="calculator">Калькулятор</a></li>
+    <li><a href="tel:8(016)42-46-6-35">8(016)42-46-6-35</a></li>
+  </ul>
+</div>
 <script>
   let urlPage = document.URL;
   let pageName = urlPage.match(/[^/][a-z]+(?=.html)/)
@@ -25,5 +38,17 @@
       linksPage[i].className += ' current-page'
     }
   }
-  console.log(urlPage, linksPage, pageName)
+  const burgerBtn = document.getElementById('btn-burger');
+  const burgerMenu = document.getElementById('content-menu');
+  const classes = burgerMenu.classList;
+  console.log(burgerBtn);
+  burgerBtn.addEventListener('click', function () {
+    const result = classes.toggle("appear");
+    if (result) {
+      burgerBtn.style.backgroundImage = "url('../images/icons/close.png')";
+    } else {
+      burgerBtn.style.backgroundImage = "url('../images/icons/menu.png')";
+    }
+  })
+
 </script>

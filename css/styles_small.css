@@ -131,3 +131,76 @@ form{
 select{
     width: 100%;
 }
+/*==================
+product page 
+====================*/
+.info-wrapper{
+    grid-template-columns: 1fr;
+}
+
+/* .link-wrapper{
+    flex-direction: column;
+} */
+
+
+/*==================
+navigation menu
+.====================*/
+
+a .logo{
+    width:65px;
+    height:75px;
+}
+.nav-right{
+    display: none;
+}
+.nav-burger{
+    display: block;
+}
+nav{
+    display:flex;
+    justify-content: space-between;
+}
+/* .nav-burger button{
+position: absolute;
+right: 10px;
+top: 10px;
+} */
+
+.btn-burger{
+    
+    width: 50px;
+    height: 50px;
+    background-image: url(../images/icons/menu.png);
+    background-size: 35px;
+    background-clip:border-box;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: inherit;
+    border: solid 1px grey;
+    border-radius: 8px;
+}
+
+.content-menu{
+    display: none;
+    z-index:2;
+}
+
+.appear{
+display: flex;
+}
+
+
+.nav-bottom{
+    width:100%;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    gap: 20px;
+}
+
+a {
+    margin-bottom: 10px;
+}

@@ -47,7 +47,7 @@ left-side
   font-size: 20px;
 }
 
-.collapsible:after {
+.filterBtns .collapsible:after {
   content: "\25B2";
   font-size: 1rem;
   float: right;

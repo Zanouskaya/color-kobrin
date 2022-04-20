@@ -244,3 +244,11 @@ color-cards
   cursor: pointer;
   border-bottom: solid 2px var(--hover-color);
 }
+
+.content-menu{
+  display: none;
+}
+
+.nav-burger{
+  display: none;
+}
