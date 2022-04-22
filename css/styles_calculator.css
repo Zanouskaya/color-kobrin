@@ -54,12 +54,13 @@ select {
   height: 50px;
   padding-left: 10px;
   font-family: inherit;
-  font-size: 1rem;
+  font-size: 16px;
   background-color: #fff;
   border-style: none;
   border-radius: 8px;
   box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.08);
 }
+
 .btn {
   font-family: inherit;
   font-size: 1rem;
@@ -76,6 +77,10 @@ select {
   margin: 20px auto 0 0;
   width: 50%;
   padding: 10px;
+  cursor:pointer;
+  -moz-appearance: button;
+  color: inherit;
+  -webkit-appearance: caret;
 }
 
 .result-surface {

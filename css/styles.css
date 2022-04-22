@@ -125,8 +125,8 @@ footer
 footer {
   background-color: #fafafa;
 }
-footer p  {
-  margin-bottom: 20px;
+footer .container{
+  padding-bottom: 20px;
 }
 .footer-section {
   display: flex;
@@ -178,8 +178,6 @@ search-bar
   border: none;
   background: none;
   padding: 5px 0 5px 0;
-  margin-bottom: 10px;
-
 }
 
 .btn:hover {
@@ -193,17 +191,19 @@ search-bar
 
 .link-btn {
   font-family: inherit;
-  font-size: 1rem;
-  border: solid 1px grey;
-  padding: 10px;
-  width: 48%;
-  margin-top: 20px;
+  font-size: 16px;
+  padding: 15px;
+  min-width: 300px;
   text-align: center;
   border-radius: 8px;
+  background-color: var(--hover-color);
+  border-style: none;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.08);
+  color: #fff;
 }
 
 .link-btn:hover {
-  border: solid 1px var(--hover-color);
+  background-color: #fff;
   cursor: pointer;
 }
 
