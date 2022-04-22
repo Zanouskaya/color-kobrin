@@ -11,12 +11,13 @@ hero-section
 }
 
 .hero-presentation {
-  position: relative;
-  bottom: -20vh;
-  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
   padding: 50px;
-  max-width: 50vw;
-  max-height: 40vh;
+  max-width: fit-content;
+  height: 300px;
   background-color: var(--main-bg-color);
   box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.08);
   border-radius: 18px;
@@ -24,6 +25,7 @@ hero-section
 
 .hero-presentation h1 {
   margin-bottom: 20px;
+  width: 750px;
 }
 
 .hero-presentation p {
@@ -95,6 +97,7 @@ productions-section
   background: url(../images/close-up-hand-painting-wall-with-roller.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   text-align: right;
   border-radius: 0 18px 18px 0;
 }
@@ -103,6 +106,7 @@ productions-section
   background: url(../images/putty.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   border-radius: 18px 0 0 18px;
 }
 
@@ -110,6 +114,7 @@ productions-section
   background: url(../images/plasters.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   text-align: right;
   border-radius: 0 18px 18px 0;
 }
@@ -118,6 +123,7 @@ productions-section
   background: url(../images/pallette.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   border-radius: 18px 0 0 18px;
 }
 
@@ -125,6 +131,7 @@ productions-section
   background: url(../images/calculator-picture.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   text-align: right;
   border-radius: 0 18px 18px 0;
 }
