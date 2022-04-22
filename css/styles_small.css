@@ -6,13 +6,15 @@
 index page 
 ====================*/
 .hero-presentation{
-    display:flex;
-    flex-direction: column;
-    position:inherit;
     min-width: 100%;
     margin:0;
-    max-height: fit-content;
-  }
+    height: auto;
+}
+
+.hero-presentation h1{
+    width: auto;
+}
+
 .hero-presentation .btn{
     width: 100%;
     margin: 0px;
@@ -138,14 +140,20 @@ product page
     grid-template-columns: 1fr;
 }
 
-/* .link-wrapper{
+.link-wrapper{
     flex-direction: column;
-} */
+    margin-top: 10px;
+}
+
+.link-btn{
+    width: 100%;
+    margin-top: 0;
+}
 
 
 /*==================
 navigation menu
-.====================*/
+====================*/
 
 a .logo{
     width:65px;
@@ -161,11 +169,7 @@ nav{
     display:flex;
     justify-content: space-between;
 }
-/* .nav-burger button{
-position: absolute;
-right: 10px;
-top: 10px;
-} */
+
 
 .btn-burger{
     
@@ -187,7 +191,7 @@ top: 10px;
 }
 
 .appear{
-display: flex;
+    display: flex;
 }
 
 
