@@ -15,7 +15,7 @@ function addSurface() {
   document.querySelector(".surface-areas").insertAdjacentHTML(
     "beforeend",
     `<div class="surface-area" id="sur-${count}">
-          <p>Площадь ${count}</p>
+          <p class = 'name'>Площадь ${count}</p>
               <input
               type="text"
               class="height"

@@ -124,9 +124,15 @@ form{
     border-radius: 18px 18px 0 0;
 }
 .surface-area{
-    grid-template-columns: 2fr 3fr 3fr;
-    gap:10px;
+    grid-template: 'name name name name name'
+                    'height width number square del' / 3fr 3fr 0.5fr 0.5fr 0.5fr ;  
+    row-gap: 10px;
 }
+
+.name{
+    grid-area: name;
+}
+
 .result-area{
     border-radius: 0 0 18px 18px;
 }
