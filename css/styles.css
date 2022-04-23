@@ -178,6 +178,7 @@ search-bar
   border: none;
   background: none;
   padding: 5px 0 5px 0;
+  margin-bottom: 10px;
 }
 
 .btn:hover {

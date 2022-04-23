@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="./css/styles_calculator.css" />
   <link rel=" stylesheet" href="./css/styles_small.css" media="screen and (max-width: 768px)  " />
   <link rel="stylesheet" href="./css/styles_medium.css" media="screen and (min-width: 769px) and (max-width: 992px)" />
+  <link rel="stylesheet" href="./css/styles_large.css" media="screen and (min-width: 993px) and (max-width: 1399px)" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
     $(function () {
@@ -35,7 +36,7 @@
         <button class="btn add-surface">+ Добавить площадь</button>
 
         <div class="product-select-area">
-          <label for="products-select">Выберите краску, которой будете покрывать поверхность
+          <label for="products-select">Выберите краску, которой будете покрывать поверхность:
             <select name="products" id="product-select" class="product-select">
               <option value.min="300" value.max="350">Белоснежка</option>
               <option value.min="300" value.max="350">Фасадная</option>
@@ -81,14 +82,14 @@
           </div>
         </div>
         <div class="product-rashod" id="product-paint-rashod">
-          <p>Расход краски</p>
-          <p>300</p>
-          <p>г/м²</p>
+          <span>Расход краски</span>
+          <span>300</span>
+          <span>г/м²</span>
         </div>
         <div class="product-rashod" id="product-primer-rashod">
-          <p>Расход грунтовки</p>
-          <p>110</p>
-          <p>г/м² (на один слой)</p>
+          <span>Расход грунтовки</span>
+          <span>110</span>
+          <span>г/м² (на один слой)</span>
         </div>
         <div id="result"></div>
       </div>
