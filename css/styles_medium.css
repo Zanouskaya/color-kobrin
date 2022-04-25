@@ -5,14 +5,16 @@
 /*==================
 index page 
 ====================*/
+
 .hero-presentation{
     display:flex;
     flex-direction: column;
     position:inherit;
-    min-width: 100%;
     margin:0;
+    min-width: 100%;
     max-height: fit-content;
   }
+
 .hero-presentation .btn{
     width: 50%;
     margin: 0px;
@@ -30,6 +32,7 @@ index page
     grid-template-columns: 1fr 1fr;
     row-gap: 20px;
 }
+
 .benefit {
     flex-direction: row;
     gap: 30px;
@@ -76,6 +79,7 @@ production page
 .product-columns {
     grid-template-columns: 1fr 1fr;
 }
+
 .card-description{
     min-height: fit-content;
 }
@@ -83,6 +87,7 @@ production page
 /*==================
 palitra page 
 ====================*/
+
 .grid-page-palitra{
     grid-template-columns: 1fr;
 }
@@ -90,6 +95,7 @@ palitra page
 .palitra-columns{
     grid-template-columns: 1fr 1fr;
 }
+
 .btns-wrapper{
     display: block;
 }
@@ -97,13 +103,16 @@ palitra page
 .btns-wrapper .btn{
     margin-right: 20px;
 }
+
 /*==================
 contact page 
 ====================*/
+
 .contact-info{
     grid-template-columns: 1fr;
     padding: 50px;
 }
+
 .info-right{
     text-align: left;
 }
@@ -111,20 +120,24 @@ contact page
 /*==================
 calculator page 
 ====================*/
+
 .calculator{
     grid-template-columns: 1fr;
-
 }
+
 form{
     padding: 30px;
     border-radius: 18px 18px 0 0;
 }
+
 .surface-area{
     gap:10px;
 }
+
 .result-area{
     border-radius: 0 0 18px 18px;
 }
+
 select{
     width: 100%;
 }
@@ -132,6 +145,7 @@ select{
 /*==================
 product page 
 ====================*/
+
 .info-wrapper{
     grid-template-columns: 0.8fr 1fr;
 }

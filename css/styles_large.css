@@ -2,6 +2,9 @@
     width: 95%;
 }
 
+/*==================
+product page 
+====================*/
 
 .grid-page-products{
     grid-template-columns: 1fr 3fr;
@@ -11,9 +14,9 @@
     grid-template-columns: 1fr 1fr;
 }
 
-
-
-
+/*==================
+product page 
+====================*/
 
 .info-wrapper{
     grid-template-columns: 0.7fr 1fr;
@@ -32,6 +35,10 @@
 }
 
 
+/*==================
+palitra page 
+====================*/
+
 .grid-page-palitra{
     grid-template-columns: 1fr 3.5fr;
 }
@@ -40,8 +47,9 @@
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-
-
+/*==================
+calculator page 
+====================*/
 
 .surface-area{
     grid-template-columns: 2fr 2.5fr 2.5fr 1fr 0.5fr 0.5fr;
