@@ -2,14 +2,12 @@
   <div class="logo-conatainer">
     <a href="index.html"><img src="./images/logo.png" alt="колор-буццард кобрин" class="logo" /></a>
   </div>
-
   <div class="nav-right">
     <div class="nav-top">
       <a href="tel:8(016)42-46-6-35"><span>8(016)42-46-6-35</span></a>
       <a href="calculator.html" id="calculator">Калькулятор</a>
     </div>
     <ul class="nav-bottom">
-      <!-- <li><a href='./about.html'>О компании</a></li> -->
       <li><a href="./productions.html" id="productions">Продукция</a></li>
       <li><a href="./palitra.html" id='palitra'>Палитра</a></li>
       <li><a href="./contacts.html" id="contacts">Контакты</a></li>
@@ -29,7 +27,9 @@
     <li><a href="tel:8(016)42-46-6-35">8(016)42-46-6-35</a></li>
   </ul>
 </div>
+
 <script>
+
   let urlPage = document.URL;
   let pageName = urlPage.match(/[^/][a-z]+(?=.html)/)
   let linksPage = document.getElementsByTagName('a')
@@ -41,7 +41,6 @@
   const burgerBtn = document.getElementById('btn-burger');
   const burgerMenu = document.getElementById('content-menu');
   const classes = burgerMenu.classList;
-  console.log(burgerBtn);
   burgerBtn.addEventListener('click', function () {
     const result = classes.toggle("appear");
     if (result) {
