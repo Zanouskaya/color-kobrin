@@ -1,4 +1,4 @@
-
+//add action on button '+добавить площадь' and don't refresh page
 let addSurfaceBtn = document.querySelector(".add-surface");
 let count = 0;
 addSurface();
@@ -10,6 +10,7 @@ addSurfaceBtn.addEventListener("click", function (event) {
 let paintIndex = 0;
 let surfaceIndex = 0;
 
+//add div with new fields, call the function that count number of child elements
 function addSurface() {
   count += 1;
   document.querySelector(".surface-areas").insertAdjacentHTML(
@@ -60,6 +61,7 @@ function addSurface() {
   divCount();
 }
 
+//count number of child elements and hide del button if count=0
 function divCount() {
   let divCounter = document.getElementById("surface-areas").childElementCount;
   let el = document.getElementsByClassName("del-surface")[0];
@@ -70,6 +72,7 @@ function divCount() {
   }
 }
 
+//action on delete button
 function delSurface(id) {
   let delDiv = document.getElementById(`sur-${id}`);
   delDiv.remove();
@@ -77,41 +80,44 @@ function delSurface(id) {
   divCount();
 }
 
-
-let paintSet = document.getElementById('product-select')
-paintSet.addEventListener('change', function () {
+//define index of choosing paint (after user action on select element)
+let paintSet = document.getElementById("product-select");
+paintSet.addEventListener("change", function () {
   paintIndex = paintSet.selectedIndex;
+  defineRashod(paintIndex, surfaceIndex);
+});
 
-  defineRashod(paintIndex, surfaceIndex)
-})
-
-let surfaceSet = document.getElementById('surface-select')
-surfaceSet.addEventListener('change', function () {
+//define index of choosing surface (after user action on select element)
+let surfaceSet = document.getElementById("surface-select");
+surfaceSet.addEventListener("change", function () {
   surfaceIndex = surfaceSet.selectedIndex;
-  defineRashod(paintIndex, surfaceIndex)
-})
+  defineRashod(paintIndex, surfaceIndex);
+});
 
-
+//define paint consumption, depending on the selected options => call to action calculations
 function defineRashod(paintIndex, surfaceIndex) {
-  let paintSet = document.getElementById('product-select')
-  let paintName = paintSet.getElementsByTagName("option")[paintIndex]
+  let paintSet = document.getElementById("product-select");
+  let paintName = paintSet.getElementsByTagName("option")[paintIndex];
   let paintRashod, primerRashod;
   if (surfaceIndex == 0) {
-    paintRashod = paintName.getAttribute('value.min')
+    paintRashod = paintName.getAttribute("value.min");
     primerRashod = 110;
-
   } else {
-    paintRashod = paintName.getAttribute('value.max')
+    paintRashod = paintName.getAttribute("value.max");
     primerRashod = 120;
   }
 
-  document.getElementById('product-paint-rashod').children[1].innerHTML = `${paintRashod}`
-  document.getElementById('product-primer-rashod').children[1].innerHTML = `${primerRashod}`
+  document.getElementById(
+    "product-paint-rashod"
+  ).children[1].innerHTML = `${paintRashod}`;
+  document.getElementById(
+    "product-primer-rashod"
+  ).children[1].innerHTML = `${primerRashod}`;
 
-  calculator(paintRashod, primerRashod)
+  calculator(paintRashod, primerRashod);
 }
 
-
+//define finish results
 function calculator(rashodPaint, rashodPrimer) {
   let surfaces = document.getElementsByClassName("surface-area");
   let total_sqr = 0;
@@ -128,8 +134,6 @@ function calculator(rashodPaint, rashodPrimer) {
     total_sqr += sqr;
   }
 
-
-  // let rashodPrimer = 200;
   let resultPaint = (total_sqr * rashodPaint) / 1000;
   let resultPrimer = (total_sqr * rashodPrimer) / 1000;
 
@@ -142,10 +146,4 @@ function calculator(rashodPaint, rashodPrimer) {
   document.getElementById(
     "result-calc-primer"
   ).innerHTML = ` ${resultPrimer.toFixed(2)}`;
-
-
 }
-
-
-
-

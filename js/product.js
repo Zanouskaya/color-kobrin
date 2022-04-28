@@ -3,25 +3,11 @@ import { colorsDahavaya } from "./modules/colors_dahavaya.js";
 import { colorsMaster } from "./modules/colors_master.js";
 import { colorsAzure } from "./modules/colors_azure.js";
 
-// function getRandom(arr, n) {
-//   let result = new Array(n),
-//     len = arr.length,
-//     taken = new Array(len);
-//   if (n > len)
-//     throw new RangeError("getRandom: more elements taken than available");
-//   while (n--) {
-//     let x = Math.floor(Math.random() * len);
-//     result[n] = arr[x in taken ? taken[x] : x];
-//     taken[x] = --len in taken ? taken[len] : len;
-//   }
-//   return result;
-// }
-
-// let randomColors = getRandom(colorsList, 5);
-
-let regex = new RegExp(/(?<=\/)\w*(?=.html)/g);
+//define name of choosing product
+let regex = new RegExp(/\w*(?=.html)/);
 let pageName = document.URL.match(regex)[0];
 
+//add information in each category on product page
 productDataList.forEach((product) => {
   if (pageName == product.id) {
     document.getElementById(
@@ -68,6 +54,7 @@ productDataList.forEach((product) => {
   }
 });
 
+//make a some differences for products information rendering
 if (pageName == "dahavaya") {
   document.getElementById("section-title").innerHTML = "Палитра";
   document.getElementById("colors").innerHTML = colorsDahavaya
@@ -121,16 +108,3 @@ if (pageName == "dahavaya") {
     <a class="link-btn" href="#section-title" id="palitra"> Перейти к палитре
     </a>`;
 }
-
-// else {
-//   document.getElementById("colors").innerHTML = randomColors
-//     .map(
-//       (color) =>
-//         `<div class='color-card show' id='colorCard_${color.id}' >
-//               <div class='color-back' style= "background-color: ${color.rgb_1}">
-//               </div>
-//               <h4>${color.name}</h4>
-//             </div>`
-//     )
-//     .join("");
-// }
