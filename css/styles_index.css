@@ -11,12 +11,13 @@ hero-section
 }
 
 .hero-presentation {
-  position: relative;
-  bottom: -20vh;
-  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
   padding: 50px;
-  max-width: 50vw;
-  max-height: 40vh;
+  max-width: fit-content;
+  height: 300px;
   background-color: var(--main-bg-color);
   box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.08);
   border-radius: 18px;
@@ -24,6 +25,7 @@ hero-section
 
 .hero-presentation h1 {
   margin-bottom: 20px;
+  width: 750px;
 }
 
 .hero-presentation p {
@@ -37,13 +39,7 @@ hero-section
   color: var(--hover-color);
 }
 
-/* @media (max-width: 1400px) {
-  .hero-presentation {
-    max-width: 60vw;
-    max-height: 40vw;
-  }
-} */
-/* 
+/*
 ==========================
 benefits-section
 ========================== */
@@ -60,8 +56,8 @@ benefits-section
   text-align: center;
 }
 .benefit img {
-  width: 100px;
   margin-bottom: 20px;
+  width: 100px;
 }
 .section-benefits {
   margin: 100px 0;
@@ -85,17 +81,18 @@ productions-section
 }
 
 .grid-production .square {
-  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
   min-height: 500px;
   padding: 100px;
+  transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .grid-production .paint {
+  text-align: right;
   background: url(../images/close-up-hand-painting-wall-with-roller.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  text-align: right;
+  background-position: center;
   border-radius: 0 18px 18px 0;
 }
 
@@ -103,14 +100,16 @@ productions-section
   background: url(../images/putty.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   border-radius: 18px 0 0 18px;
 }
 
 .grid-production .plaster {
+  text-align: right;
   background: url(../images/plasters.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  text-align: right;
+  background-position: center;
   border-radius: 0 18px 18px 0;
 }
 
@@ -118,14 +117,16 @@ productions-section
   background: url(../images/pallette.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   border-radius: 18px 0 0 18px;
 }
 
 .grid-production .calculator {
+  text-align: right;
   background: url(../images/calculator-picture.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  text-align: right;
+  background-position: center;
   border-radius: 0 18px 18px 0;
 }
 
@@ -140,22 +141,3 @@ productions-section
   transform: scale3d(1.02, 1.02, 1.02);
 }
 
-/* Small devices (landscape phones, 576px and up) */
-/* @media screen and (max-width: 576px) {
- 
-} */
-
-/*  Medium devices (tablets, 768px and up) */
-/* @media (min-width: 768px) {
-} */
-
-/* Large devices (desktops, 992px and up) */
-/* @media (min-width: 992px) {
-} */
-
-/* Extra large devices (large desktops, 1200px and up) */
-/* @media (min-width: 1200px) {
-} */
-
-/* @media (min-width: 1400px) {
-}  */

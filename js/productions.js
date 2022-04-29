@@ -21,7 +21,6 @@ document.getElementById("products").innerHTML = productsList
   .join("");
 
 //make cards tags coloring
-
 productsList.forEach((item) => {
   let productCategory = document.getElementById(`${item.id}_title`);
   if (item.type == "paint") {
@@ -93,7 +92,7 @@ function filterName() {
   }
 }
 
-//filtering cards by checkboxes. show is class that display card. default: class='card type show'
+//filtering cards by checkboxes. show cards that contain in hide-tags user input. default: class='card type show'
 let checkboxes = document.querySelectorAll("input[type=checkbox]");
 
 let filterOptions = [];
@@ -142,6 +141,7 @@ document.getElementById("filter-cancel").addEventListener("click", function () {
     }
   }
 });
+
 //hide checkboxes
 let coll = document.getElementsByClassName("collapsible");
 

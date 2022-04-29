@@ -5,16 +5,18 @@
 /*==================
 index page 
 ====================*/
+
 .hero-presentation{
     display:flex;
     flex-direction: column;
     position:inherit;
-    min-width: 100%;
     margin:0;
+    min-width: 100%;
     max-height: fit-content;
   }
+
 .hero-presentation .btn{
-    width: 100%;
+    width: 50%;
     margin: 0px;
 }
     
@@ -27,9 +29,10 @@ index page
 }
 
 .grid-benefits{
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     row-gap: 20px;
 }
+
 .benefit {
     flex-direction: row;
     gap: 30px;
@@ -76,6 +79,7 @@ production page
 .product-columns {
     grid-template-columns: 1fr 1fr;
 }
+
 .card-description{
     min-height: fit-content;
 }
@@ -83,28 +87,32 @@ production page
 /*==================
 palitra page 
 ====================*/
+
 .grid-page-palitra{
     grid-template-columns: 1fr;
 }
 
 .palitra-columns{
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
 }
+
 .btns-wrapper{
     display: block;
-    
-    /* flex-direction: row; */
 }
+
 .btns-wrapper .btn{
     margin-right: 20px;
 }
+
 /*==================
 contact page 
 ====================*/
+
 .contact-info{
     grid-template-columns: 1fr;
     padding: 50px;
 }
+
 .info-right{
     text-align: left;
 }
@@ -112,21 +120,47 @@ contact page
 /*==================
 calculator page 
 ====================*/
+
 .calculator{
     grid-template-columns: 1fr;
-
 }
+
 form{
     padding: 30px;
     border-radius: 18px 18px 0 0;
 }
+
 .surface-area{
-    grid-template-columns: 2fr 3fr 3fr;
     gap:10px;
 }
+
 .result-area{
     border-radius: 0 0 18px 18px;
 }
+
 select{
     width: 100%;
+}
+
+/*==================
+product page 
+====================*/
+
+.info-wrapper{
+    grid-template-columns: 0.8fr 1fr;
+}
+
+.link-wrapper{
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.link-btn{
+    width: 100%;
+    margin-top: 20px;
+}
+
+#product-image img{
+    margin-top: 50px;
+    width: 70%;
 }

@@ -4,6 +4,7 @@
   gap: 40px;
   margin: 50px auto;
 }
+
 /* 
 =====================
 left-side 
@@ -15,6 +16,7 @@ left-side
   align-items: flex-start;
   overflow: auto;
 }
+
 .filterbar {
   margin-top: 50px;
 }
@@ -24,22 +26,25 @@ left-side
   align-items: center;
   margin-bottom: 10px;
 }
+
 .filter-line span {
   color: grey;
 }
+
 .filterbar h3 {
   font-family: "Raleway", sans-serif;
   font-weight: 400;
 }
+
 .collapsible {
-  background-color: inherit;
-  cursor: pointer;
   padding: 18px 0 18px 0;
   width: 100%;
-  border-top: 1px solid grey;
   text-align: left;
-  outline: none;
   align-content: center;
+  cursor: pointer;
+  background-color: inherit;
+  border-top: 1px solid grey;
+  outline: none;
 }
 
 .collapsible span {
@@ -47,11 +52,11 @@ left-side
   font-size: 20px;
 }
 
-.collapsible:after {
+.filterBtns .collapsible:after {
   content: "\25B2";
-  font-size: 1rem;
   float: right;
   margin: 0 5px;
+  font-size: 16px;
 }
 
 .close:after {
@@ -70,10 +75,12 @@ left-side
   font-family: "Raleway", sans-serif;
   font-size: 16px;
 }
+
 .content > label:hover {
   color: var(--hover-color);
   cursor: pointer;
 }
+
 .content input {
   margin-right: 10px;
 }
@@ -95,11 +102,6 @@ searchbar in styles.css
   margin-top: 20px;
 }
 
-/* @media (max-width: 1200px) {
-  .product-columns {
-    grid-template-columns: 1fr 1fr;
-  }
-} */
 .right-side .card {
   display: none;
   padding: 20px;
@@ -133,10 +135,10 @@ searchbar in styles.css
 .card-description {
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  text-align: left;
   justify-content: flex-start;
+  padding: 20px;
   min-height: 250px;
+  text-align: left;
 }
 
 .card-description h2 {

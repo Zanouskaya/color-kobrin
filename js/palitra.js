@@ -15,7 +15,6 @@ for (let i = 0; i < btns.length; i++) {
   });
 }
 
-
 function activeBtn() {
   let current = document.getElementsByClassName("active");
   current[0].className = current[0].className.replace(" active", "");
@@ -44,10 +43,10 @@ function filterName() {
   }
 }
 
-//rendering cards
+//rendering cards => add actions on delete Button, button with bookmark, button with full screen
 
 function showCards(rgb) {
-  if (rgb != 'fav_col') {
+  if (rgb != "fav_col") {
     document.getElementById("colors").innerHTML = colorsList
       .map(
         (color) =>
@@ -70,17 +69,20 @@ function showCards(rgb) {
       .join("");
     let favoriteBtns = document.getElementsByClassName("btn-favorite");
     for (let i = 0; i < favoriteBtns.length; i++) {
-      let favoriteIndex = arrOfFavoriteColors.findIndex((el) => el.id == favoriteBtns[i].id);
+      let favoriteIndex = arrOfFavoriteColors.findIndex(
+        (el) => el.id == favoriteBtns[i].id
+      );
       if (favoriteIndex === -1) {
-        favoriteBtns[i].innerHTML = `<img src = './images/icons/bookmark.png' style='width: 20px;'>`
-      }
-      else {
-        favoriteBtns[i].innerHTML = `<img src = './images/icons/bookmark_fill.png' style='width: 20px;'>`;
+        favoriteBtns[
+          i
+        ].innerHTML = `<img src = './images/icons/bookmark.png' style='width: 20px;'>`;
+      } else {
+        favoriteBtns[
+          i
+        ].innerHTML = `<img src = './images/icons/bookmark_fill.png' style='width: 20px;'>`;
       }
     }
-    console.log(arrOfFavoriteColors)
   } else {
-
     document.getElementById("colors").innerHTML = arrOfFavoriteColors
       .map(
         (colors) =>
@@ -104,82 +106,93 @@ function showCards(rgb) {
       .join("");
   }
 
-  if (rgb == 'fav_col' && arrOfFavoriteColors.length == 0) {
-    document.getElementById("comments").style.display = 'block';
+  if (rgb == "fav_col" && arrOfFavoriteColors.length == 0) {
+    document.getElementById("comments").style.display = "block";
   } else {
-    document.getElementById("comments").style.display = 'none';
+    document.getElementById("comments").style.display = "none";
   }
   addFullScreenEvent();
-  addFavoriteEvent();
+  addCardToFavorite();
   addDelEvent();
 }
 
+//add event on Button with bookmark => add cards to favorite tab => c
+//all action with changing number of favorite cards
 
-function addFavoriteEvent() {
-
+function addCardToFavorite() {
   let favoriteBtns = document.getElementsByClassName("btn-favorite");
 
   for (let i = 0; i < favoriteBtns.length; i++) {
-
     favoriteBtns[i].addEventListener("click", function () {
-      let favoriteIndex = arrOfFavoriteColors.findIndex((el) => el.id == favoriteBtns[i].id);
+      let favoriteIndex = arrOfFavoriteColors.findIndex(
+        (el) => el.id == favoriteBtns[i].id
+      );
       if (favoriteIndex === -1) {
-        arrOfFavoriteColors.push({ id: favoriteBtns[i].id, number: favoriteBtns[i].getAttribute("number"), conc: favoriteBtns[i].getAttribute("conc") })
+        arrOfFavoriteColors.push({
+          id: favoriteBtns[i].id,
+          number: favoriteBtns[i].getAttribute("number"),
+          conc: favoriteBtns[i].getAttribute("conc"),
+        });
         for (let elem of arrOfFavoriteColors) {
           let colorDetails = colorsList.find((el) => el.id == elem.number);
           elem.name = colorDetails.name;
           elem.rgb = colorDetails[elem.conc];
         }
-        console.log(arrOfFavoriteColors)
-        favoriteBtns[i].innerHTML = `<img src = './images/icons/bookmark_fill.png' style='width: 20px;'>`;
+        favoriteBtns[
+          i
+        ].innerHTML = `<img src = './images/icons/bookmark_fill.png' style='width: 20px;'>`;
         changeNumberFavorite();
       } else {
         arrOfFavoriteColors.splice(favoriteIndex, 1);
-        console.log(arrOfFavoriteColors)
-        favoriteBtns[i].innerHTML = `<img src = './images/icons/bookmark.png' style='width: 20px;'>`;
+        favoriteBtns[
+          i
+        ].innerHTML = `<img src = './images/icons/bookmark.png' style='width: 20px;'>`;
         changeNumberFavorite();
       }
-    })
-
+    });
   }
 }
 
+// add Deleting action on delete button => call action with changing number of favorite cards=>
+// show updating scope of favorite cards
 function addDelEvent() {
   let delFavoriteBtn = document.getElementsByClassName("btn-del-favorite");
 
   for (let i = 0; i < delFavoriteBtn.length; i++) {
     delFavoriteBtn[i].addEventListener("click", function () {
-      let favoriteDelIndex = arrOfFavoriteColors.findIndex((el) =>
-        (el.number == delFavoriteBtn[i].getAttribute("number") && el.conc == delFavoriteBtn[i].getAttribute("conc")));
+      let favoriteDelIndex = arrOfFavoriteColors.findIndex(
+        (el) =>
+          el.number == delFavoriteBtn[i].getAttribute("number") &&
+          el.conc == delFavoriteBtn[i].getAttribute("conc")
+      );
 
       if (favoriteDelIndex > -1) {
         arrOfFavoriteColors.splice(favoriteDelIndex, 1);
-        console.log(arrOfFavoriteColors)
-
       }
-      showCards('fav_col')
+      showCards("fav_col");
       changeNumberFavorite();
-    })
-  }
-}
-
-function changeNumberFavorite() {
-  let favoriteDiv = document.getElementById('fav_col')
-  let numberOfFavorite = arrOfFavoriteColors.length
-  favoriteDiv.children[1].innerHTML = `${numberOfFavorite}`
-}
-
-
-function addFullScreenEvent() {
-  let fullScreenBtns = document.getElementsByClassName("btn-full-screen");
-  for (let i = 0; i < fullScreenBtns.length; i++) {
-    fullScreenBtns[i].addEventListener("click", function () {
-      fullScreen(this.getAttribute('color'), this.getAttribute('number'));
-      // console.log(this.id);
     });
   }
 }
 
+//updating number of favorite cards
+function changeNumberFavorite() {
+  let favoriteDiv = document.getElementById("fav_col");
+  let numberOfFavorite = arrOfFavoriteColors.length;
+  favoriteDiv.children[1].innerHTML = `${numberOfFavorite}`;
+}
+
+//handle full screen button event
+function addFullScreenEvent() {
+  let fullScreenBtns = document.getElementsByClassName("btn-full-screen");
+  for (let i = 0; i < fullScreenBtns.length; i++) {
+    fullScreenBtns[i].addEventListener("click", function () {
+      fullScreen(this.getAttribute("color"), this.getAttribute("number"));
+    });
+  }
+}
+
+//action full screen button and add action on close button
 function fullScreen(color, elemId) {
   let fullScreenBtns = document.getElementsByClassName("btn-full-screen");
 
@@ -238,7 +251,6 @@ function closeScreen() {
   let closeScreenBtns = document.getElementsByClassName(
     "palitra-icon btn-close-screen"
   );
-  console.log(closeScreenBtns);
   for (let i = 0; i < closeScreenBtns.length; i++) {
     closeScreenBtns[i].addEventListener("click", function () {
       let fullScreenDiv = document.getElementById("full-screen");

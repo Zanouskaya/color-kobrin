@@ -21,18 +21,13 @@ body {
 
 .container {
   width: 80vw;
-  margin: auto;
-  
+  margin: auto;  
 }
-/* @media (max-width: 1400px) {
-  .container {
-    width: 90vw;
-  }
-} */
+
 a {
+  padding-bottom: 5px;
   text-decoration: none;
   color: black;
-  padding-bottom: 5px;
 }
 
 a:hover {
@@ -43,24 +38,30 @@ a:hover {
 .active {
   border-bottom: solid 2px var(--hover-color);
 }
+
 h1 {
   font-size: 25px;
 }
+
 h2 {
   font-size: 22px;
 }
+
 h3 {
   font-size: 20px;
 }
+
 h4 {
   font-size: 16px;
   text-align: center;
   font-weight: 400;
   padding: 10px;
 }
+
 p {
   font-size: 16px;
 }
+
 /* 
 ==========================
 navigation
@@ -68,12 +69,11 @@ navigation
 
 nav {
   display: flex;
-  width: 100%;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
-
 
 .nav-right {
   display: flex;
@@ -109,14 +109,7 @@ a .logo {
   display: inline-block;
   width: 90px;
   height: 100px;
-
 }
-
-/* @media (max-width: 1200px) {
-  .nav-right {
-    width: 40vw;
-  }
-} */
 
 /* 
 ==========================
@@ -125,9 +118,11 @@ footer
 footer {
   background-color: #fafafa;
 }
-footer p  {
-  margin-bottom: 20px;
+
+footer .container{
+  padding-bottom: 20px;
 }
+
 .footer-section {
   display: flex;
   flex-direction: row;
@@ -168,6 +163,7 @@ search-bar
 ==========================
 search-bar
 ========================== */
+
 .btn h3 {
   font-family: "Raleway", sans-serif;
   font-weight: 400;
@@ -175,11 +171,10 @@ search-bar
 }
 
 .btn {
-  border: none;
-  background: none;
   padding: 5px 0 5px 0;
   margin-bottom: 10px;
-
+  background: none;
+  border: none;
 }
 
 .btn:hover {
@@ -193,17 +188,19 @@ search-bar
 
 .link-btn {
   font-family: inherit;
-  font-size: 1rem;
-  border: solid 1px grey;
-  padding: 10px;
-  width: 48%;
-  margin-top: 20px;
+  font-size: 16px;
+  padding: 15px;
+  min-width: 300px;
   text-align: center;
   border-radius: 8px;
+  background-color: var(--hover-color);
+  border-style: none;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.08);
+  color: #fff;
 }
 
 .link-btn:hover {
-  border: solid 1px var(--hover-color);
+  background-color: #fff;
   cursor: pointer;
 }
 
@@ -243,4 +240,12 @@ color-cards
   color: var(--hover-color);
   cursor: pointer;
   border-bottom: solid 2px var(--hover-color);
+}
+
+.content-menu{
+  display: none;
+}
+
+.nav-burger{
+  display: none;
 }

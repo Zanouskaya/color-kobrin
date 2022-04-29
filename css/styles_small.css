@@ -5,14 +5,17 @@
 /*==================
 index page 
 ====================*/
+
 .hero-presentation{
-    display:flex;
-    flex-direction: column;
-    position:inherit;
     min-width: 100%;
     margin:0;
-    max-height: fit-content;
-  }
+    height: auto;
+}
+
+.hero-presentation h1{
+    width: auto;
+}
+
 .hero-presentation .btn{
     width: 100%;
     margin: 0px;
@@ -84,6 +87,7 @@ production page
 /*==================
 palitra page 
 ====================*/
+
 .grid-page-palitra{
     grid-template-columns: 1fr;
 }
@@ -91,21 +95,24 @@ palitra page
 .palitra-columns{
     grid-template-columns: 1fr;
 }
+
 .btns-wrapper{
     display: block;
-    
-    /* flex-direction: row; */
 }
+
 .btns-wrapper .btn{
     margin-right: 20px;
 }
+
 /*==================
 contact page 
 ====================*/
+
 .contact-info{
     grid-template-columns: 1fr;
     padding: 50px;
 }
+
 .info-right{
     text-align: left;
 }
@@ -113,21 +120,107 @@ contact page
 /*==================
 calculator page 
 ====================*/
+
 .calculator{
     grid-template-columns: 1fr;
-
 }
+
 form{
     padding: 30px;
     border-radius: 18px 18px 0 0;
 }
+
 .surface-area{
-    grid-template-columns: 2fr 3fr 3fr;
-    gap:10px;
+    grid-template: 'name name name name name'
+                    'height width number square del' / 3fr 3fr 0.5fr 0.5fr 0.5fr ;  
+    row-gap: 10px;
 }
+
+.name{
+    grid-area: name;
+}
+
 .result-area{
     border-radius: 0 0 18px 18px;
 }
+
 select{
     width: 100%;
+}
+
+/*==================
+product page 
+====================*/
+
+.info-wrapper{
+    grid-template-columns: 1fr;
+}
+
+.link-wrapper{
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.link-btn{
+    width: 100%;
+    margin-top: 0;
+}
+
+
+/*==================
+navigation menu
+====================*/
+
+a .logo{
+    width:65px;
+    height:75px;
+}
+
+.nav-right{
+    display: none;
+}
+
+.nav-burger{
+    display: block;
+}
+
+nav{
+    display:flex;
+    justify-content: space-between;
+}
+
+.btn-burger{
+    width: 50px;
+    height: 50px;
+    background-image: url(../images/icons/menu.png);
+    background-size: 35px;
+    background-clip:border-box;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: inherit;
+    border: solid 1px grey;
+    border-radius: 8px;
+}
+
+.content-menu{
+    display: none;
+    z-index:2;
+}
+
+.appear{
+    display: flex;
+}
+
+.nav-bottom{
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width:100%;
+    margin: 0 auto;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+
+a {
+    margin-bottom: 10px;
 }

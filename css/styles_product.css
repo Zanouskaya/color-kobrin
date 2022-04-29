@@ -1,6 +1,6 @@
 .info-wrapper {
   display: grid;
-  grid-template-columns: 2fr 2fr;
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
   margin-top: 50px;
 }
@@ -56,9 +56,9 @@ img {
 .link-wrapper {
   display: flex;
   justify-content: space-between;
+  margin-top: 20px;
 }
 
 .palitra-columns {
   margin-top: 20px;
-  /* grid-template-columns: repeat(4, 1fr); */
 }

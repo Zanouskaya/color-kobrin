@@ -1,0 +1,61 @@
+.container{
+    width: 95%;
+}
+
+/*==================
+product page 
+====================*/
+
+.grid-page-products{
+    grid-template-columns: 1fr 3fr;
+}
+
+.product-columns{
+    grid-template-columns: 1fr 1fr;
+}
+
+/*==================
+product page 
+====================*/
+
+.info-wrapper{
+    grid-template-columns: 0.7fr 1fr;
+}
+
+.product-image img{
+    width: 70%;
+}
+
+.link-wrapper{
+    flex-direction: column;
+}
+
+.link-wrapper .link-btn {
+    width: 350px;
+}
+
+
+/*==================
+palitra page 
+====================*/
+
+.grid-page-palitra{
+    grid-template-columns: 1fr 3.5fr;
+}
+
+.palitra-columns{
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/*==================
+calculator page 
+====================*/
+
+.surface-area{
+    grid-template-columns: 2fr 2.5fr 2.5fr 1fr 0.5fr 0.5fr;
+    gap:10px;
+}
+
+form select{
+    width: 100%;
+}
