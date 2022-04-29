@@ -51,13 +51,27 @@ productDataList.forEach((product) => {
     document.getElementById(
       "product-sertificate"
     ).innerHTML = `${product.sertificate}`;
+    if (product.disposal === "") {
+      document.getElementById("product-disposal").style.display = "none";
+      document.getElementById("product-disposal-title").style.display = "none";
+    }
   }
 });
 
-//make a some differences for products information rendering
+//defines colors palitra for some products
+let colorsData = 0;
 if (pageName == "dahavaya") {
+  colorsData = colorsDahavaya;
+} else if (pageName == "master" || pageName == "master_m") {
+  colorsData = colorsMaster;
+} else if (pageName == "azure") {
+  colorsData = colorsAzure;
+}
+
+//make a some differences for products information rendering
+if (colorsData != 0) {
   document.getElementById("section-title").innerHTML = "Палитра";
-  document.getElementById("colors").innerHTML = colorsDahavaya
+  document.getElementById("colors").innerHTML = colorsData
     .map(
       (color) =>
         `<div class='color-card show' id='colorCard_${color.id}' >
@@ -72,39 +86,9 @@ if (pageName == "dahavaya") {
     </a>
     <a class="link-btn" href="#section-title" id="palitra"> Перейти к палитре
     </a>`;
-} else if (pageName == "master" || pageName == "master_m") {
-  document.getElementById("section-title").innerHTML = "Палитра";
-  document.getElementById("colors").innerHTML = colorsMaster
-    .map(
-      (color) =>
-        `<div class='color-card show' id='colorCard_${color.id}' >
-                <div class='color-back' style= "background-color: ${color.rgb_o}">
-                </div>
-                <h4>${color.name}</h4>
-              </div>`
-    )
-    .join("");
-  document.getElementById("link-wrapper").innerHTML = `
-      <a class="link-btn" href="calculator.html"> Рассчитать необходимое количество
-      </a>
-      <a class="link-btn" href="#section-title" id="palitra"> Перейти к палитре
-      </a>`;
-} else if (pageName == "azure") {
-  document.getElementById("section-title").innerHTML = "Палитра";
-  document.getElementById("colors").innerHTML = colorsAzure
-    .map(
-      (color) =>
-        `<div class='color-card show' id='colorCard_${color.id}' >
-              <div class='color-back' >
-              <img src='${color.image}' style='display: flex; width: 100%; height: 100%; border-radius: 18px 18px 0 0'/>
-              </div>
-              <h4>${color.name}</h4>
-            </div>`
-    )
-    .join("");
-  document.getElementById("link-wrapper").innerHTML = `
-    <a class="link-btn" href="calculator.html"> Рассчитать необходимое количество
-    </a>
-    <a class="link-btn" href="#section-title" id="palitra"> Перейти к палитре
-    </a>`;
+}
+
+if (pageName == "pasta") {
+  const pastaTable = document.getElementById("pasta-consumption");
+  document.getElementById("product-consumption").appendChild(pastaTable);
 }
