@@ -4,9 +4,9 @@
   "description": "color-kobrin.by website",
   "main": "app.js",
   "scripts": {
-    "dev": "node app.js",
+    "start": "node app.js",
     "debug": "DEBUG=express:* node app.js",
-    "run": "DEBUG=express:* PORT=8080 node app.js"
+    "prod": "PORT=8080 node app.js"
   },
   "devDependencies": {
     "nodemon": "^2.0.16"
