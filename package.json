@@ -5,8 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "debug": "DEBUG=express:* node app.js",
-    "prod": "PORT=8080 node app.js"
+    "debug": "DEBUG=express:* node app.js"
   },
   "devDependencies": {
     "nodemon": "^2.0.16"
