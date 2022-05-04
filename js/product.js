@@ -55,6 +55,10 @@ productDataList.forEach((product) => {
       document.getElementById("product-disposal").style.display = "none";
       document.getElementById("product-disposal-title").style.display = "none";
     }
+    if (product.properties === "") {
+      document.getElementById("product-properies-title").style.display = "none";
+      document.getElementById("product-properies").style.display = "none";
+    }
   }
 });
 
