@@ -124,26 +124,26 @@ export const productsList = [
     link: "./inraib_vp1ps.html",
   },
   {
-    id: "pl_kratc_vp1ps",
+    id: "pl_kratc_np1ps",
     type: "plasters",
     category: "Штукатурка",
     name: "Кратц Путц НП 1 ПС",
     description:
       "Предназначена для выполнения высококачественных наружных и внутренних штукатурных работ на минеральных основаниях (бетон, кирпич, минеральная штукатурка, пенобетон), а также по гипсокартону, ДВП, ДСП с целью придания декоративной структуры ( «короед», «под шубу»).",
-    image: "./images/kratc_vp1ps.png",
+    image: "./images/kratc_np1ps.png",
     tags: "for-outdoor for-indoor plaster brick concrete coroed DSP drywall decorative-plaster",
-    link: "./kratc_vp1ps.html",
+    link: "./kratc_np1ps.html",
   },
   {
-    id: "pl_raibe_vp1ps",
+    id: "pl_raibe_np1ps",
     type: "plasters",
     category: "Штукатурка",
     name: "Райбе Путц НП 1 ПС",
     description:
       "Предназначена для выполнения высококачественных наружных и внутренних штукатурных работ на минеральных основаниях (бетон, кирпич, минеральная штукатурка, пенобетон), а также по гипсокартону, ДВП, ДСП с целью придания декоративной структуры ( «короед», «под шубу»).",
-    image: "./images/raibe_vp1ps.png",
+    image: "./images/raibe_np1ps.png",
     tags: "for-outdoor for-indoor plaster brick concrete coroed DSP drywall decorative-plaster",
-    link: "./raibe_vp1ps.html",
+    link: "./raibe_np1ps.html",
   },
   {
     id: "pr_lf_indoor",
@@ -176,7 +176,7 @@ export const productsList = [
       "Глубокого проникновения, бесцветная, прозрачная при высыхании.",
     image: "./images/shf_concrete.png",
     tags: "for-indoor for-outdoor concrete",
-    link: "./shf_conctete.html",
+    link: "./shf_concrete.html",
   },
   {
     id: "pr_lf",
