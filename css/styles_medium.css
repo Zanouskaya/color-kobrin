@@ -1,3 +1,5 @@
+@media screen and (max-width: 992px) {
+    
 .container{
     width: 95%;
 }
@@ -163,4 +165,5 @@ product page
 #product-image img{
     margin-top: 50px;
     width: 70%;
+}
 }
