@@ -200,17 +200,17 @@ export const productsList = [
     tags: "for-indoor for-outdoor concrete brick plaster DSP for-wood",
     link: "./azure.html",
   },
-  {
-    id: "gl_klej",
-    type: "glue",
-    category: "Клей",
-    name: "Клей для потолочных изделий",
-    description:
-      "Быстросхватывающийся клей для быстрой и экономичной отделки (облицовки) потолков декоративными панелями, плинтусами из пенополистирола, для изделий из пенопласта, полиуретана.",
-    image: "./images/klej.png",
-    tags: "for-indoor ceiling",
-    link: "./klej.html",
-  },
+  // {
+  //   id: "gl_klej",
+  //   type: "glue",
+  //   category: "Клей",
+  //   name: "Клей для потолочных изделий",
+  //   description:
+  //     "Быстросхватывающийся клей для быстрой и экономичной отделки (облицовки) потолков декоративными панелями, плинтусами из пенополистирола, для изделий из пенопласта, полиуретана.",
+  //   image: "./images/klej.png",
+  //   tags: "for-indoor ceiling",
+  //   link: "./klej.html",
+  // },
   {
     id: "p_pasta",
     type: "coloring",
