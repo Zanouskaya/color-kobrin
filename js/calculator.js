@@ -101,10 +101,10 @@ function defineRashod(paintIndex, surfaceIndex) {
   let paintRashod, primerRashod;
   if (surfaceIndex == 0) {
     paintRashod = paintName.getAttribute("value.min");
-    primerRashod = 110;
+    primerRashod = 120;
   } else {
     paintRashod = paintName.getAttribute("value.max");
-    primerRashod = 120;
+    primerRashod = 150;
   }
 
   document.getElementById(
