@@ -120,7 +120,7 @@ export const productsList = [
     description:
       "Предназначена для выполнения высококачественных наружных и внутренних штукатурных работ на минеральных основаниях (бетон, кирпич, минеральная штукатурка, пенобетон), а также по гипсокартону, ДВП, ДСП с целью придания декоративной структуры ( «короед», «под шубу»).",
     image: "./images/inraib_vp1ps.png",
-    tags: "for-outdoor for-indoor plaster brick concrete coroed DSP drywall decorative-plaster",
+    tags: "for-indoor plaster brick concrete coroed DSP drywall decorative-plaster",
     link: "./inraib_vp1ps.html",
   },
   {
@@ -131,7 +131,7 @@ export const productsList = [
     description:
       "Предназначена для выполнения высококачественных наружных и внутренних штукатурных работ на минеральных основаниях (бетон, кирпич, минеральная штукатурка, пенобетон), а также по гипсокартону, ДВП, ДСП с целью придания декоративной структуры ( «короед», «под шубу»).",
     image: "./images/kratc_np1ps.png",
-    tags: "for-outdoor for-indoor plaster brick concrete coroed DSP drywall decorative-plaster",
+    tags: "for-outdoor plaster brick concrete coroed DSP drywall decorative-plaster",
     link: "./kratc_np1ps.html",
   },
   {
@@ -142,7 +142,7 @@ export const productsList = [
     description:
       "Предназначена для выполнения высококачественных наружных и внутренних штукатурных работ на минеральных основаниях (бетон, кирпич, минеральная штукатурка, пенобетон), а также по гипсокартону, ДВП, ДСП с целью придания декоративной структуры ( «короед», «под шубу»).",
     image: "./images/raibe_np1ps.png",
-    tags: "for-outdoor for-indoor plaster brick concrete coroed DSP drywall decorative-plaster",
+    tags: "for-outdoor plaster brick concrete coroed DSP drywall decorative-plaster",
     link: "./raibe_np1ps.html",
   },
   {
