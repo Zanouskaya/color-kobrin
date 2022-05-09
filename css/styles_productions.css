@@ -147,7 +147,7 @@ searchbar in styles.css
 
 .card img {
   display: block;
-  float: bottom;
+  width: 70%;
   margin: auto auto 10px auto;
 }
 
