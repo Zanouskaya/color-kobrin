@@ -125,10 +125,6 @@ footer {
   background-color: #fafafa;
 }
 
-footer .container{
-  padding-bottom: 20px;
-}
-
 .footer-section {
   display: flex;
   flex-direction: row;
@@ -139,6 +135,10 @@ footer .container{
 .footer-section p {
   font-size: 16px;
   padding: 10px 0;
+}
+.footer-bottom {
+  padding: 20px 0;
+  border-top: 1px solid grey;
 }
 
 /* 
