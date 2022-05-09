@@ -134,7 +134,7 @@ form{
 
 .surface-area{
     grid-template: 'name name name name name'
-                    'height width number square del' / 3fr 3fr 0.5fr 0.5fr 0.5fr ;  
+                    'height width number square del' / 3fr 3fr 1fr 0.5fr 0.5fr ;  
     row-gap: 10px;
 }
 
@@ -226,4 +226,23 @@ nav{
 a {
     margin-bottom: 10px;
 }
+}
+
+@media screen and (max-width: 576px){
+    .hero-presentation{
+        padding: 20px;
+    }
+    .hero-presentation h1{
+        font-size: 20px;
+    }
+    .benefit img{
+       min-width: 70px;
+    }
+    .footer-section{
+        flex-direction: column;
+        text-align: center;
+    }
+    .card img {
+        width:50%;
+    }
 }
