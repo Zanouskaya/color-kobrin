@@ -44,6 +44,7 @@ h1 {
 }
 
 .palitra {
+  display: none;
   margin: 50px auto;
 }
 

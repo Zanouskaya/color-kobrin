@@ -73,7 +73,8 @@ if (pageName == "dahavaya") {
 }
 
 //make a some differences for products information rendering
-if (colorsData != 0) {
+if (colorsData !== 0) {
+  document.getElementById("palitra-extra").style.display = "block";
   document.getElementById("section-title").innerHTML = "Палитра";
   document.getElementById("colors").innerHTML = colorsData
     .map(
