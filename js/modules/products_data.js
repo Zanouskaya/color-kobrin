@@ -78,17 +78,17 @@ export const productsList = [
     tags: "for-outdoor for-indoor living-room for-wood wallpaper DSP plaster brick concrete",
     link: "./master.html",
   },
-  {
-    id: "p_master_m",
-    type: "paint",
-    category: "Краска",
-    name: "Мастер-М",
-    description:
-      "Применяется для наружных и внутренних покрытий по натуральной древесине, минеральной основе (штукатурка, бетон, кирпич), ДСП, ДВП, гипсокартону, обоям.",
-    image: "./images/master_m.png",
-    tags: "for-outdoor for-indoor living-room for-wood wallpaper DSP plaster brick concrete",
-    link: "./master_m.html",
-  },
+  // {
+  //   id: "p_master_m",
+  //   type: "paint",
+  //   category: "Краска",
+  //   name: "Мастер-М",
+  //   description:
+  //     "Применяется для наружных и внутренних покрытий по натуральной древесине, минеральной основе (штукатурка, бетон, кирпич), ДСП, ДВП, гипсокартону, обоям.",
+  //   image: "./images/master_m.png",
+  //   tags: "for-outdoor for-indoor living-room for-wood wallpaper DSP plaster brick concrete",
+  //   link: "./master_m.html",
+  // },
 
   {
     id: "pt_np1ps",
@@ -112,17 +112,17 @@ export const productsList = [
     tags: "for-indoor living-room for-leveling-the-surface",
     link: "./vp1ps.html",
   },
-  {
-    id: "pl_inraib_vp1ps",
-    type: "plasters",
-    category: "Штукатурка",
-    name: "Инрайб Путц ВП 1 ПС",
-    description:
-      "Предназначена для выполнения высококачественных наружных и внутренних штукатурных работ на минеральных основаниях (бетон, кирпич, минеральная штукатурка, пенобетон), а также по гипсокартону, ДВП, ДСП с целью придания декоративной структуры ( «короед», «под шубу»).",
-    image: "./images/inraib_vp1ps.png",
-    tags: "for-indoor plaster brick concrete coroed DSP drywall decorative-plaster",
-    link: "./inraib_vp1ps.html",
-  },
+  // {
+  //   id: "pl_inraib_vp1ps",
+  //   type: "plasters",
+  //   category: "Штукатурка",
+  //   name: "Инрайб Путц ВП 1 ПС",
+  //   description:
+  //     "Предназначена для выполнения высококачественных наружных и внутренних штукатурных работ на минеральных основаниях (бетон, кирпич, минеральная штукатурка, пенобетон), а также по гипсокартону, ДВП, ДСП с целью придания декоративной структуры ( «короед», «под шубу»).",
+  //   image: "./images/inraib_vp1ps.png",
+  //   tags: "for-indoor plaster brick concrete coroed DSP drywall decorative-plaster",
+  //   link: "./inraib_vp1ps.html",
+  // },
   {
     id: "pl_kratc_np1ps",
     type: "plasters",
