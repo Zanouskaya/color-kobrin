@@ -46,7 +46,7 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 
 ## Install
 
-    $ git clone https://github.com/Zanouskaya/color-kobrin
+    $ git clone https://github.com/Zanouskaya/color-kobrin.git
     $ cd color-kobrin
     $ npm install
 
