@@ -5,22 +5,22 @@
   <meta charset="utf-8" lang="ru" />
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
   <title>Калькулятор</title>
-  <link rel="stylesheet" href="./css/styles.css" />
-  <link rel="stylesheet" href="./css/styles_calculator.css" />
-  <link rel=" stylesheet" href="./css/styles_small.css" media="screen and (max-width: 768px)  " />
-  <link rel="stylesheet" href="./css/styles_medium.css" media="screen and (min-width: 769px) and (max-width: 992px)" />
-  <link rel="stylesheet" href="./css/styles_large.css" media="screen and (min-width: 993px) and (max-width: 1399px)" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/styles_calculator.css" />
+  <link rel=" stylesheet" href="/css/styles_small.css" media="screen and (max-width: 768px)  " />
+  <link rel="stylesheet" href="/css/styles_medium.css" media="screen and (min-width: 769px) and (max-width: 992px)" />
+  <link rel="stylesheet" href="/css/styles_large.css" media="screen and (min-width: 993px) and (max-width: 1399px)" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
     $(function () {
       var includes = $("[data-include]");
       $.each(includes, function () {
-        var file = "html/" + $(this).data("include") + ".html";
+        var file = "/html-modules/" + $(this).data("include") + ".html";
         $(this).load(file);
       });
     });
   </script>
-  <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -97,6 +97,6 @@
   </div>
   <div data-include="footer"></div>
 </body>
-<script src="./js/calculator.js"></script>
+<script src="/js/calculator.js"></script>
 
 </html>
