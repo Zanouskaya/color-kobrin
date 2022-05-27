@@ -55,7 +55,7 @@ function showCards(rgb) {
         <div class='color-back' style= "background-color: ${color[rgb]}">
           <div class='icon-wrapper'>
             <button class='palitra-icon btn-full-screen' id='${rgb}-btn-screen_${color.id}' color='${color[rgb]}' conc='${rgb}' number='${color.id}'>
-              <img src = './images/icons/crop.png' style='width: 20px;'>
+              <img src = '/images/icons/crop.png' style='width: 20px;'>
             </button>
             <button class='palitra-icon btn-favorite' conc='${rgb}' number='${color.id}'  id='${rgb}-btn-favorite-${color.id}'>
            
@@ -75,11 +75,11 @@ function showCards(rgb) {
       if (favoriteIndex === -1) {
         favoriteBtns[
           i
-        ].innerHTML = `<img src = './images/icons/bookmark.png' style='width: 20px;'>`;
+        ].innerHTML = `<img src = '/images/icons/bookmark.png' style='width: 20px;'>`;
       } else {
         favoriteBtns[
           i
-        ].innerHTML = `<img src = './images/icons/bookmark_fill.png' style='width: 20px;'>`;
+        ].innerHTML = `<img src = '/images/icons/bookmark_fill.png' style='width: 20px;'>`;
       }
     }
   } else {
@@ -91,10 +91,10 @@ function showCards(rgb) {
       <div class="color-back" style="background-color: ${colors.rgb}">
         <div class="icon-wrapper">
         <button class='palitra-icon btn-full-screen'  id='${colors.conc}-btn-screen_${colors.number}' color='${colors.rgb}' conc='${colors.conc}' number= '${colors.number}'> 
-          <img src = './images/icons/crop.png' style='width: 20px;'>
+          <img src = '/images/icons/crop.png' style='width: 20px;'>
         </button>
         <button class='palitra-icon btn-del-favorite' conc='${colors.conc}' number='${colors.number}'  id='${colors.conc}-btn-del-favorite-${colors.number}' color ='${colors.rgb}'>
-          <img src = './images/icons/close.png' style='width: 20px;'>
+          <img src = '/images/icons/close.png' style='width: 20px;'>
         </button>
         </div>
       </div>
@@ -140,13 +140,13 @@ function addCardToFavorite() {
         }
         favoriteBtns[
           i
-        ].innerHTML = `<img src = './images/icons/bookmark_fill.png' style='width: 20px;'>`;
+        ].innerHTML = `<img src = '/images/icons/bookmark_fill.png' style='width: 20px;'>`;
         changeNumberFavorite();
       } else {
         arrOfFavoriteColors.splice(favoriteIndex, 1);
         favoriteBtns[
           i
-        ].innerHTML = `<img src = './images/icons/bookmark.png' style='width: 20px;'>`;
+        ].innerHTML = `<img src = '/images/icons/bookmark.png' style='width: 20px;'>`;
         changeNumberFavorite();
       }
     });
@@ -205,7 +205,7 @@ function fullScreen(color, elemId) {
             <div class = 'full-screen-background' style= 'background-color: ${color}' id='full-screen-background'>
               <div class= 'full-screen-title'>
                 <h1 >${item.name} </h1>
-                <button class='palitra-icon btn-close-screen' id='btn-close-screen' ><img src = './images/icons/close.png' style='width: 20px; '></button>
+                <button class='palitra-icon btn-close-screen' id='btn-close-screen' ><img src = '/images/icons/close.png' style='width: 20px; '></button>
               </div>
               <div class="all-colors-columns small">
                 <div class="color-card show" id='${item.id}-rgb_1'>

@@ -4,7 +4,7 @@ import { colorsMaster } from "./modules/colors_master.js";
 import { colorsAzure } from "./modules/colors_azure.js";
 
 //define name of choosing product
-let regex = new RegExp(/\w*(?=.html)/);
+let regex = new RegExp(/\w*(?=\.html)/);
 let pageName = document.URL.match(regex)[0];
 
 //add information in each category on product page
