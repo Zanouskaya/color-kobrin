@@ -4,7 +4,7 @@ import { productsList } from "./modules/products_data.js";
 document.getElementById("products").innerHTML = productsList
   .map(
     (item) =>
-      `<div class='card ${item.type}' id=${item.id}> <a href=${item.link}>
+      `<div class='card ${item.type}' id=${item.id}> <a href='/products/${item.link}/'>
         <div class='card-top'>
         <div id='${item.id}_title' class='tag'><span>${item.category}</span></div>
         

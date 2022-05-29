@@ -4,7 +4,7 @@ import { colorsMaster } from "./modules/colors_master.js";
 import { colorsAzure } from "./modules/colors_azure.js";
 
 //define name of choosing product
-let regex = new RegExp(/\w*(?=\.html)/);
+let regex = new RegExp(/(?<=products\/)\w*/);
 let pageName = document.URL.match(regex)[0];
 
 //add information in each category on product page
@@ -87,7 +87,7 @@ if (colorsData !== 0) {
     )
     .join("");
   document.getElementById("link-wrapper").innerHTML = `
-    <a class="link-btn" href="calculator.html"> Рассчитать необходимое количество
+    <a class="link-btn" href="/calculator/"> Рассчитать необходимое количество
     </a>
     <a class="link-btn" href="#section-title" id="palitra"> Перейти к палитре
     </a>`;

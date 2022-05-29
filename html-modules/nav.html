@@ -1,53 +1,52 @@
 <nav class="container">
   <div class="logo-conatainer">
-    <a href="index.html"><img src="/images/logo.png" alt="колор-буццард кобрин" class="logo" /></a>
+    <a href="/"
+      ><img src="/images/logo.png" alt="колор-буццард кобрин" class="logo"
+    /></a>
   </div>
   <div class="nav-right">
     <div class="nav-top">
       <a href="tel:+375(29)627-05-74"><span>+375(29)627-05-74</span></a>
-      <a href="calculator.html" id="calculator">Калькулятор</a>
+      <a href="/calculator/" id="calculator">Калькулятор</a>
     </div>
     <ul class="nav-bottom">
-      <li><a href="./productions.html" id="productions">Продукция</a></li>
-      <li><a href="./palitra.html" id='palitra'>Палитра</a></li>
-      <li><a href="./contacts.html" id="contacts">Контакты</a></li>
+      <li><a href="/products/" id="productions">Продукция</a></li>
+      <li><a href="/palitra/" id="palitra">Палитра</a></li>
+      <li><a href="/contacts/" id="contacts">Контакты</a></li>
     </ul>
   </div>
   <div class="nav-burger">
-    <button class="collapsible btn-burger" id="btn-burger">
-    </button>
+    <button class="collapsible btn-burger" id="btn-burger"></button>
   </div>
 </nav>
 <div class="content-menu container" id="content-menu">
   <ul class="nav-bottom">
-    <li><a href="./productions.html" id="productions">Продукция</a></li>
-    <li><a href="./palitra.html" id='palitra'>Палитра</a></li>
-    <li><a href="./contacts.html" id="contacts">Контакты</a></li>
-    <li><a href="calculator.html" id="calculator">Калькулятор</a></li>
+    <li><a href="/products/" id="productions">Продукция</a></li>
+    <li><a href="/palitra/" id="palitra">Палитра</a></li>
+    <li><a href="/contacts/" id="contacts">Контакты</a></li>
+    <li><a href="/calculator/" id="calculator">Калькулятор</a></li>
     <li><a href="tel:+375(29)627-05-74">+375(29)627-05-74</a></li>
   </ul>
 </div>
 
 <script>
-
   let urlPage = document.URL;
-  let pageName = urlPage.match(/[^/][a-z]+(?=.html)/)
-  let linksPage = document.getElementsByTagName('a')
+  let pageName = urlPage.match(/[^/][a-z]+(?=.html)/);
+  let linksPage = document.getElementsByTagName("a");
   for (let i = 0; i < linksPage.length; i++) {
     if (linksPage[i].id == pageName) {
-      linksPage[i].className += ' current-page'
+      linksPage[i].className += " current-page";
     }
   }
-  const burgerBtn = document.getElementById('btn-burger');
-  const burgerMenu = document.getElementById('content-menu');
+  const burgerBtn = document.getElementById("btn-burger");
+  const burgerMenu = document.getElementById("content-menu");
   const classes = burgerMenu.classList;
-  burgerBtn.addEventListener('click', function () {
+  burgerBtn.addEventListener("click", function () {
     const result = classes.toggle("appear");
     if (result) {
       burgerBtn.style.backgroundImage = "url('../images/icons/close.png')";
     } else {
       burgerBtn.style.backgroundImage = "url('../images/icons/menu.png')";
     }
-  })
-
+  });
 </script>
