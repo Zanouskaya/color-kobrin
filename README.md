@@ -1,12 +1,14 @@
 # color-kobrin
 
 Color-kobrin.by is a website that displays information about the company's products. 
-You can go to the product page, color palette, and contacts from the main page. 
+You can go to the Product page, Color Palette, Calculator and Contacts from the main page. 
 Navigation and footer are inserted using the JS-code. 
-The product page is filled with product cards from the data file, you can filter by category and use the search. 
-Detailed information is displayed on a separate page after clicking on the card. The color picker page also displays cards from the color data file. 
-Using the buttons on the cards, you can switch to the color display mode on the whole screen, as well as save to favorites. 
-Favorite Colors is a tab with different colors and saturation wounds. Data from this tab is not stored in the browser. 
+The Product page is filled with product cards from the data file, you can filter by category and use the search. 
+Detailed information is displayed on a separate page after clicking on the card. 
+The Color Palette page also displays cards from the color data file. 
+Using the buttons on the cards, you can switch to the color display mode on the full screen, as well as save to favorites. 
+Favorite colors is a tab with different colors and different saturation. Data from this tab is not stored in the browser. 
+The Calculator page has an algorithm for calculating the required amount of paint depending on the surface and type of paint.
 The page with contact details is quite simple and does not have any additional features.
 
 ---
@@ -38,7 +40,7 @@ If the installation was successful, you should be able to run the following comm
     $ npm --version
     8.5.0
 
-If you need to update `npm`, you can make it using `npm`! Cool right? After running the following command, just open again the command line and be happy.
+If you need to update `npm`, you can make it using `npm`. After running the following command, just open again the command line and be happy.
 
     $ npm install npm -g
 
@@ -54,6 +56,3 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 
     $ npm start
 
-## Simple build for production
-
-    $ npm build
