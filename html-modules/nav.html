@@ -10,7 +10,7 @@
       <a href="/calculator/" id="calculator">Калькулятор</a>
     </div>
     <ul class="nav-bottom">
-      <li><a href="/products/" id="productions">Продукция</a></li>
+      <li><a href="/products/" id="products">Продукция</a></li>
       <li><a href="/palitra/" id="palitra">Палитра</a></li>
       <li><a href="/contacts/" id="contacts">Контакты</a></li>
     </ul>
@@ -21,7 +21,7 @@
 </nav>
 <div class="content-menu container" id="content-menu">
   <ul class="nav-bottom">
-    <li><a href="/products/" id="productions">Продукция</a></li>
+    <li><a href="/products/" id="products">Продукция</a></li>
     <li><a href="/palitra/" id="palitra">Палитра</a></li>
     <li><a href="/contacts/" id="contacts">Контакты</a></li>
     <li><a href="/calculator/" id="calculator">Калькулятор</a></li>
@@ -31,7 +31,8 @@
 
 <script>
   let urlPage = document.URL;
-  let pageName = urlPage.match(/[^/][a-z]+(?=.html)/);
+  let pageName = urlPage.match(/(\w+)(?:\/)$/)[1];
+
   let linksPage = document.getElementsByTagName("a");
   for (let i = 0; i < linksPage.length; i++) {
     if (linksPage[i].id == pageName) {
