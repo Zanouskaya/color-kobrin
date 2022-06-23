@@ -7,6 +7,7 @@ export const productsList = [
     description:
       "Применяется для покрытия внутренних стен и потолков жилых, подвальных помещений по кирпичным, бетонным, оштукатуренным поверхностям а также ДСП, ДВП, гипсокартону.",
     image: "/images/belosnezhka.png",
+    imageAlt: "Краска для внетренних работ Белоснежка",
     tags: "for-indoor ceiling living-room basement brick concrete DSP plaster drywall",
     link: "belosnezhka",
   },
@@ -18,6 +19,7 @@ export const productsList = [
     description:
       "Применяется для наружных покрытий по минеральной основе (штукатурка, бетон, кирпич)и для внутренних работ в помещениях с более активной химической средой.",
     image: "/images/fasadnaya.png",
+    imageAlt: "Краска для наружних работ Фасадная",
     tags: "for-outdoor plaster brick concrete with-active-chemical-environment",
     link: "fasadnaya",
   },
@@ -29,6 +31,7 @@ export const productsList = [
     description:
       "Рекомендуется для ремонта старых, не утративших несущей способности штукатурок, в том числе на основе искусственных смол,а также покрытий, выполненных минеральными силикатными материалами.",
     image: "/images/f_silikonovaya.png",
+    imageAlt: "Краска для наружних работ Фасадная силиконовая",
     tags: "old-plaster silicate",
     link: "fasadnaya_silikon",
   },
@@ -40,6 +43,7 @@ export const productsList = [
     description:
       "Особо рекомендуется для ремонта старых, не утративших несущей способности штукатурок, в том числе на основе искусственных смол, а также покрытий, выполненных разнородными минеральными и силикатными материалами.",
     image: "/images/f_silikatnaya.png",
+    imageAlt: "Краска для наружних работ Фасадная силикатная",
     tags: "old-plaster silicate",
     link: "fasadnaya_silikat",
   },
@@ -52,6 +56,7 @@ export const productsList = [
     description:
       "Для окраски шифера и цементно-песчаной черепицы с углом наклона не менее 45. Рекомендуется использовать для окраски минеральных оснований подвергаемых повышенным нагрузкам.",
     image: "/images/dahavaya.png",
+    imageAlt: "Краска для шифера и черепицы Дахавая",
     tags: "slate",
     link: "dahavaya",
   },
@@ -63,6 +68,7 @@ export const productsList = [
     description:
       "Применяется для покрытия внутренних стен и потолков жилых, подвальных помещений по кирпичным, бетонным, оштукатуренным поверхностям а также ДСП, ДВП, гипсокартону.",
     image: "/images/evrostar.png",
+    imageAlt: "Краска для стен и потолков Евростар",
     tags: "for-indoor living-room ceiling basement brick concrete DSP plaster drywall",
     link: "evrostar",
   },
@@ -74,6 +80,7 @@ export const productsList = [
     description:
       "Применяется для наружных и внутренних покрытий по натуральной древесине, минеральной основе (штукатурка, бетон, кирпич), ДСП, ДВП, гипсокартону, обоям.",
     image: "/images/master.png",
+    imageAlt: "Краска по дереву Мастер",
     tags: "for-outdoor for-indoor living-room for-wood wallpaper DSP plaster brick concrete",
     link: "master",
   },
@@ -97,6 +104,7 @@ export const productsList = [
     description:
       "Предназначена для выравнивания дефектов поверхностей (для наружных работ)",
     image: "/images/np1ps.png",
+    imageAlt: "Шпатлевка для наружных работ",
     tags: "for-outdoor for-leveling-the-surface",
     link: "np1ps",
   },
@@ -108,6 +116,7 @@ export const productsList = [
     description:
       "Предназначена для выравнивания дефектов поверхностей (для внутренних работ)",
     image: "/images/vp1ps.png",
+    imageAlt: "Шпатлевка для внутренних работ",
     tags: "for-indoor living-room for-leveling-the-surface",
     link: "vp1ps",
   },
@@ -130,6 +139,7 @@ export const productsList = [
     description:
       "Предназначена для выполнения высококачественных наружных и внутренних штукатурных работ на минеральных основаниях (бетон, кирпич, минеральная штукатурка, пенобетон), а также по гипсокартону, ДВП, ДСП с целью придания декоративной структуры ( «короед», «под шубу»).",
     image: "/images/kratc_np1ps.png",
+    imageAlt: "Штукатурка для наружных и внутренних работ",
     tags: "for-outdoor plaster brick concrete coroed DSP drywall decorative-plaster",
     link: "kratc_np1ps",
   },
@@ -141,6 +151,7 @@ export const productsList = [
     description:
       "Предназначена для выполнения высококачественных наружных и внутренних штукатурных работ на минеральных основаниях (бетон, кирпич, минеральная штукатурка, пенобетон), а также по гипсокартону, ДВП, ДСП с целью придания декоративной структуры ( «короед», «под шубу»).",
     image: "/images/raibe_np1ps.png",
+    imageAlt: "Штукатурка для наружных и внутренних работ",
     tags: "for-outdoor plaster brick concrete coroed DSP drywall decorative-plaster",
     link: "raibe_np1ps",
   },
@@ -152,6 +163,7 @@ export const productsList = [
     description:
       "Глубокого проникновения, бесцветная, прозрачная при высыхании.",
     image: "/images/lf_indoor.png",
+    imageAlt: "Грунтовка для внутренних работ",
     tags: "for-indoor living-room",
     link: "lf_indoor",
   },
@@ -163,6 +175,7 @@ export const productsList = [
     description:
       "Глубокого проникновения, бесцветная, прозрачная при высыхании.",
     image: "/images/lf_outdoor.png",
+    imageAlt: "Грунтовка для внутренних и наружных работ",
     tags: "for-indoor living-room for-outdoor concrete",
     link: "lf_outdoor",
   },
@@ -174,6 +187,7 @@ export const productsList = [
     description:
       "Глубокого проникновения, бесцветная, прозрачная при высыхании.",
     image: "/images/shf_concrete.png",
+    imageAlt: "Грунтовка по бетонным поверхностям",
     tags: "for-indoor for-outdoor concrete",
     link: "shf_concrete",
   },
@@ -185,6 +199,7 @@ export const productsList = [
     description:
       "Для наружных и внутренних работ по минеральным поверхностям (штукатурка, бетон, кирпич, асбоцемент) а также гипсокартону, ДСП, ДВП.",
     image: "/images/lf.png",
+    imageAlt: "Грунтовка для внутренних и наружных работ",
     tags: "for-indoor for-outdoor concrete brick plaster DSP",
     link: "grunt_lf",
   },
@@ -196,6 +211,7 @@ export const productsList = [
     description:
       "Для декоративной отделки (под ценные породы) и защиты изделий из натуральной древесины снаружи и внутри помещений, по минеральным основаниям и камню.",
     image: "/images/laquer.png",
+    imageAlt: "Лак для древесины снаружи и внутри помещения",
     tags: "for-indoor for-outdoor concrete brick plaster DSP for-wood",
     link: "azure",
   },
@@ -218,6 +234,7 @@ export const productsList = [
     description:
       "Предназначен для придания водно-дисперсионным краскам (для наружных и внутренних работ) различных цветов. Допускается окрашивание поверхности чистым красителем.",
     image: "/images/pasta.png",
+    imageAlt: "Краситель для водно-дисперсионных красок",
     tags: "for-indoor ceiling living-room basement brick concrete DSP plaster drywall",
     link: "pasta",
   },

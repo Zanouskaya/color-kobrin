@@ -1,102 +1,137 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <meta charset="utf-8" lang="ru" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-  <title>Калькулятор</title>
-  <link rel="stylesheet" href="/css/styles.css" />
-  <link rel="stylesheet" href="/css/styles_calculator.css" />
-  <link rel=" stylesheet" href="/css/styles_small.css" media="screen and (max-width: 768px)  " />
-  <link rel="stylesheet" href="/css/styles_medium.css" media="screen and (min-width: 769px) and (max-width: 992px)" />
-  <link rel="stylesheet" href="/css/styles_large.css" media="screen and (min-width: 993px) and (max-width: 1399px)" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script>
-    $(function () {
-      var includes = $("[data-include]");
-      $.each(includes, function () {
-        var file = "/html-modules/" + $(this).data("include") + ".html";
-        $(this).load(file);
+  <head>
+    <meta charset="utf-8" lang="ru" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <meta
+      name="description"
+      content="Калькулятор для расчета необходимого количества краски Колор-Буццард"
+    />
+    <title>Калькулятор</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/styles_calculator.css" />
+    <link
+      rel=" stylesheet"
+      href="/css/styles_small.css"
+      media="screen and (max-width: 768px)  "
+    />
+    <link
+      rel="stylesheet"
+      href="/css/styles_medium.css"
+      media="screen and (min-width: 769px) and (max-width: 992px)"
+    />
+    <link
+      rel="stylesheet"
+      href="/css/styles_large.css"
+      media="screen and (min-width: 993px) and (max-width: 1399px)"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(function () {
+        var includes = $("[data-include]");
+        $.each(includes, function () {
+          var file = "/html-modules/" + $(this).data("include") + ".html";
+          $(this).load(file);
+        });
       });
-    });
-  </script>
-  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
-</head>
+    </script>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+  </head>
 
-<body>
-  <div data-include="nav"></div>
-  <div class="container">
-    <section class="calculator">
-      <form>
-        <div class="surface-title">
-          <h3>Введите размеры покрываемой поверхности</h3>
-        </div>
-        <div class="surface-areas" id="surface-areas"></div>
-
-        <button class="btn add-surface">+ Добавить площадь</button>
-
-        <div class="product-select-area">
-          <label for="products-select">Выберите краску, которой будете покрывать поверхность:
-            <select name="products" id="product-select" class="product-select">
-              <option value.min="300" value.max="400">Белоснежка</option>
-              <option value.min="300" value.max="400">Фасадная</option>
-              <option value.min="340" value.max="500">Фасадная силикатная</option>
-              <option value.min="340" value.max="500">Фасадная силиконовая</option>
-              <option value.min="300" value.max="400">Дахавая</option>
-              <option value.min="250" value.max="300">Мастер</option>
-            </select>
-          </label>
-        </div>
-        <div class="surface-select-area">
-          <label for="surface-select">Поверхность: <br />
-            <select name="surface-type" id="surface-select" class="surface-select">
-              <option value="smooth" selected>Гладкая: гипсокартон/шпатлевка</option>
-              <option value="rough">Грубая/с дефектами: декоративная штукатурка/шифер</option>
-            </select>
-          </label>
-        </div>
-      </form>
-      <div class="result-area">
-        <div class="result-title">
-          <h3>Сколько краски нужно для покрытия поверхности в 2 слоя</h3>
-        </div>
-
-        <div class="result-surface">
-          Общая площадь:
-          <p class="surface-summ" id="surfaceSumm">0.00</p>
-          <span>м²</span>
-        </div>
-
-        <div class="result">
-          <p>Краска</p>
-          <div class="result-num">
-            <p class="calc-paint" id="result-calc-paint">0.00</p>
-            <p>кг</p>
+  <body>
+    <div data-include="nav"></div>
+    <div class="container">
+      <section class="calculator">
+        <form>
+          <div class="surface-title">
+            <h3>Введите размеры покрываемой поверхности</h3>
           </div>
-        </div>
-        <div class="result">
-          <p>Грунтовка</p>
-          <div class="result-num">
-            <p class="calc-primer" id="result-calc-primer">0.00</p>
-            <p>кг</p>
-          </div>
-        </div>
-        <div class="product-rashod" id="product-paint-rashod">
-          <span>Расход краски</span>
-          <span>300</span>
-          <span>г/м²</span>
-        </div>
-        <div class="product-rashod" id="product-primer-rashod">
-          <span>Расход грунтовки</span>
-          <span>120</span>
-          <span>г/м² (на один слой)</span>
-        </div>
-        <div id="result"></div>
-      </div>
-    </section>
-  </div>
-  <div data-include="footer"></div>
-</body>
-<script src="/js/calculator.js"></script>
+          <div class="surface-areas" id="surface-areas"></div>
 
+          <button class="btn add-surface">+ Добавить площадь</button>
+
+          <div class="product-select-area">
+            <label for="products-select"
+              >Выберите краску, которой будете покрывать поверхность:
+              <select
+                name="products"
+                id="product-select"
+                class="product-select"
+              >
+                <option value.min="300" value.max="400">Белоснежка</option>
+                <option value.min="300" value.max="400">Фасадная</option>
+                <option value.min="340" value.max="500">
+                  Фасадная силикатная
+                </option>
+                <option value.min="340" value.max="500">
+                  Фасадная силиконовая
+                </option>
+                <option value.min="300" value.max="400">Дахавая</option>
+                <option value.min="250" value.max="300">Мастер</option>
+              </select>
+            </label>
+          </div>
+          <div class="surface-select-area">
+            <label for="surface-select"
+              >Поверхность: <br />
+              <select
+                name="surface-type"
+                id="surface-select"
+                class="surface-select"
+              >
+                <option value="smooth" selected>
+                  Гладкая: гипсокартон/шпатлевка
+                </option>
+                <option value="rough">
+                  Грубая/с дефектами: декоративная штукатурка/шифер
+                </option>
+              </select>
+            </label>
+          </div>
+        </form>
+        <div class="result-area">
+          <div class="result-title">
+            <h3>Сколько краски нужно для покрытия поверхности в 2 слоя</h3>
+          </div>
+
+          <div class="result-surface">
+            Общая площадь:
+            <p class="surface-summ" id="surfaceSumm">0.00</p>
+            <span>м²</span>
+          </div>
+
+          <div class="result">
+            <p>Краска</p>
+            <div class="result-num">
+              <p class="calc-paint" id="result-calc-paint">0.00</p>
+              <p>кг</p>
+            </div>
+          </div>
+          <div class="result">
+            <p>Грунтовка</p>
+            <div class="result-num">
+              <p class="calc-primer" id="result-calc-primer">0.00</p>
+              <p>кг</p>
+            </div>
+          </div>
+          <div class="product-rashod" id="product-paint-rashod">
+            <span>Расход краски</span>
+            <span>300</span>
+            <span>г/м²</span>
+          </div>
+          <div class="product-rashod" id="product-primer-rashod">
+            <span>Расход грунтовки</span>
+            <span>120</span>
+            <span>г/м² (на один слой)</span>
+          </div>
+          <div id="result"></div>
+        </div>
+      </section>
+    </div>
+    <div data-include="footer"></div>
+  </body>
+  <script src="/js/calculator.js"></script>
 </html>

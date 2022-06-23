@@ -1,88 +1,107 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <meta charset="utf-8" lang="ru" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-  <title>Палитра</title>
-  <link rel="stylesheet" href="/css/styles.css" />
-  <link rel="stylesheet" href="/css/styles_palitra.css" />
-  <link rel="stylesheet" href="/css/styles_small.css" media="screen and (max-width: 768px) " />
-  <link rel="stylesheet" href="/css/styles_medium.css" media="screen and (min-width: 769px) and (max-width: 992px)" />
-  <link rel="stylesheet" href="/css/styles_large.css" media="screen and (min-width: 993px) and (max-width: 1399px)" />
-  <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script>
-    $(function () {
-      var includes = $("[data-include]");
-      $.each(includes, function () {
-        var file = "/html-modules/" + $(this).data("include") + ".html";
-        $(this).load(file);
+  <head>
+    <meta charset="utf-8" lang="ru" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <meta name="description" content="" />
+    <title>Палитра</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/styles_palitra.css" />
+    <link
+      rel="stylesheet"
+      href="/css/styles_small.css"
+      media="screen and (max-width: 768px) "
+    />
+    <link
+      rel="stylesheet"
+      href="/css/styles_medium.css"
+      media="screen and (min-width: 769px) and (max-width: 992px)"
+    />
+    <link
+      rel="stylesheet"
+      href="/css/styles_large.css"
+      media="screen and (min-width: 993px) and (max-width: 1399px)"
+    />
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(function () {
+        var includes = $("[data-include]");
+        $.each(includes, function () {
+          var file = "/html-modules/" + $(this).data("include") + ".html";
+          $(this).load(file);
+        });
       });
-    });
-  </script>
-</head>
+    </script>
+  </head>
 
-<body>
-  <main>
-    <div data-include="nav"></div>
-    <div class="container">
-      <div class="grid-page-palitra">
-        <div class="left-side">
-
-          <div class="btns-wrapper" id="btnsWrapper">
-            <h4>Насыщенность цвета <br>
-              краситель : краска</h4>
-            <button class="btn active" id="rgb_o">
-              <h3>Оригинальный</h3>
-            </button>
-            <button class="btn" id="rgb_1">
-              <h3>1:1</h3>
-            </button>
-            <button class="btn" id="rgb_2">
-              <h3>1:2</h3>
-            </button>
-            <button class="btn" id="rgb_4">
-              <h3>1:4</h3>
-            </button>
-            <button class="btn" id="rgb_8">
-              <h3>1:8</h3>
-            </button>
-            <button class="btn" id="rgb_16">
-              <h3>1:16</h3>
-            </button>
-            <button class="btn" id="rgb_40">
-              <h3>1:40</h3>
-            </button>
-            <button class="btn" id="rgb_80">
-              <h3>1:80</h3>
-            </button>
-            <button class="btn" id="fav_col">
-              <h3>Избранные цвета:</h3>
-              <h3>0</h3>
-            </button>
+  <body>
+    <main>
+      <div data-include="nav"></div>
+      <div class="container">
+        <div class="grid-page-palitra">
+          <div class="left-side">
+            <div class="btns-wrapper" id="btnsWrapper">
+              <h4>
+                Насыщенность цвета <br />
+                краситель : краска
+              </h4>
+              <button class="btn active" id="rgb_o">
+                <h3>Оригинальный</h3>
+              </button>
+              <button class="btn" id="rgb_1">
+                <h3>1:1</h3>
+              </button>
+              <button class="btn" id="rgb_2">
+                <h3>1:2</h3>
+              </button>
+              <button class="btn" id="rgb_4">
+                <h3>1:4</h3>
+              </button>
+              <button class="btn" id="rgb_8">
+                <h3>1:8</h3>
+              </button>
+              <button class="btn" id="rgb_16">
+                <h3>1:16</h3>
+              </button>
+              <button class="btn" id="rgb_40">
+                <h3>1:40</h3>
+              </button>
+              <button class="btn" id="rgb_80">
+                <h3>1:80</h3>
+              </button>
+              <button class="btn" id="fav_col">
+                <h3>Избранные цвета:</h3>
+                <h3>0</h3>
+              </button>
+            </div>
           </div>
 
-        </div>
-
-        <div class="right-side" id="right-side">
-
-          <input class="searchbar" id="search" type="text" placeholder="Поиск по названию" />
-          <div class='comments' id="comments">
-            <p>Нажмите на <img src='/images/icons/bookmark.png' style='width: 20px;'> чтобы увидеть карточки в
-              избранных</p>
+          <div class="right-side" id="right-side">
+            <input
+              class="searchbar"
+              id="search"
+              type="text"
+              placeholder="Поиск по названию"
+            />
+            <div class="comments" id="comments">
+              <p>
+                Нажмите на
+                <img src="/images/icons/bookmark.png" style="width: 20px" />
+                чтобы увидеть карточки в избранных
+              </p>
+            </div>
+            <div class="palitra-columns" id="colors"></div>
           </div>
-          <div class="palitra-columns" id="colors"></div>
         </div>
-
       </div>
+      <div class="full-screen" id="full-screen"></div>
+      <div data-include="footer"></div>
+    </main>
 
-    </div>
-    <div class="full-screen" id="full-screen"></div>
-    <div data-include="footer"></div>
-  </main>
-
-  <script type="module" src="/js/palitra.js"></script>
-</body>
-
+    <script type="module" src="/js/palitra.js"></script>
+  </body>
 </html>

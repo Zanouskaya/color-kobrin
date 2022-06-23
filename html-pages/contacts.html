@@ -1,63 +1,79 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <meta charset="utf-8" lang="ru" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-  <title>Контакты</title>
-  <link rel="stylesheet" href="/css/styles.css" />
-  <link rel="stylesheet" href="/css/styles_contacts.css" />
-  <link rel="stylesheet" href="/css/styles_small.css" media="screen and (max-width: 768px) " />
-  <link rel="stylesheet" href="/css/styles_medium.css" media="screen and (min-width: 769px) and (max-width: 992px)" />
-  <link rel="stylesheet" href="/css/styles_large.css" media="screen and (min-width: 993px) and (max-width: 1399px)" />
-  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script>
-    $(function () {
-      var includes = $("[data-include]");
-      $.each(includes, function () {
-        var file = "/html-modules/" + $(this).data("include") + ".html";
-        $(this).load(file);
+  <head>
+    <meta charset="utf-8" lang="ru" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <meta
+      name="description"
+      content="Колор-Буццард краски и другие материалы для строительства и ремонта в Кобрине"
+    />
+    <title>Контакты</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/styles_contacts.css" />
+    <link
+      rel="stylesheet"
+      href="/css/styles_small.css"
+      media="screen and (max-width: 768px) "
+    />
+    <link
+      rel="stylesheet"
+      href="/css/styles_medium.css"
+      media="screen and (min-width: 769px) and (max-width: 992px)"
+    />
+    <link
+      rel="stylesheet"
+      href="/css/styles_large.css"
+      media="screen and (min-width: 993px) and (max-width: 1399px)"
+    />
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(function () {
+        var includes = $("[data-include]");
+        $.each(includes, function () {
+          var file = "/html-modules/" + $(this).data("include") + ".html";
+          $(this).load(file);
+        });
       });
-    });
-  </script>
-</head>
+    </script>
+  </head>
 
-<body>
-  <main>
-    <div data-include="nav"></div>
-    <section class="container">
-      <div class='contact-info'>
-        <div class="info">
-          <h3>Контакты</h3>
-          <p>тел./факс: (01642) 4-66-35, 4-68-65</p>
-          <p>моб.: 8(029)627-05-74</p>
-          <p>E-mail: color@color-kobrin.by</p>
-          <p>
-            Адрес: 225305, Республика Беларусь, Брестская обл., г. Кобрин, ул.
-            Вертолётная 22А
-          </p>
+  <body>
+    <main>
+      <div data-include="nav"></div>
+      <section class="container">
+        <div class="contact-info">
+          <div class="info">
+            <h3>Контакты</h3>
+            <p>тел./факс: (01642) 4-66-35, 4-68-65</p>
+            <p>моб.: 8(029)627-05-74</p>
+            <p>E-mail: color@color-kobrin.by</p>
+            <p>
+              Адрес: 225305, Республика Беларусь, Брестская обл., г. Кобрин, ул.
+              Вертолётная 22А
+            </p>
+          </div>
+          <div class="info info-right">
+            <h3>Реквизиты</h3>
+            <p>СООО «Колор-Буццард»</p>
+            <p>р/счет: BY26BAPB 30124150200110000000</p>
+            <p>ОАО «Белагропромбанк»</p>
+            <p>УНН: 290370253</p>
+            <p>ОКПО: 29229775</p>
+          </div>
+          <div class="info">
+            <h3>Время работы</h3>
+            <p>пн-пт: 08:00–16:30</p>
+            <p>сб-вс: закрыто</p>
+          </div>
         </div>
-        <div class="info info-right">
-          <h3>Реквизиты</h3>
-          <p>СООО «Колор-Буццард» </p>
-          <p>р/счет: BY26BAPB 30124150200110000000 </p>
-          <p>ОАО «Белагропромбанк»</p>
-          <p>УНН: 290370253</p>
-          <p>ОКПО: 29229775</p>
-        </div>
-        <div class="info">
-          <h3>Время работы</h3>
-          <p>пн-пт: 08:00–16:30</p>
-          <p>сб-вс: закрыто</p>
-        </div>
-      </div>
+      </section>
+      <div data-include="footer"></div>
+    </main>
 
-    </section>
-    <div data-include="footer"></div>
-  </main>
-
-  <div id="map"></div>
-</body>
-
+    <div id="map"></div>
+  </body>
 </html>
