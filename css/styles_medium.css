@@ -55,6 +55,7 @@ index page
 .grid-production .palette,
 .grid-production .paint {
     border-radius: 0px;
+    margin: 20px  0;
 }
 
 .grid-production .square {
