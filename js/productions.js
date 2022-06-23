@@ -14,7 +14,7 @@ document.getElementById("products").innerHTML = productsList
           <p>${item.description}</p>
           <p id='tags' class='hide-tags'>${item.tags}</p>
         </div>
-        <img src='${item.image}'>
+        <img src='${item.image}' alt='${item.imageAlt}'>
         </a>
       </div>`
   )
