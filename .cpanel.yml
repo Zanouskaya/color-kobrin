@@ -1,5 +1,5 @@
 deployment:
   tasks:
     - export REPOPATH=/home/colorkob/repositories/color-kobrin/*
-    - export SITEPATH=/home/colorkob/public_html/
+    - export SITEPATH=/home/colorkob/color_app/
     - /bin/rsync -rav --exclude '.git' --exclude '.cpanel.yml' --del $REPOPATH $SITEPATH
