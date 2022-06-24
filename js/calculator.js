@@ -36,7 +36,7 @@ function addSurface() {
               onkeyup="this.value=this.value.replace(/,/g, '.')"
               title ='Введите число'/>
           <div class='sqr-result'>0.00</div><p>м&#178;</p>
-          <button class="btn del-surface" id="${count}"><img src = './images/icons/close.png'  style='width: 20px;'</button>
+          <button class="btn del-surface" id="${count}"><img src = '../images/icons/close.png'  style='width: 20px;'</button>
         </div>`
   );
   let delBtn = document.getElementById(`${count}`);

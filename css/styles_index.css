@@ -5,7 +5,7 @@ hero-section
 .hero-background {
   display: flex;
   height: 80vh;
-  background-image: url("../images/background4.jpg");
+  background-image: url("../images/background4.webp");
   background-size: cover;
   background-position: center;
 }
@@ -89,7 +89,8 @@ productions-section
 
 .grid-production .paint {
   text-align: right;
-  background: url(../images/close-up-hand-painting-wall-with-roller.jpg);
+  background: url(../images/close-up-hand-painting-wall-with-roller.webp);
+  
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -97,7 +98,7 @@ productions-section
   margin: 20px 20px 20px 0;
 }
 
-.grid-production .putty {
+/* .grid-production .putty {
   background: url(../images/putty.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -112,10 +113,10 @@ productions-section
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 0 18px 18px 0;
-}
+} */
 
 .grid-production .palette {
-  background: url(../images/pallette.jpg);
+  background: url(../images/pallette.webp);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -125,7 +126,7 @@ productions-section
 
 .grid-production .calculator {
   text-align: right;
-  background: url(../images/calculator-picture.jpg);
+  background: url(../images/calculator-picture.webp);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
